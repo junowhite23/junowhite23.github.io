@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="juno white">
+    <meta name="theme-color" content="#5a8aaa">
+    <title>Mùa Hạ Năm Thứ Bảy — juno white</title>
+
+    <link rel="icon"
+        href="https://i.ibb.co/nq6NnL6s/imgi-2-b6d41899a20f3d146d6b3d5a75b3ccfdd4575618a53b9a8e5874dfe83644c84a.png">
+
+    <!-- Fonts - Vietnamese subset -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Golos+Text:wght@400..900&family=Figtree:ital,wght@0,300..900;1,300..900&subset=vietnamese,latin&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Fonts -->
+    <link href="https://cdn.jsdelivr.net/gh/Richard9394/MingCute@main/fonts/MingCute.min.css" rel="stylesheet">
+
+    <style>
+        :root,
+        [data-theme="light"] {
+            --Background-Color: #f5f7fa;
+            --Main-Text-Font-Family: "Inter", "Segoe UI", sans-serif;
+            --Main-Text-Font-Size: 0.925rem;
+            --Main-Text-Line-Height: 1.8;
+            --Main-Text-Color: #5e7e95;
+            --Bold-Text-Color: #4a7a9b;
+            --Italic-Text-Color: #7aa3c0;
+            --Heading-Font-Family: "Golos Text", serif;
+            --Caps-Font-Family: "Figtree", sans-serif;
+            --Links-Color: #6a9ec0;
+            --Links-HOVER-Color: #4a7a9b;
+            --Boxes-BG: #ffffff;
+            --Boxes-Shadow: 5px 5px 0px rgba(160, 185, 210, 0.35);
+            --clr-blue: #4a90c8;
+            --clr-blue-light: #5ba8e8;
+            --clr-blue-border: #c4daf0;
+            --clr-blue-bg: #eaf2fa;
+            --clr-muted: #93b3cc;
+            --hero-title-color: #5a8aaa;
+            --nav-btn-bg: #eaf2fa;
+            --nav-btn-border: #c4daf0;
+            --nav-btn-color: #6a9ec0;
+            --nav-btn-hover-bg: #dbe8f5;
+            --nav-btn-hover-color: #4a7a9b;
+            --chapter-border: #e8f0f8;
+            --chapter-hover-bg: #f8fbfd;
+        }
+
+        [data-theme="dark"] {
+            --Background-Color: #1a2332;
+            --Main-Text-Color: #b0c8dc;
+            --Bold-Text-Color: #8ec0e8;
+            --Italic-Text-Color: #7aa8c8;
+            --Links-Color: #7ab8e0;
+            --Links-HOVER-Color: #a0d0f0;
+            --Boxes-BG: #1e2e40;
+            --Boxes-Shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+            --clr-blue: #5aa0d8;
+            --clr-blue-light: #6ab8f0;
+            --clr-blue-border: #3a5a78;
+            --clr-blue-bg: #243344;
+            --clr-muted: #6a8aa0;
+            --hero-title-color: #7ab8e0;
+            --nav-btn-bg: #243344;
+            --nav-btn-border: #3a5a78;
+            --nav-btn-color: #7ab8e0;
+            --nav-btn-hover-bg: #2e4458;
+            --nav-btn-hover-color: #a0d0f0;
+            --chapter-border: #2a3a4e;
+            --chapter-hover-bg: #243344;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            background-color: var(--Background-Color);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25'%3E%3Crect width='25' height='25' fill='none' stroke='%23cdd8e2' stroke-width='0.6' stroke-dasharray='4 3'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-attachment: fixed;
+            font: normal var(--Main-Text-Font-Size)/var(--Main-Text-Line-Height) var(--Main-Text-Font-Family);
+            color: var(--Main-Text-Color);
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        [data-theme="dark"] body {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25'%3E%3Crect width='25' height='25' fill='none' stroke='%23283848' stroke-width='0.6' stroke-dasharray='4 3'/%3E%3C/svg%3E");
+        }
+
+        a { text-decoration: none; color: var(--Links-Color); }
+        a:hover { color: var(--Links-HOVER-Color); }
+        b, strong { font-weight: 600; color: var(--Bold-Text-Color); }
+        i, em { color: var(--Italic-Text-Color); }
+        img { max-width: 100%; }
+        p { margin: 0 0 14px; }
+
+        .page-cont {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        /* Story Header */
+        .story-header {
+            background: var(--Boxes-BG);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--Boxes-Shadow);
+            margin-bottom: 28px;
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .story-cover {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .story-header-body {
+            padding: 24px;
+        }
+
+        .story-title {
+            font-family: var(--Heading-Font-Family);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--hero-title-color);
+            margin: 0 0 6px;
+            line-height: 1.35;
+        }
+
+        .story-author {
+            font-size: 14px;
+            color: var(--clr-muted);
+            margin: 0 0 14px;
+        }
+
+        .story-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .meta-tag {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 600;
+            background: var(--clr-blue-bg);
+            color: var(--clr-blue);
+            border: 1px solid var(--clr-blue-border);
+        }
+
+        .story-desc {
+            font-size: var(--Main-Text-Font-Size);
+            line-height: var(--Main-Text-Line-Height);
+            color: var(--Main-Text-Color);
+        }
+
+        /* Navigation */
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 28px;
+            gap: 12px;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            border: 1.5px solid var(--nav-btn-border);
+            border-radius: 50px;
+            background: var(--nav-btn-bg);
+            color: var(--nav-btn-color);
+            font-size: 13px;
+            font-weight: 600;
+            font-family: var(--Caps-Font-Family);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: var(--nav-btn-hover-bg);
+            color: var(--nav-btn-hover-color);
+        }
+
+        .theme-toggle-story {
+            margin-left: auto;
+        }
+
+        /* Chapter List */
+        .chapter-box {
+            background: var(--Boxes-BG);
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: var(--Boxes-Shadow);
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .chapter-box h2 {
+            font-family: var(--Heading-Font-Family);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--hero-title-color);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin: 0 0 18px;
+        }
+
+        .chapter-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .chapter-list li {
+            border-bottom: 1px solid var(--chapter-border);
+        }
+
+        .chapter-list li:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-list a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 12px;
+            border-radius: 8px;
+            color: var(--Main-Text-Color);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .chapter-list a:hover {
+            background: var(--chapter-hover-bg);
+            color: var(--Links-Color);
+        }
+
+        .ch-num {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--clr-blue-bg);
+            border: 1.5px solid var(--clr-blue-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--clr-blue);
+        }
+
+        .ch-title {
+            font-size: var(--Main-Text-Font-Size);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .story-footer {
+            text-align: center;
+            margin-top: 28px;
+            font-style: italic;
+            font-size: 12px;
+            color: var(--clr-muted);
+        }
+
+        @media (max-width: 640px) {
+            .page-cont { padding: 1.5rem 0.75rem 3rem; }
+            .story-cover { height: 180px; }
+            .story-title { font-size: 1.3rem; }
+            .nav-bar { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-cont">
+
+        <!-- Navigation -->
+        <div class="nav-bar">
+            <a href="index.html" class="nav-btn">
+                <i class="mgc_arrow_left_line"></i> Trang chủ
+            </a>
+            <button class="nav-btn theme-toggle-story" onclick="toggleTheme()">
+                <i class="mgc_sun_line icon-sun"></i>
+                <i class="mgc_moon_line icon-moon"></i>
+            </button>
+        </div>
+
+        <!-- Story Header -->
+        <div class="story-header">
+            <img class="story-cover" src="https://i.ibb.co/m5Gc5X6w/B-A-2D.jpg" alt="Bìa truyện Mùa Hạ Năm Thứ Bảy">
+            <div class="story-header-body">
+                <h1 class="story-title">Mùa Hạ Năm Thứ Bảy</h1>
+                <p class="story-author">Tác giả: Xuân Hoài Tửu Nùng · Edit: juno white</p>
+                <div class="story-meta">
+                    <span class="meta-tag">HE</span>
+                    <span class="meta-tag">Niên hạ</span>
+                    <span class="meta-tag">Chữa lành</span>
+                    <span class="meta-tag">Road trip</span>
+                    <span class="meta-tag">Gương vỡ lại lành</span>
+                    <span class="meta-tag">Complete</span>
+                </div>
+                <p class="story-desc">
+                    <!-- Thêm giới thiệu ngắn về truyện ở đây -->
+                    <i>Mô tả ngắn về truyện sẽ được đặt tại đây...</i>
+                </p>
+            </div>
+        </div>
+
+        <!-- Chapters -->
+        <div class="chapter-box">
+            <h2>Mục Lục</h2>
+            <ul class="chapter-list">
+                <li><a href="#"><span class="ch-num">1</span><span class="ch-title">Chương 1</span></a></li>
+                <li><a href="#"><span class="ch-num">2</span><span class="ch-title">Chương 2</span></a></li>
+                <li><a href="#"><span class="ch-num">3</span><span class="ch-title">Chương 3</span></a></li>
+                <li><a href="#"><span class="ch-num">4</span><span class="ch-title">Chương 4</span></a></li>
+                <li><a href="#"><span class="ch-num">5</span><span class="ch-title">Chương 5</span></a></li>
+                <!-- Thêm chương tại đây -->
+            </ul>
+        </div>
+
+        <div class="story-footer">♡ cảm ơn đã ghé đọc ♡</div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            try { localStorage.setItem('theme', next); } catch (e) {}
+        }
+
+        (function () {
+            try {
+                const saved = localStorage.getItem('theme');
+                if (saved === 'dark' || saved === 'light') {
+                    document.documentElement.setAttribute('data-theme', saved);
+                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <style>
+        .theme-toggle-story .icon-sun,
+        .theme-toggle-story .icon-moon { display: none; }
+        [data-theme="light"] .theme-toggle-story .icon-moon { display: inline; }
+        [data-theme="dark"] .theme-toggle-story .icon-sun { display: inline; }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mùa Hạ Năm Thứ Bảy — Chương 1</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    background: #faf6f0;
+    color: #2c2c2c;
+    line-height: 1.9;
+    overflow-x: hidden;
+  }
+
+  /* ─── Header ─── */
+  .header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    border-bottom: 1px solid #e0d5c7;
+    background: linear-gradient(180deg, #fff8f0, #faf6f0);
+  }
+  .header h1 {
+    font-size: 2.2em;
+    color: #5a3e2b;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  .header .chapter {
+    font-size: 1.1em;
+    color: #a08060;
+    font-style: italic;
+  }
+  .header .author {
+    margin-top: 12px;
+    font-size: 0.9em;
+    color: #b09070;
+  }
+
+  /* ─── Layout ─── */
+  .app {
+    display: flex;
+    min-height: 100vh;
+  }
+  .story-area {
+    flex: 1;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 50px 30px 100px;
+    transition: margin-right 0.4s ease;
+  }
+  .story-area.shifted {
+    margin-right: 420px;
+  }
+
+  /* ─── Paragraph ─── */
+  .para-wrapper {
+    position: relative;
+    margin-bottom: 10px;
+    padding: 14px 20px 14px 24px;
+    border-radius: 8px;
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .para-wrapper:hover {
+    background: rgba(255, 200, 100, 0.08);
+  }
+  .para-wrapper.active {
+    background: rgba(255, 180, 60, 0.12);
+    border-left: 3px solid #e6a030;
+  }
+  .para-wrapper p {
+    font-size: 1.12em;
+    text-align: justify;
+    text-indent: 2em;
+  }
+
+  /* ─── Comment Icon ─── */
+  .comment-btn {
+    position: absolute;
+    right: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #d4c4a8;
+    background: #fffbf3;
+    color: #a08060;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .para-wrapper:hover .comment-btn,
+  .para-wrapper.active .comment-btn {
+    opacity: 1;
+  }
+  .comment-btn:hover {
+    background: #f0e0c0;
+    border-color: #c0a060;
+    transform: translateY(-50%) scale(1.1);
+  }
+  .comment-btn .count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #e07030;
+    color: #fff;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+  }
+
+  /* ─── Comment Panel ─── */
+  .comment-panel {
+    position: fixed;
+    top: 0;
+    right: -440px;
+    width: 420px;
+    height: 100vh;
+    background: #ffffff;
+    border-left: 1px solid #e0d5c7;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.08);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+  }
+  .comment-panel.open {
+    right: 0;
+  }
+  .panel-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fdf8f0;
+  }
+  .panel-header h3 {
+    font-size: 1em;
+    color: #5a3e2b;
+  }
+  .panel-header .para-label {
+    font-size: 0.8em;
+    color: #a08060;
+    background: #f5ead8;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+  .close-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #999;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .close-btn:hover {
+    background: #f0e8e0;
+    color: #333;
+  }
+  .panel-quote {
+    padding: 16px 24px;
+    border-bottom: 1px solid #eee;
+    background: #fffcf5;
+    font-style: italic;
+    color: #887050;
+    font-size: 0.88em;
+    line-height: 1.6;
+    max-height: 100px;
+    overflow-y: auto;
+    border-left: 3px solid #e6a030;
+    margin: 0;
+  }
+  .giscus-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+  }
+
+  /* ─── Overlay ─── */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ─── Reading progress ─── */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #e6a030, #e07030);
+    z-index: 2000;
+    transition: width 0.1s;
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 768px) {
+    .comment-panel {
+      width: 100%;
+      right: -100%;
+    }
+    .story-area.shifted {
+      margin-right: 0;
+    }
+    .story-area {
+      padding: 30px 16px 80px;
+    }
+    .header h1 { font-size: 1.6em; }
+    .comment-btn {
+      right: -10px;
+      width: 30px;
+      height: 30px;
+      font-size: 12px;
+    }
+  }
+
+  /* ─── Separator ─── */
+  .separator {
+    text-align: center;
+    padding: 30px 0;
+    color: #c0a878;
+    font-size: 1.4em;
+    letter-spacing: 12px;
+  }
+
+  /* ─── Loading ─── */
+  .loading-giscus {
+    text-align: center;
+    padding: 60px 20px;
+    color: #b09070;
+    font-style: italic;
+  }
+  .loading-giscus .spinner {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #e0d5c7;
+    border-top-color: #e6a030;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 12px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<div class="header">
+  <h1>MÙA HẠ NĂM THỨ BẢY</h1>
+  <div class="chapter">Chương 1: Ngày hè trở lại</div>
+  <div class="author">✦ Demo — Bình luận theo đoạn với Giscus ✦</div>
+</div>
+
+<!-- App -->
+<div class="app">
+  <div class="story-area" id="storyArea">
+
+    <div class="para-wrapper" data-id="chap1-p1">
+      <p>Mùa hè năm ấy, khi tôi mười bảy tuổi, ba tôi quyết định đưa cả nhà về lại thị trấn ven biển nơi ông từng lớn lên. Chiếc xe khách cũ kỹ chạy suốt sáu tiếng đồng hồ, băng qua những cánh đồng lúa vàng óng rồi đổ dốc xuống con đường nhỏ dẫn ra biển. Tôi nhớ mãi khoảnh khắc mùi muối mặn đầu tiên tràn qua cửa kính — nó giống như một lời chào từ ký ức xa xôi nào đó mà tôi chưa từng sống.</p>
+      <button class="comment-btn" onclick="openComments('chap1-p1')">
+        💬
+      </button>
+    </div>
+
+    <div class="para-wrapper" data-id="chap1-p2">
+      <p>Căn nhà cũ nằm cuối con hẻm nhỏ, mái ngói đã rêu phong và bức tường vôi loang lổ vệt thời gian. Bà nội đứng chờ ở cửa từ bao giờ, mắt nheo lại cười khi thấy chúng tôi. Bà ôm tôi thật chặt, mùi trầu cay nồng quen thuộc. "Lớn dữ rồi," bà nói, giọng run run. Tôi cũng muốn nói điều gì đó thật hay, nhưng cổ họng tôi nghẹn lại.</p>
+      <button class="comment-btn" onclick="openComments('chap1-p2')">
+        💬
+      </button>
+    </div>
+
+    <div class="para-wrapper" data-id="chap1-p3">
+      <p>Phòng tôi ở trên gác, cửa sổ nhìn ra khoảng sân nhỏ trồng đầy hoa giấy tím. Xa hơn nữa là mái ngói san sát của những ngôi nhà trong xóm, rồi đến hàng dương liễu chắn gió, và cuối cùng là biển — một đường chỉ xanh thẫm nằm im giữa trời và đất. Tôi đặt ba lô xuống giường, mở toang cửa sổ và hít thật sâu. Gió biển chiều hè ùa vào, mang theo tiếng ve râm ran từ hàng phượng đầu ngõ.</p>
+      <button class="comment-btn" onclick="openComments('chap1-p3')">
+        💬
+      </button>
+    </div>
+
+    <div class="separator">· · ·</div>
+
+    <div class="para-wrapper" data-id="chap1-p4">
+      <p>Tôi gặp Hạ vào buổi chiều thứ hai ở thị trấn. Lúc đó tôi đang ngồi trên bờ kè, chân trần đung đưa phía trên mặt nước, vẽ nhăng vào cuốn sổ tay. Một cái bóng đổ xuống trang giấy. "Vẽ xấu ghê." Tôi ngẩng lên. Một cô gái trạc tuổi tôi, tóc buộc cao, da nâu rám nắng, đang nhìn cuốn sổ của tôi với vẻ mặt chê bai rõ ràng nhưng mắt thì lấp lánh cười.</p>
+      <button class="comment-btn" onclick="openComments('chap1-p4')">
+        💬
+      </button>
+    </div>
+
+    <div class="para-wrapper" data-id="chap1-p5">
+      <p>"Tôi vẽ trừu tượng," tôi nói, cố giữ vẻ tự tin dù biết rõ bức vẽ chẳng trừu tượng chút nào — nó chỉ đơn giản là xấu. Cô gái bật cười, tiếng cười giòn tan như sóng vỗ vào bờ kè đá. "Trừu tượng kiểu gì mà con cá trông như cái dép?" Rồi cô ngồi phịch xuống cạnh tôi, tự nhiên như thể chúng tôi đã quen nhau từ kiếp trước.</p>
+      <button class="comment-btn" onclick="openComments('chap1-p5')">
+        💬
+      </button>
+    </div>
+
+    <div class="para-wrapper" data-id="chap1-p6">
+      <p>"Tao tên Hạ," cô nói, mắt nhìn ra biển. "Sống ở đây từ nhỏ. Còn mày chắc là thằng cháu ông Tám mới về hả? Cả xóm đồn mấy ngày nay rồi." Tôi gật đầu, hơi ngạc nhiên vì tốc độ lan truyền tin tức ở cái thị trấn bé xíu này. Hạ quay sang tôi, nhoẻn miệng cười. "Mùa hè ở đây chán lắm. Nhưng có thêm một đứa thì đỡ chán hơn. Ngày mai ra bãi đá không? Tao chỉ cho chỗ bắt ốc ngon nhất."</p>
+      <button class="comment-btn" onclick="openComments('chap1-p6')">
+        💬
+      </button>
+    </div>
+
+    <div class="separator">· · ·</div>
+
+    <div class="para-wrapper" data-id="chap1-p7">
+      <p>Đêm đầu tiên ở thị trấn, tôi nằm trên chiếc giường gỗ cũ, nghe tiếng sóng biển vọng về từ xa. Trần nhà bằng gỗ tối thẫm, thỉnh thoảng có tiếng tắc kè kêu. Tôi nghĩ về Hạ — cô gái lạ lùng với tiếng cười giòn tan ấy — và tự hỏi mùa hè này sẽ ra sao. Ở thành phố, tôi có WiFi, có máy lạnh, có trung tâm thương mại. Ở đây tôi chỉ có tiếng sóng, gió biển, và một cô gái vừa gặp đã rủ đi bắt ốc.</p>
+      <button class="comment-btn" onclick="openComments('chap1-p7')">
+        💬
+      </button>
+    </div>
+
+    <div class="para-wrapper" data-id="chap1-p8">
+      <p>Nhưng kỳ lạ thay, lần đầu tiên sau rất lâu, tôi thấy mình mỉm cười trước khi ngủ. Ngoài cửa sổ, trăng non treo lơ lửng trên mái ngói, và hoa giấy tím đung đưa nhè nhẹ trong gió đêm. Tôi chưa biết rằng đây sẽ là mùa hè thay đổi tất cả — mùa hè thứ bảy tôi đến thị trấn này, dù sáu lần trước tôi đều quá nhỏ để nhớ. Lần này, tôi sẽ nhớ. Nhớ từng khoảnh khắc.</p>
+      <button class="comment-btn" onclick="openComments('chap1-p8')">
+        💬
+      </button>
+    </div>
+
+    <div class="separator">— Hết Chương 1 —</div>
+
+  </div>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closeComments()"></div>
+
+<!-- Comment Panel -->
+<div class="comment-panel" id="commentPanel">
+  <div class="panel-header">
+    <div>
+      <h3>💬 Bình luận đoạn văn</h3>
+      <span class="para-label" id="paraLabel">—</span>
+    </div>
+    <button class="close-btn" onclick="closeComments()">✕</button>
+  </div>
+  <div class="panel-quote" id="panelQuote"></div>
+  <div class="giscus-container" id="giscusContainer">
+    <div class="loading-giscus">
+      <div class="spinner"></div>
+      <p>Chọn một đoạn văn để xem bình luận...</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // =====================================================
+  //  ⚠️  THAY THÔNG TIN REPO CỦA BẠN VÀO ĐÂY
+  // =====================================================
+  const GISCUS_CONFIG = {
+    repo:           "junowhite23/junowhite23.github.io",      // ← đổi
+    repoId:         "R_kgDOSdm-sA",               // ← đổi (lấy từ giscus.app)
+    category:       "General",                      // ← tên category trong Discussions
+    categoryId:     "DIC_kwDOSdm-sM4C9HPP",             // ← đổi (lấy từ giscus.app)
+    theme:          "light",
+    lang:           "vi"
+  };
+
+  let currentParaId = null;
+
+  // ─── Open comments for a paragraph ───
+  function openComments(paraId) {
+    // Highlight active paragraph
+    document.querySelectorAll('.para-wrapper').forEach(el => el.classList.remove('active'));
+    const wrapper = document.querySelector(`[data-id="${paraId}"]`);
+    if (wrapper) {
+      wrapper.classList.add('active');
+    }
+
+    currentParaId = paraId;
+
+    // Update panel info
+    document.getElementById('paraLabel').textContent = paraId;
+    const paraText = wrapper ? wrapper.querySelector('p').textContent : '';
+    document.getElementById('panelQuote').textContent =
+      paraText.length > 150 ? paraText.substring(0, 150) + '…' : paraText;
+
+    // Open panel
+    document.getElementById('commentPanel').classList.add('open');
+    document.getElementById('overlay').classList.add('show');
+    document.getElementById('storyArea').classList.add('shifted');
+
+    // Load Giscus
+    loadGiscus(paraId);
+  }
+
+  // ─── Close comments ───
+  function closeComments() {
+    document.getElementById('commentPanel').classList.remove('open');
+    document.getElementById('overlay').classList.remove('show');
+    document.getElementById('storyArea').classList.remove('shifted');
+    document.querySelectorAll('.para-wrapper').forEach(el => el.classList.remove('active'));
+    currentParaId = null;
+  }
+
+  // ─── Load Giscus widget for a specific paragraph ───
+  function loadGiscus(paraId) {
+    const container = document.getElementById('giscusContainer');
+
+    // Show loading
+    container.innerHTML = `
+      <div class="loading-giscus">
+        <div class="spinner"></div>
+        <p>Đang tải bình luận cho <strong>${paraId}</strong>...</p>
+      </div>
+    `;
+
+    // Small delay to let the panel animate open
+    setTimeout(() => {
+      container.innerHTML = '';
+
+      const script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.setAttribute('data-repo',               GISCUS_CONFIG.repo);
+      script.setAttribute('data-repo-id',            GISCUS_CONFIG.repoId);
+      script.setAttribute('data-category',           GISCUS_CONFIG.category);
+      script.setAttribute('data-category-id',        GISCUS_CONFIG.categoryId);
+      script.setAttribute('data-mapping',            'specific');
+      script.setAttribute('data-term',               paraId);  // ← mỗi đoạn = 1 Discussion riêng
+      script.setAttribute('data-strict',             '0');
+      script.setAttribute('data-reactions-enabled',  '1');
+      script.setAttribute('data-emit-metadata',      '0');
+      script.setAttribute('data-input-position',     'top');
+      script.setAttribute('data-theme',              GISCUS_CONFIG.theme);
+      script.setAttribute('data-lang',               GISCUS_CONFIG.lang);
+      script.setAttribute('data-loading',            'lazy');
+      script.crossOrigin = 'anonymous';
+      script.async = true;
+
+      container.appendChild(script);
+    }, 300);
+  }
+
+  // ─── Reading progress bar ───
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    document.getElementById('progressBar').style.width = progress + '%';
+  });
+
+  // ─── Keyboard shortcut: Escape to close ───
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeComments();
+  });
+</script>
+
+</body>
+</html>
