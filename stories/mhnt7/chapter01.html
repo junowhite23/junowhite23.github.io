@@ -458,6 +458,42 @@
       transform: translateY(-50%) scale(1.1);
     }
 
+    /* Comment count badge */
+    .comment-btn.has-comments {
+      opacity: 1 !important;
+      background: var(--blue-bg);
+      border-color: var(--blue);
+      color: var(--blue);
+      width: auto;
+      min-width: 28px;
+      padding: 0 6px;
+      font-size: 11px;
+      gap: 3px;
+      border-radius: 14px;
+    }
+
+    .comment-btn.has-comments i {
+      font-size: 11px;
+    }
+
+    .comment-count {
+      font-size: 10px;
+      font-weight: 700;
+      font-family: var(--font-caps);
+      line-height: 1;
+      color: var(--blue);
+    }
+
+    [data-theme="dark"] .comment-btn.has-comments {
+      background: var(--blue-bg);
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    [data-theme="dark"] .comment-count {
+      color: var(--blue);
+    }
+
     .author-note {
       margin-top: 48px;
       padding: 24px;
@@ -844,6 +880,19 @@
       color: var(--scroll-btn-color) !important;
     }
 
+    /* ===== READING PROGRESS BAR ===== */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(to right, var(--blue), var(--pink));
+      z-index: 9999;
+      transition: width 0.1s ease;
+      border-radius: 0 2px 2px 0;
+    }
+
     @media (max-width: 680px) {
       .page-cont {
         padding: 1.5rem 1rem 3rem;
@@ -929,6 +978,9 @@
 </head>
 
 <body>
+
+  <div class="reading-progress" id="readingProgress"></div>
+
   <div class="page-cont" id="pageCont">
 
     <div class="nav-bar">
@@ -1769,11 +1821,47 @@
       widget.setAttribute('term', term);
       widget.setAttribute('strict', '0');
       widget.setAttribute('reactionsenabled', '1');
-      widget.setAttribute('emitmetadata', '0');
+      widget.setAttribute('emitmetadata', '1');
       widget.setAttribute('inputposition', 'top');
       widget.setAttribute('theme', getGiscusTheme());
       widget.setAttribute('lang', 'vi');
       return widget;
+    }
+
+    // ===== NHẬN METADATA TỪ GISCUS (số comment) =====
+    var paraCommentCounts = {};
+
+    window.addEventListener('message', function (event) {
+      if (event.origin !== 'https://giscus.app') return;
+      var data = event.data;
+      if (!data || data.giscus === undefined) return;
+      var meta = data.giscus;
+      if (meta && meta.discussion && currentParaId) {
+        var count = meta.discussion.totalCommentCount || 0;
+        paraCommentCounts[currentParaId] = count;
+        updateCommentBadge(currentParaId, count);
+      }
+    });
+
+    function updateCommentBadge(paraId, count) {
+      var wrapper = document.querySelector('[data-id="' + paraId + '"]');
+      if (!wrapper) return;
+      var btn = wrapper.querySelector('.comment-btn');
+      if (!btn) return;
+
+      var badge = btn.querySelector('.comment-count');
+      if (count > 0) {
+        if (!badge) {
+          badge = document.createElement('span');
+          badge.className = 'comment-count';
+          btn.appendChild(badge);
+        }
+        badge.textContent = count > 99 ? '99+' : count;
+        btn.classList.add('has-comments');
+      } else {
+        if (badge) badge.remove();
+        btn.classList.remove('has-comments');
+      }
     }
 
     // ===== CHAPTER GISCUS =====
@@ -1904,8 +1992,14 @@
     }
 
     window.addEventListener('scroll', function () {
+      // Scroll top button
       var btn = document.getElementById('scrollTopBtn');
       btn.classList.toggle('visible', window.scrollY > 400);
+
+      // Reading progress bar
+      var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+      document.getElementById('readingProgress').style.width = progress + '%';
     });
 
     // ===== FOOTNOTES =====
@@ -1914,7 +2008,7 @@
         e.preventDefault();
         var target = document.getElementById('fn' + ref.getAttribute('data-fn'));
         if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           target.classList.add('highlight');
           setTimeout(function () { target.classList.remove('highlight'); }, 2500);
         }
@@ -1925,7 +2019,7 @@
       link.addEventListener('click', function (e) {
         e.preventDefault();
         var target = document.getElementById(link.getAttribute('href').substring(1));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
