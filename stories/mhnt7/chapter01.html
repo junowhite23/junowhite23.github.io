@@ -733,10 +733,13 @@
       flex-shrink: 0;
     }
 
-    .giscus-container {
-      flex: 1;
-      overflow-y: auto;
-      padding: 16px;
+    .giscus-container .giscus {
+      width: 100%;
+    }
+
+    .giscus-container .giscus iframe {
+      width: 100% !important;
+      min-height: 300px;
     }
 
     .loading-giscus {
@@ -1744,9 +1747,7 @@
       return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     }
 
-    // Hàm inject giscus bằng SCRIPT TAG (cách duy nhất hoạt động)
     function injectGiscus(container, term) {
-      // Xóa sạch nội dung cũ
       container.innerHTML = '';
 
       var script = document.createElement('script');
@@ -1763,11 +1764,46 @@
       script.setAttribute('data-input-position', 'top');
       script.setAttribute('data-theme', getGiscusTheme());
       script.setAttribute('data-lang', 'vi');
-      script.setAttribute('data-loading', 'lazy');
+      // ⚠️ BỎ data-loading="lazy" — đây là nguyên nhân chính!
       script.setAttribute('crossorigin', 'anonymous');
       script.async = true;
 
       container.appendChild(script);
+    }
+
+    function openComments(paraId) {
+      document.querySelectorAll('.para-wrapper').forEach(function (el) { el.classList.remove('active'); });
+      var wrapper = document.querySelector('[data-id="' + paraId + '"]');
+      if (wrapper) wrapper.classList.add('active');
+
+      currentParaId = paraId;
+      document.getElementById('paraLabel').textContent = 'Bình luận cho đoạn: ' + paraId;
+
+      var paraText = wrapper ? wrapper.querySelector('p').textContent : '';
+      document.getElementById('panelQuote').textContent =
+        paraText.length > 180 ? paraText.substring(0, 180) + '…' : paraText;
+
+      // Mở panel TRƯỚC
+      document.getElementById('commentPanel').classList.add('open');
+      document.getElementById('overlay').classList.add('show');
+      document.getElementById('pageCont').classList.add('shifted');
+
+      var container = document.getElementById('giscusContainer');
+      container.innerHTML = '<div class="loading-giscus"><div class="spinner"></div><p>Đang tải bình luận...</p></div>';
+
+      // Delay lâu hơn để panel render xong → giscus mới inject
+      setTimeout(function () {
+        injectGiscus(container, paraId);
+
+        // Backup: force resize sau khi giscus load
+        setTimeout(function () {
+          var iframe = container.querySelector('iframe.giscus-frame');
+          if (iframe) {
+            iframe.style.width = '100%';
+            iframe.style.minHeight = '300px';
+          }
+        }, 2000);
+      }, 500);
     }
 
     // ===== CHAPTER GISCUS (load 1 lần khi mở trang) =====
