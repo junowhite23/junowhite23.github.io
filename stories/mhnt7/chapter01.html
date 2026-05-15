@@ -914,7 +914,18 @@
         font-size: 11px;
       }
     }
+
+    giscus-widget {
+      display: block;
+      width: 100%;
+    }
+
+    .giscus-container giscus-widget {
+      min-height: 300px;
+    }
   </style>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/giscus/dist/giscus.mjs"></script>
 </head>
 
 <body>
@@ -1747,70 +1758,30 @@
       return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     }
 
-    function injectGiscus(container, term) {
-      container.innerHTML = '';
-
-      var script = document.createElement('script');
-      script.src = 'https://giscus.app/client.js';
-      script.setAttribute('data-repo', GISCUS_REPO);
-      script.setAttribute('data-repo-id', GISCUS_REPO_ID);
-      script.setAttribute('data-category', GISCUS_CATEGORY);
-      script.setAttribute('data-category-id', GISCUS_CATEGORY_ID);
-      script.setAttribute('data-mapping', 'specific');
-      script.setAttribute('data-term', term);
-      script.setAttribute('data-strict', '0');
-      script.setAttribute('data-reactions-enabled', '1');
-      script.setAttribute('data-emit-metadata', '0');
-      script.setAttribute('data-input-position', 'top');
-      script.setAttribute('data-theme', getGiscusTheme());
-      script.setAttribute('data-lang', 'vi');
-      // ⚠️ BỎ data-loading="lazy" — đây là nguyên nhân chính!
-      script.setAttribute('crossorigin', 'anonymous');
-      script.async = true;
-
-      container.appendChild(script);
+    // ✅ Dùng web component thay vì script tag
+    function createGiscusWidget(term) {
+      var widget = document.createElement('giscus-widget');
+      widget.setAttribute('repo', GISCUS_REPO);
+      widget.setAttribute('repoid', GISCUS_REPO_ID);
+      widget.setAttribute('category', GISCUS_CATEGORY);
+      widget.setAttribute('categoryid', GISCUS_CATEGORY_ID);
+      widget.setAttribute('mapping', 'specific');
+      widget.setAttribute('term', term);
+      widget.setAttribute('strict', '0');
+      widget.setAttribute('reactionsenabled', '1');
+      widget.setAttribute('emitmetadata', '0');
+      widget.setAttribute('inputposition', 'top');
+      widget.setAttribute('theme', getGiscusTheme());
+      widget.setAttribute('lang', 'vi');
+      return widget;
     }
 
-    function openComments(paraId) {
-      document.querySelectorAll('.para-wrapper').forEach(function (el) { el.classList.remove('active'); });
-      var wrapper = document.querySelector('[data-id="' + paraId + '"]');
-      if (wrapper) wrapper.classList.add('active');
-
-      currentParaId = paraId;
-      document.getElementById('paraLabel').textContent = 'Bình luận cho đoạn: ' + paraId;
-
-      var paraText = wrapper ? wrapper.querySelector('p').textContent : '';
-      document.getElementById('panelQuote').textContent =
-        paraText.length > 180 ? paraText.substring(0, 180) + '…' : paraText;
-
-      // Mở panel TRƯỚC
-      document.getElementById('commentPanel').classList.add('open');
-      document.getElementById('overlay').classList.add('show');
-      document.getElementById('pageCont').classList.add('shifted');
-
-      var container = document.getElementById('giscusContainer');
-      container.innerHTML = '<div class="loading-giscus"><div class="spinner"></div><p>Đang tải bình luận...</p></div>';
-
-      // Delay lâu hơn để panel render xong → giscus mới inject
-      setTimeout(function () {
-        injectGiscus(container, paraId);
-
-        // Backup: force resize sau khi giscus load
-        setTimeout(function () {
-          var iframe = container.querySelector('iframe.giscus-frame');
-          if (iframe) {
-            iframe.style.width = '100%';
-            iframe.style.minHeight = '300px';
-          }
-        }, 2000);
-      }, 500);
-    }
-
-    // ===== CHAPTER GISCUS (load 1 lần khi mở trang) =====
+    // ===== CHAPTER GISCUS =====
     function loadChapterGiscus() {
       var container = document.getElementById('giscusChapter');
       if (container) {
-        injectGiscus(container, 'mhnt7-c01');
+        container.innerHTML = '';
+        container.appendChild(createGiscusWidget('mhnt7-c01'));
       }
     }
 
@@ -1818,17 +1789,13 @@
     var currentParaId = null;
 
     function openComments(paraId) {
-      // Highlight đoạn văn
       document.querySelectorAll('.para-wrapper').forEach(function (el) { el.classList.remove('active'); });
       var wrapper = document.querySelector('[data-id="' + paraId + '"]');
       if (wrapper) wrapper.classList.add('active');
 
       currentParaId = paraId;
-
-      // Cập nhật panel header
       document.getElementById('paraLabel').textContent = 'Bình luận cho đoạn: ' + paraId;
 
-      // Cập nhật quote
       var paraText = wrapper ? wrapper.querySelector('p').textContent : '';
       document.getElementById('panelQuote').textContent =
         paraText.length > 180 ? paraText.substring(0, 180) + '…' : paraText;
@@ -1838,14 +1805,14 @@
       document.getElementById('overlay').classList.add('show');
       document.getElementById('pageCont').classList.add('shifted');
 
-      // Load giscus cho đoạn văn này
+      // Inject giscus widget
       var container = document.getElementById('giscusContainer');
       container.innerHTML = '<div class="loading-giscus"><div class="spinner"></div><p>Đang tải bình luận...</p></div>';
 
-      // Delay nhỏ để panel mở trước
       setTimeout(function () {
-        injectGiscus(container, paraId);
-      }, 300);
+        container.innerHTML = '';
+        container.appendChild(createGiscusWidget(paraId));
+      }, 400);
     }
 
     function closeComments() {
@@ -1856,7 +1823,6 @@
       currentParaId = null;
     }
 
-    // ===== KEYBOARD =====
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeComments();
     });
@@ -1868,13 +1834,10 @@
       html.setAttribute('data-theme', next);
       try { localStorage.setItem('theme', next); } catch (e) { }
 
-      // Gửi message cho tất cả giscus iframe để đổi theme
+      // ✅ Cập nhật theme cho TẤT CẢ giscus widget
       var giscusTheme = next === 'dark' ? 'dark' : 'light';
-      document.querySelectorAll('iframe.giscus-frame').forEach(function (frame) {
-        frame.contentWindow.postMessage(
-          { giscus: { setConfig: { theme: giscusTheme } } },
-          'https://giscus.app'
-        );
+      document.querySelectorAll('giscus-widget').forEach(function (widget) {
+        widget.setAttribute('theme', giscusTheme);
       });
     }
 
