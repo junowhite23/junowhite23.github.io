@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300..900;1,300..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&subset=vietnamese,latin&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
     rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/gh/Richard9394/MingCute@main/fonts/MingCute.min.css" rel="stylesheet">
@@ -24,9 +24,9 @@
     [data-theme="light"] {
       --bg: #ffffff;
       --bg-secondary: #f8fbfd;
-      --font: "Be Vietnam Pro", "Segoe UI", sans-serif;
+      --font: "Inter", "Segoe UI", sans-serif;
       --font-serif: "Cormorant Garamond", "Times New Roman", serif;
-      --font-caps: "Figtree", sans-serif;
+      --font-caps: "Figtree", "Inter", sans-serif;
       --font-reading: "Lora", serif;
       --text: #4a6a80;
       --text-dark: #2a3a4c;
@@ -164,7 +164,7 @@
       color: var(--icon-color);
       font-size: 12px;
       font-weight: 600;
-      font-family: var(--font-caps);
+      font-family: var(--font);
       cursor: pointer;
       transition: all 0.2s ease;
       text-decoration: none;
@@ -632,17 +632,6 @@
       color: var(--blue);
     }
 
-    .chapter-comment .giscus-chapter {
-      min-height: 100px;
-    }
-
-    .giscus-iframe {
-      width: 100%;
-      border: none;
-      min-height: 300px;
-      color-scheme: light dark;
-    }
-
     .overlay {
       position: fixed;
       top: 0;
@@ -697,7 +686,7 @@
       font-size: 14px;
       font-weight: 700;
       color: var(--text-dark);
-      font-family: var(--font-caps);
+      font-family: var(--font);
       display: flex;
       align-items: center;
       gap: 6px;
@@ -706,7 +695,7 @@
     .panel-header .para-label {
       font-size: 11px;
       color: var(--muted);
-      font-family: var(--font-caps);
+      font-family: var(--font);
     }
 
     .close-btn {
@@ -747,11 +736,7 @@
     .giscus-container {
       flex: 1;
       overflow-y: auto;
-      padding: 0;
-    }
-
-    .giscus-container .giscus-iframe {
-      min-height: 100%;
+      padding: 16px;
     }
 
     .loading-giscus {
@@ -933,7 +918,7 @@
   <div class="page-cont" id="pageCont">
 
     <div class="nav-bar">
-      <a href="mua-ha-nam-thu-bay.html" class="nav-btn">
+      <a href="../../mua-ha-nam-thu-bay.html" class="nav-btn">
         <i class="mgc_menu_line"></i> Mục lục
       </a>
       <a href="#" class="nav-btn disabled">
@@ -1708,14 +1693,14 @@
         <div class="icon"><i class="mgc_chat_1_line"></i></div>
         <span class="label">Bình luận chương</span>
       </div>
-      <div class="giscus-chapter" id="giscusChapter"></div>
+      <div id="giscusChapter"></div>
     </div>
 
     <div class="chapter-nav-bottom">
       <a href="#" class="nav-btn disabled">
         <i class="mgc_arrow_left_line"></i> Chương trước
       </a>
-      <a href="mua-ha-nam-thu-bay.html" class="nav-btn">
+      <a href="../../mua-ha-nam-thu-bay.html" class="nav-btn">
         <i class="mgc_menu_line"></i> Mục lục
       </a>
       <a href="chapter02.html" class="nav-btn">
@@ -1750,67 +1735,81 @@
 
   <script>
     // ===== GISCUS CONFIG =====
-    const GISCUS_CONFIG = {
-      repo: "junowhite23/junowhite23.github.io",
-      repoId: "R_kgDOSdm-sA",
-      category: "General",
-      categoryId: "DIC_kwDOSdm-sM4C9HPP",
-      lang: "vi"
-    };
+    var GISCUS_REPO = 'junowhite23/junowhite23.github.io';
+    var GISCUS_REPO_ID = 'R_kgDOSdm-sA';
+    var GISCUS_CATEGORY = 'General';
+    var GISCUS_CATEGORY_ID = 'DIC_kwDOSdm-sM4C9HPP';
 
     function getGiscusTheme() {
       return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     }
 
-    // Tạo URL iframe trực tiếp cho giscus (không dùng script injection)
-    function buildGiscusIframeSrc(term) {
-      var params = new URLSearchParams({
-        repo: GISCUS_CONFIG.repo,
-        repoId: GISCUS_CONFIG.repoId,
-        category: GISCUS_CONFIG.category,
-        categoryId: GISCUS_CONFIG.categoryId,
-        mapping: 'specific',
-        term: term,
-        strict: '0',
-        reactionsEnabled: '1',
-        emitMetadata: '0',
-        inputPosition: 'top',
-        theme: getGiscusTheme(),
-        lang: GISCUS_CONFIG.lang
-      });
-      return 'https://giscus.app/widget?' + params.toString();
+    // Hàm inject giscus bằng SCRIPT TAG (cách duy nhất hoạt động)
+    function injectGiscus(container, term) {
+      // Xóa sạch nội dung cũ
+      container.innerHTML = '';
+
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.setAttribute('data-repo', GISCUS_REPO);
+      script.setAttribute('data-repo-id', GISCUS_REPO_ID);
+      script.setAttribute('data-category', GISCUS_CATEGORY);
+      script.setAttribute('data-category-id', GISCUS_CATEGORY_ID);
+      script.setAttribute('data-mapping', 'specific');
+      script.setAttribute('data-term', term);
+      script.setAttribute('data-strict', '0');
+      script.setAttribute('data-reactions-enabled', '1');
+      script.setAttribute('data-emit-metadata', '0');
+      script.setAttribute('data-input-position', 'top');
+      script.setAttribute('data-theme', getGiscusTheme());
+      script.setAttribute('data-lang', 'vi');
+      script.setAttribute('data-loading', 'lazy');
+      script.setAttribute('crossorigin', 'anonymous');
+      script.async = true;
+
+      container.appendChild(script);
     }
 
-    // Tạo iframe giscus
-    function createGiscusIframe(term) {
-      var iframe = document.createElement('iframe');
-      iframe.className = 'giscus-frame giscus-iframe';
-      iframe.src = buildGiscusIframeSrc(term);
-      iframe.setAttribute('loading', 'lazy');
-      iframe.setAttribute('allow', 'clipboard-write');
-      iframe.style.width = '100%';
-      iframe.style.border = 'none';
-      iframe.style.minHeight = '300px';
-      iframe.style.colorScheme = 'light dark';
-      return iframe;
+    // ===== CHAPTER GISCUS (load 1 lần khi mở trang) =====
+    function loadChapterGiscus() {
+      var container = document.getElementById('giscusChapter');
+      if (container) {
+        injectGiscus(container, 'mhnt7-c01');
+      }
     }
 
     // ===== PARAGRAPH COMMENTS =====
-    let currentParaId = null;
+    var currentParaId = null;
 
     function openComments(paraId) {
+      // Highlight đoạn văn
       document.querySelectorAll('.para-wrapper').forEach(function (el) { el.classList.remove('active'); });
       var wrapper = document.querySelector('[data-id="' + paraId + '"]');
       if (wrapper) wrapper.classList.add('active');
+
       currentParaId = paraId;
-      document.getElementById('paraLabel').textContent = 'Comment ở đây nò:';
+
+      // Cập nhật panel header
+      document.getElementById('paraLabel').textContent = 'Bình luận cho đoạn: ' + paraId;
+
+      // Cập nhật quote
       var paraText = wrapper ? wrapper.querySelector('p').textContent : '';
       document.getElementById('panelQuote').textContent =
         paraText.length > 180 ? paraText.substring(0, 180) + '…' : paraText;
+
+      // Mở panel
       document.getElementById('commentPanel').classList.add('open');
       document.getElementById('overlay').classList.add('show');
       document.getElementById('pageCont').classList.add('shifted');
-      loadParaGiscus(paraId);
+
+      // Load giscus cho đoạn văn này
+      var container = document.getElementById('giscusContainer');
+      container.innerHTML = '<div class="loading-giscus"><div class="spinner"></div><p>Đang tải bình luận...</p></div>';
+
+      // Delay nhỏ để panel mở trước
+      setTimeout(function () {
+        injectGiscus(container, paraId);
+      }, 300);
     }
 
     function closeComments() {
@@ -1819,48 +1818,6 @@
       document.getElementById('pageCont').classList.remove('shifted');
       document.querySelectorAll('.para-wrapper').forEach(function (el) { el.classList.remove('active'); });
       currentParaId = null;
-    }
-
-    function loadParaGiscus(paraId) {
-      var container = document.getElementById('giscusContainer');
-      container.innerHTML = '<div class="loading-giscus"><div class="spinner"></div><p>Đang tải bình luận...</p></div>';
-
-      // Dùng iframe trực tiếp thay vì script injection
-      setTimeout(function () {
-        container.innerHTML = '';
-        var iframe = createGiscusIframe(paraId);
-        container.appendChild(iframe);
-
-        // Auto-resize iframe khi giscus gửi message về
-        window.addEventListener('message', function resizeHandler(event) {
-          if (event.origin !== 'https://giscus.app') return;
-          if (!event.data || !event.data.giscus) return;
-          if (event.data.giscus.resizeHeight) {
-            iframe.style.height = event.data.giscus.resizeHeight + 'px';
-          }
-        });
-      }, 200);
-    }
-
-    // ===== CHAPTER GISCUS =====
-    function loadChapterGiscus() {
-      var container = document.getElementById('giscusChapter');
-      if (!container) return;
-      var iframe = createGiscusIframe('mhnt7-c01');
-      container.appendChild(iframe);
-
-      // Auto-resize
-      window.addEventListener('message', function (event) {
-        if (event.origin !== 'https://giscus.app') return;
-        if (!event.data || !event.data.giscus) return;
-        if (event.data.giscus.resizeHeight) {
-          // Tìm iframe trong chapter container
-          var chapterIframe = container.querySelector('iframe');
-          if (chapterIframe && event.source === chapterIframe.contentWindow) {
-            chapterIframe.style.height = event.data.giscus.resizeHeight + 'px';
-          }
-        }
-      });
     }
 
     // ===== KEYBOARD =====
@@ -1875,11 +1832,11 @@
       html.setAttribute('data-theme', next);
       try { localStorage.setItem('theme', next); } catch (e) { }
 
-      // Update tất cả giscus iframe
-      var giscusFrames = document.querySelectorAll('iframe.giscus-frame');
-      giscusFrames.forEach(function (frame) {
+      // Gửi message cho tất cả giscus iframe để đổi theme
+      var giscusTheme = next === 'dark' ? 'dark' : 'light';
+      document.querySelectorAll('iframe.giscus-frame').forEach(function (frame) {
         frame.contentWindow.postMessage(
-          { giscus: { setConfig: { theme: next === 'dark' ? 'dark' : 'light' } } },
+          { giscus: { setConfig: { theme: giscusTheme } } },
           'https://giscus.app'
         );
       });
@@ -1912,6 +1869,7 @@
         if (savedSize) currentSize = parseInt(savedSize);
       } catch (e) { }
       applySettings();
+
       var fontBtns = document.querySelectorAll('#fontOptions button');
       fontBtns.forEach(function (btn) {
         if (btn.getAttribute('data-font') === currentFont) {
@@ -1972,7 +1930,7 @@
       });
     });
 
-    // ===== INIT =====
+    // ===== KHỞI ĐỘNG =====
     loadChapterGiscus();
   </script>
 </body>
