@@ -2,1775 +2,1977 @@
 <html lang="vi" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="juno white">
-    <meta name="theme-color" content="#5a8aaa">
-    <title>Chương 01. Zephyr — Mùa Hạ Năm Thứ Bảy</title>
-
-    <link rel="icon"
-        href="https://i.ibb.co/nq6NnL6s/imgi-2-b6d41899a20f3d146d6b3d5a75b3ccfdd4575618a53b9a8e5874dfe83644c84a.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300..900;1,300..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&subset=vietnamese,latin&display=swap"
-        rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/gh/Richard9394/MingCute@main/fonts/MingCute.min.css" rel="stylesheet">
-
-    <style>
-        :root,
-        [data-theme="light"] {
-            --bg: #ffffff;
-            --bg-secondary: #f8fbfd;
-            --font: "Inter", "Segoe UI", sans-serif;
-            --font-serif: "Cormorant Garamond", "Times New Roman", serif;
-            --font-caps: "Figtree", sans-serif;
-            --font-reading: "Lora", serif;
-            --text: #4a6a80;
-            --text-dark: #2a3a4c;
-            --text-content: #3a3a3a;
-            --bold: #4a7a9b;
-            --link: #6a9ec0;
-            --link-hover: #4a7a9b;
-            --box-bg: #ffffff;
-            --box-shadow: 0 2px 20px rgba(160, 185, 210, 0.15);
-            --blue: #4a90c8;
-            --blue-border: #c4daf0;
-            --blue-bg: #eaf2fa;
-            --navy: #1a3a6c;
-            --pink: #b85070;
-            --pink-border: #e0c8d4;
-            --pink-bg: #fdf8fa;
-            --muted: #93b3cc;
-            --hero: #5a8aaa;
-            --divider: #e8f0f8;
-            --settings-bg: #f0f5fa;
-            --footnote-bg: #f8fbfd;
-            --footnote-border: #e0eaf2;
-            --author-bg: #fdf8fa;
-            --author-border: #e0c8d4;
-            --fn-highlight: #eaf2fa;
-            --fn-back-bg: #6a9ec0;
-            --fn-back-color: #ffffff;
-            --fn-back-hover-bg: #b85070;
-            --fn-back-hover-color: #ffffff;
-            --scroll-btn-bg: #6a9ec0;
-            --scroll-btn-color: #ffffff;
-            --scroll-btn-hover: #4a7a9b;
-        }
-
-        [data-theme="dark"] {
-            --bg: #1a2332;
-            --bg-secondary: #1e2e40;
-            --text: #a0b8cc;
-            --text-dark: #d0e0f0;
-            --text-content: #c8d8e8;
-            --bold: #8ec0e8;
-            --link: #7ab8e0;
-            --link-hover: #a0d0f0;
-            --box-bg: #243344;
-            --box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-            --blue: #5aa0d8;
-            --blue-border: #5a8ab0;
-            --blue-bg: #263a50;
-            --navy: #8ec8f0;
-            --pink: #e080a8;
-            --pink-border: #6a4058;
-            --pink-bg: #2e2030;
-            --muted: #7a9ab8;
-            --hero: #7ab8e0;
-            --divider: #3a4e68;
-            --settings-bg: #263a50;
-            --footnote-bg: #263a50;
-            --footnote-border: #4a6a88;
-            --author-bg: #2e2030;
-            --author-border: #6a4058;
-            --fn-highlight: #2a4060;
-            --fn-back-bg: #5aa0d8;
-            --fn-back-color: #ffffff;
-            --fn-back-hover-bg: #e080a8;
-            --fn-back-hover-color: #ffffff;
-            --scroll-btn-bg: #5aa0d8;
-            --scroll-btn-color: #ffffff;
-            --scroll-btn-hover: #7ab8e0;
-        }
-
-        *, *::before, *::after { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
-        body {
-            margin: 0;
-            background-color: var(--bg);
-            font-family: var(--font);
-            color: var(--text);
-            -webkit-font-smoothing: antialiased;
-            transition: background-color 0.4s ease, color 0.4s ease;
-            line-height: 1.8;
-        }
-
-        i[class^="mgc_"],
-        i[class*=" mgc_"] {
-            color: inherit !important;
-        }
-
-        a { text-decoration: none; color: var(--link); transition: color 0.2s; }
-        a:hover { color: var(--link-hover); }
-
-        .page-cont {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 2rem 1.25rem 4rem;
-            transition: transform 0.35s ease;
-        }
-
-        .page-cont.shifted {
-            transform: translateX(-140px);
-        }
-
-        .nav-bar {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .nav-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
-            border: 1.5px solid var(--blue-border);
-            border-radius: 50px;
-            background: var(--blue-bg);
-            color: var(--navy);
-            font-size: 12px;
-            font-weight: 600;
-            font-family: var(--font-caps);
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .nav-btn:hover {
-            background: var(--box-bg);
-            color: var(--link-hover);
-            border-color: var(--link-hover);
-        }
-
-        .nav-btn.disabled {
-            opacity: 0.35;
-            pointer-events: none;
-        }
-
-        .nav-spacer { flex: 1; }
-
-        .settings-toggle {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border: 1.5px solid var(--blue-border);
-            border-radius: 50%;
-            background: var(--blue-bg);
-            color: var(--navy);
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .settings-toggle:hover {
-            background: var(--box-bg);
-            border-color: var(--link-hover);
-            color: var(--link-hover);
-        }
-
-        [data-theme="dark"] .settings-toggle {
-            color: #ffffff;
-        }
-
-        [data-theme="dark"] .settings-toggle:hover {
-            color: var(--link-hover);
-        }
-
-        /* Settings */
-        .settings-panel {
-            display: none;
-            background: var(--settings-bg);
-            border: 1.5px solid var(--blue-border);
-            border-radius: 12px;
-            padding: 18px 22px;
-            margin-bottom: 28px;
-            animation: fadeIn 0.25s ease;
-        }
-
-        .settings-panel.open { display: block; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .settings-row {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 14px;
-        }
-
-        .settings-row:last-child { margin-bottom: 0; }
-
-        .settings-label {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--muted);
-            min-width: 70px;
-            flex-shrink: 0;
-        }
-
-        .settings-options {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-        }
-
-        .settings-options button {
-            padding: 6px 14px;
-            border: 1.5px solid var(--blue-border);
-            border-radius: 6px;
-            background: var(--box-bg);
-            color: var(--text-dark);
-            font-size: 12px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-
-        .settings-options button:hover {
-            border-color: var(--blue);
-            color: var(--blue);
-        }
-
-        .settings-options button.active {
-            background: var(--navy);
-            color: #fff;
-            border-color: var(--navy);
-        }
-
-        [data-theme="dark"] .settings-options button.active {
-            background: var(--blue);
-            color: #1a2332;
-            border-color: var(--blue);
-        }
-
-        .size-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .size-controls button {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 1.5px solid var(--blue-border);
-            background: var(--box-bg);
-            color: var(--navy);
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-        }
-
-        .size-controls button:hover {
-            background: var(--navy);
-            color: #fff;
-            border-color: var(--navy);
-        }
-
-        .size-controls .size-display {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-dark);
-            min-width: 36px;
-            text-align: center;
-        }
-
-        .chapter-header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid var(--divider);
-        }
-
-        .chapter-number {
-            font-family: var(--font-caps);
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 8px;
-        }
-
-        .chapter-title {
-            font-family: var(--font-serif);
-            font-size: 2.2rem;
-            font-weight: 400;
-            font-style: italic;
-            color: var(--hero);
-            margin: 0 0 6px;
-            line-height: 1.2;
-        }
-
-        .chapter-title .fn-ref {
-            font-size: 0.55em;
-            color: var(--pink);
-            font-style: normal;
-            cursor: pointer;
-            vertical-align: super;
-            font-weight: 700;
-            font-family: var(--font-caps);
-        }
-
-        .chapter-title .fn-ref:hover { color: var(--link-hover); }
-
-        .chapter-epigraph {
-            font-style: italic;
-            color: var(--muted);
-            font-size: 15px;
-            margin-top: 12px;
-        }
-
-        .chapter-content {
-            font-family: var(--font-reading);
-            font-size: 16px;
-            line-height: 2;
-            color: var(--text-content);
-        }
-
-        .chapter-content .scene-break {
-            text-align: center;
-            margin: 2em 0;
-            color: var(--muted);
-            font-size: 1.2em;
-            letter-spacing: 8px;
-        }
-
-        .chapter-content .fn-ref {
-            font-size: 0.75em;
-            color: var(--pink);
-            cursor: pointer;
-            font-family: var(--font-caps);
-            font-weight: 700;
-            vertical-align: super;
-            line-height: 0;
-        }
-
-        .chapter-content .fn-ref:hover { color: var(--link-hover); }
-
-        /* Para wrapper */
-        .para-wrapper {
-            position: relative;
-            margin: 0 0 1.4em;
-            padding: 4px 8px;
-            border-radius: 6px;
-            border-left: 3px solid transparent;
-            transition: all 0.25s ease;
-        }
-
-        .para-wrapper:hover {
-            background: var(--blue-bg);
-            border-left-color: var(--blue-border);
-        }
-
-        .para-wrapper.active {
-            background: var(--blue-bg);
-            border-left-color: var(--blue);
-        }
-
-        .para-wrapper p {
-            margin: 0;
-            text-align: justify;
-        }
-
-        .comment-btn {
-            position: absolute;
-            top: 50%;
-            right: -36px;
-            transform: translateY(-50%);
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            border: 1.5px solid var(--blue-border);
-            background: var(--box-bg);
-            color: var(--muted);
-            font-size: 13px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: all 0.2s ease;
-            padding: 0;
-        }
-
-        .para-wrapper:hover .comment-btn { opacity: 1; }
-
-        .comment-btn:hover {
-            background: var(--blue);
-            color: #fff;
-            border-color: var(--blue);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .author-note {
-            margin-top: 48px;
-            padding: 24px;
-            background: var(--author-bg);
-            border: 1.5px solid var(--author-border);
-            border-radius: 12px;
-        }
-
-        .author-note-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--author-border);
-        }
-
-        .author-note-header .icon {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-            background: var(--pink);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 13px;
-        }
-
-        .author-note-header .label {
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--pink);
-        }
-
-        .author-note p {
-            font-size: 14px;
-            line-height: 1.85;
-            color: var(--text-dark);
-            margin: 0 0 10px;
-        }
-
-        .author-note p:last-child { margin-bottom: 0; }
-
-        .footnotes {
-            margin-top: 32px;
-            padding: 20px 24px;
-            background: var(--footnote-bg);
-            border: 1.5px solid var(--footnote-border);
-            border-radius: 12px;
-        }
-
-        .footnotes-header {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 14px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--footnote-border);
-        }
-
-        .footnote-item {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 12px;
-            font-size: 13px;
-            line-height: 1.75;
-            color: var(--text);
-            padding: 8px;
-            border-radius: 6px;
-            transition: background 0.4s ease;
-        }
-
-        .footnote-item:last-child { margin-bottom: 0; }
-        .footnote-item.highlight { background: var(--fn-highlight); }
-
-        .footnote-item .fn-num {
-            flex-shrink: 0;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: var(--fn-back-bg);
-            color: var(--fn-back-color);
-            font-size: 11px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 2px;
-        }
-
-        .footnote-item .fn-text { flex: 1; }
-
-        .fn-back-inline {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--fn-back-bg);
-            color: var(--fn-back-color);
-            font-size: 11px;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-decoration: none;
-            margin-left: 6px;
-            vertical-align: middle;
-        }
-
-        .fn-back-inline:hover {
-            background: var(--fn-back-hover-bg);
-            color: var(--fn-back-hover-color);
-            transform: scale(1.15);
-        }
-
-        .fn-back-inline i {
-            color: var(--fn-back-color) !important;
-        }
-
-        .fn-back-inline:hover i {
-            color: var(--fn-back-hover-color) !important;
-        }
-
-        /* Chapter comment section */
-        .chapter-comment {
-            margin-top: 32px;
-            padding: 20px 24px;
-            background: var(--footnote-bg);
-            border: 1.5px solid var(--footnote-border);
-            border-radius: 12px;
-        }
-
-        .chapter-comment-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--footnote-border);
-        }
-
-        .chapter-comment-header .icon {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-            background: var(--blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 13px;
-        }
-
-        .chapter-comment-header .label {
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--blue);
-        }
-
-        .chapter-comment .giscus-chapter {
-            min-height: 100px;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 998;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .overlay.show { opacity: 1; pointer-events: all; }
-
-        .comment-panel {
-            position: fixed;
-            top: 0; right: 0;
-            width: 420px;
-            max-width: 90vw;
-            height: 100vh;
-            background: var(--bg);
-            border-left: 1.5px solid var(--divider);
-            box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            transform: translateX(100%);
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .comment-panel.open { transform: translateX(0); }
-
-        .panel-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 22px;
-            border-bottom: 1px solid var(--divider);
-            flex-shrink: 0;
-        }
-
-        .panel-header h3 {
-            margin: 0;
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-dark);
-            font-family: var(--font-caps);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .panel-header .para-label {
-            font-size: 11px;
-            color: var(--muted);
-            font-family: var(--font-caps);
-        }
-
-        .close-btn {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: 1.5px solid var(--blue-border);
-            background: var(--blue-bg);
-            color: var(--navy);
-            font-size: 14px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-            padding: 0;
-        }
-
-        .close-btn:hover {
-            background: var(--pink);
-            color: #fff;
-            border-color: var(--pink);
-        }
-
-        .panel-quote {
-            padding: 14px 22px;
-            background: var(--blue-bg);
-            border-bottom: 1px solid var(--divider);
-            font-size: 12px;
-            line-height: 1.7;
-            color: var(--text);
-            font-style: italic;
-            max-height: 100px;
-            overflow-y: auto;
-            flex-shrink: 0;
-        }
-
-        .giscus-container {
-            flex: 1;
-            overflow-y: auto;
-            padding: 16px 22px;
-        }
-
-        .loading-giscus {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-            color: var(--muted);
-            font-size: 13px;
-            text-align: center;
-        }
-
-        .spinner {
-            width: 28px; height: 28px;
-            border: 3px solid var(--blue-border);
-            border-top-color: var(--blue);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin-bottom: 12px;
-        }
-
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        .chapter-nav-bottom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            margin-top: 40px;
-            padding-top: 28px;
-            border-top: 1px solid var(--divider);
-        }
-
-        .chapter-nav-bottom .nav-btn {
-            padding: 10px 20px;
-            font-size: 13px;
-        }
-
-        .story-footer {
-            text-align: center;
-            margin-top: 32px;
-            font-style: italic;
-            font-size: 12px;
-            color: var(--muted);
-        }
-
-        .theme-toggle .icon-sun,
-        .theme-toggle .icon-moon { display: none; }
-        [data-theme="light"] .theme-toggle .icon-moon { display: inline; }
-        [data-theme="dark"] .theme-toggle .icon-sun { display: inline; }
-
-        .scroll-top {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--scroll-btn-bg);
-            color: var(--scroll-btn-color);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            pointer-events: none;
-            z-index: 90;
-            padding: 0;
-        }
-
-        .scroll-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: all;
-        }
-
-        .scroll-top:hover {
-            background: var(--scroll-btn-hover);
-            transform: translateY(-2px);
-        }
-
-        .scroll-top i {
-            color: var(--scroll-btn-color) !important;
-        }
-
-        @media (max-width: 680px) {
-            .page-cont { padding: 1.5rem 1rem 3rem; }
-            .page-cont.shifted { transform: none; }
-            .chapter-title { font-size: 1.7rem; }
-            .chapter-content { font-size: 15px; }
-            .nav-bar { gap: 8px; }
-            .nav-btn { padding: 7px 12px; font-size: 11px; }
-            .settings-panel { padding: 14px 16px; }
-            .settings-row {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-            .author-note, .footnotes, .chapter-comment { padding: 18px; }
-            .comment-btn {
-                right: -6px;
-                width: 24px;
-                height: 24px;
-                font-size: 11px;
-                opacity: 0.6;
-            }
-            .comment-panel {
-                width: 100vw;
-                max-width: 100vw;
-            }
-        }
-
-        @media (max-width: 420px) {
-            .chapter-title { font-size: 1.4rem; }
-            .settings-options button { padding: 5px 10px; font-size: 11px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="juno white">
+  <meta name="theme-color" content="#5a8aaa">
+  <title>Chương 01. Zephyr — Mùa Hạ Năm Thứ Bảy</title>
+
+  <link rel="icon"
+    href="https://i.ibb.co/nq6NnL6s/imgi-2-b6d41899a20f3d146d6b3d5a75b3ccfdd4575618a53b9a8e5874dfe83644c84a.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300..900;1,300..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&subset=vietnamese,latin&display=swap"
+    rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/gh/Richard9394/MingCute@main/fonts/MingCute.min.css" rel="stylesheet">
+
+  <style>
+    :root,
+    [data-theme="light"] {
+      --bg: #ffffff;
+      --bg-secondary: #f8fbfd;
+      --font: "Inter", "Segoe UI", sans-serif;
+      --font-serif: "Cormorant Garamond", "Times New Roman", serif;
+      --font-caps: "Figtree", sans-serif;
+      --font-reading: "Lora", serif;
+      --text: #4a6a80;
+      --text-dark: #2a3a4c;
+      --text-content: #3a3a3a;
+      --bold: #4a7a9b;
+      --link: #6a9ec0;
+      --link-hover: #4a7a9b;
+      --box-bg: #ffffff;
+      --box-shadow: 0 2px 20px rgba(160, 185, 210, 0.15);
+      --blue: #4a90c8;
+      --blue-border: #c4daf0;
+      --blue-bg: #eaf2fa;
+      --navy: #1a3a6c;
+      --pink: #b85070;
+      --pink-border: #e0c8d4;
+      --pink-bg: #fdf8fa;
+      --muted: #93b3cc;
+      --hero: #5a8aaa;
+      --divider: #e8f0f8;
+      --settings-bg: #f0f5fa;
+      --footnote-bg: #f8fbfd;
+      --footnote-border: #e0eaf2;
+      --author-bg: #fdf8fa;
+      --author-border: #e0c8d4;
+      --fn-highlight: #eaf2fa;
+      --fn-back-bg: #6a9ec0;
+      --fn-back-color: #ffffff;
+      --fn-back-hover-bg: #b85070;
+      --fn-back-hover-color: #ffffff;
+      --scroll-btn-bg: #6a9ec0;
+      --scroll-btn-color: #ffffff;
+      --scroll-btn-hover: #4a7a9b;
+      --icon-color: #1a3a6c;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a2332;
+      --bg-secondary: #1e2e40;
+      --text: #a0b8cc;
+      --text-dark: #d0e0f0;
+      --text-content: #c8d8e8;
+      --bold: #8ec0e8;
+      --link: #7ab8e0;
+      --link-hover: #a0d0f0;
+      --box-bg: #243344;
+      --box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+      --blue: #5aa0d8;
+      --blue-border: #5a8ab0;
+      --blue-bg: #263a50;
+      --navy: #8ec8f0;
+      --pink: #e080a8;
+      --pink-border: #6a4058;
+      --pink-bg: #2e2030;
+      --muted: #7a9ab8;
+      --hero: #7ab8e0;
+      --divider: #3a4e68;
+      --settings-bg: #263a50;
+      --footnote-bg: #263a50;
+      --footnote-border: #4a6a88;
+      --author-bg: #2e2030;
+      --author-border: #6a4058;
+      --fn-highlight: #2a4060;
+      --fn-back-bg: #5aa0d8;
+      --fn-back-color: #ffffff;
+      --fn-back-hover-bg: #e080a8;
+      --fn-back-hover-color: #ffffff;
+      --scroll-btn-bg: #5aa0d8;
+      --scroll-btn-color: #ffffff;
+      --scroll-btn-hover: #7ab8e0;
+      --icon-color: #e0eaf4;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      font-family: var(--font);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      line-height: 1.8;
+    }
+
+    i[class^="mgc_"],
+    i[class*=" mgc_"] {
+      color: inherit !important;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--link);
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+    }
+
+    .page-cont {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+      transition: transform 0.35s ease;
+    }
+
+    .page-cont.shifted {
+      transform: translateX(-140px);
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border: 1.5px solid var(--blue-border);
+      border-radius: 50px;
+      background: var(--blue-bg);
+      color: var(--icon-color);
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--font-caps);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .nav-btn:hover {
+      background: var(--box-bg);
+      color: var(--link-hover);
+      border-color: var(--link-hover);
+    }
+
+    .nav-btn.disabled {
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .nav-spacer {
+      flex: 1;
+    }
+
+    .settings-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--blue-border);
+      border-radius: 50%;
+      background: var(--blue-bg);
+      color: var(--icon-color);
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .settings-toggle:hover {
+      background: var(--box-bg);
+      border-color: var(--link-hover);
+      color: var(--link-hover);
+    }
+
+    /* Settings */
+    .settings-panel {
+      display: none;
+      background: var(--settings-bg);
+      border: 1.5px solid var(--blue-border);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .settings-panel.open {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .settings-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .settings-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .settings-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      min-width: 70px;
+      flex-shrink: 0;
+    }
+
+    .settings-options {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .settings-options button {
+      padding: 6px 14px;
+      border: 1.5px solid var(--blue-border);
+      border-radius: 6px;
+      background: var(--box-bg);
+      color: var(--text-dark);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .settings-options button:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .settings-options button.active {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+    }
+
+    [data-theme="dark"] .settings-options button.active {
+      background: var(--blue);
+      color: #1a2332;
+      border-color: var(--blue);
+    }
+
+    .size-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .size-controls button {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1.5px solid var(--blue-border);
+      background: var(--box-bg);
+      color: var(--icon-color);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .size-controls button:hover {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+    }
+
+    .size-controls .size-display {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-dark);
+      min-width: 36px;
+      text-align: center;
+    }
+
+    .chapter-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .chapter-number {
+      font-family: var(--font-caps);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--hero);
+      margin: 0 0 6px;
+      line-height: 1.2;
+    }
+
+    .chapter-title .fn-ref {
+      font-size: 0.55em;
+      color: var(--pink);
+      font-style: normal;
+      cursor: pointer;
+      vertical-align: super;
+      font-weight: 700;
+      font-family: var(--font-caps);
+    }
+
+    .chapter-title .fn-ref:hover {
+      color: var(--link-hover);
+    }
+
+    .chapter-epigraph {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 15px;
+      margin-top: 12px;
+    }
+
+    .chapter-content {
+      font-family: var(--font-reading);
+      font-size: 16px;
+      line-height: 2;
+      color: var(--text-content);
+    }
+
+    .chapter-content .scene-break {
+      text-align: center;
+      margin: 2em 0;
+      color: var(--muted);
+      font-size: 1.2em;
+      letter-spacing: 8px;
+    }
+
+    .chapter-content .fn-ref {
+      font-size: 0.75em;
+      color: var(--pink);
+      cursor: pointer;
+      font-family: var(--font-caps);
+      font-weight: 700;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .chapter-content .fn-ref:hover {
+      color: var(--link-hover);
+    }
+
+    /* Para wrapper - thêm padding-right để không overlay comment btn */
+    .para-wrapper {
+      position: relative;
+      margin: 0 0 1.4em;
+      padding: 4px 44px 4px 8px;
+      border-radius: 6px;
+      border-left: 3px solid transparent;
+      transition: all 0.25s ease;
+    }
+
+    .para-wrapper:hover {
+      background: var(--blue-bg);
+      border-left-color: var(--blue-border);
+    }
+
+    .para-wrapper.active {
+      background: var(--blue-bg);
+      border-left-color: var(--blue);
+    }
+
+    .para-wrapper p {
+      margin: 0;
+      text-align: justify;
+    }
+
+    .comment-btn {
+      position: absolute;
+      top: 50%;
+      right: 6px;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1.5px solid var(--blue-border);
+      background: var(--box-bg);
+      color: var(--muted);
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.2s ease;
+      padding: 0;
+    }
+
+    .para-wrapper:hover .comment-btn {
+      opacity: 1;
+    }
+
+    .comment-btn:hover {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .author-note {
+      margin-top: 48px;
+      padding: 24px;
+      background: var(--author-bg);
+      border: 1.5px solid var(--author-border);
+      border-radius: 12px;
+    }
+
+    .author-note-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--author-border);
+    }
+
+    .author-note-header .icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: var(--pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .author-note-header .label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--pink);
+    }
+
+    .author-note p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--text-dark);
+      margin: 0 0 10px;
+    }
+
+    .author-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .footnotes {
+      margin-top: 32px;
+      padding: 20px 24px;
+      background: var(--footnote-bg);
+      border: 1.5px solid var(--footnote-border);
+      border-radius: 12px;
+    }
+
+    .footnotes-header {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--footnote-border);
+    }
+
+    .footnote-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text);
+      padding: 8px;
+      border-radius: 6px;
+      transition: background 0.4s ease;
+    }
+
+    .footnote-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .footnote-item.highlight {
+      background: var(--fn-highlight);
+    }
+
+    .footnote-item .fn-num {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--fn-back-bg);
+      color: var(--fn-back-color);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .footnote-item .fn-text {
+      flex: 1;
+    }
+
+    .fn-back-inline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--fn-back-bg);
+      color: var(--fn-back-color);
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .fn-back-inline:hover {
+      background: var(--fn-back-hover-bg);
+      color: var(--fn-back-hover-color);
+      transform: scale(1.15);
+    }
+
+    .fn-back-inline i {
+      color: var(--fn-back-color) !important;
+    }
+
+    .fn-back-inline:hover i {
+      color: var(--fn-back-hover-color) !important;
+    }
+
+    /* Chapter comment section */
+    .chapter-comment {
+      margin-top: 32px;
+      padding: 20px 24px;
+      background: var(--footnote-bg);
+      border: 1.5px solid var(--footnote-border);
+      border-radius: 12px;
+    }
+
+    .chapter-comment-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--footnote-border);
+    }
+
+    .chapter-comment-header .icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .chapter-comment-header .label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    .chapter-comment .giscus-chapter {
+      min-height: 100px;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .overlay.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .comment-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 420px;
+      max-width: 90vw;
+      height: 100vh;
+      background: var(--bg);
+      border-left: 1.5px solid var(--divider);
+      box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .comment-panel.open {
+      transform: translateX(0);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--divider);
+      flex-shrink: 0;
+    }
+
+    .panel-header h3 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+      font-family: var(--font-caps);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .panel-header .para-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-family: var(--font-caps);
+    }
+
+    .close-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid var(--blue-border);
+      background: var(--blue-bg);
+      color: var(--icon-color);
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      padding: 0;
+    }
+
+    .close-btn:hover {
+      background: var(--pink);
+      color: #fff;
+      border-color: var(--pink);
+    }
+
+    .panel-quote {
+      padding: 14px 22px;
+      background: var(--blue-bg);
+      border-bottom: 1px solid var(--divider);
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--text);
+      font-style: italic;
+      max-height: 100px;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    .giscus-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 22px;
+    }
+
+    .loading-giscus {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .spinner {
+      width: 28px;
+      height: 28px;
+      border: 3px solid var(--blue-border);
+      border-top-color: var(--blue);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 12px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .chapter-nav-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 40px;
+      padding-top: 28px;
+      border-top: 1px solid var(--divider);
+    }
+
+    .chapter-nav-bottom .nav-btn {
+      padding: 10px 20px;
+      font-size: 13px;
+    }
+
+    .story-footer {
+      text-align: center;
+      margin-top: 32px;
+      font-style: italic;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .theme-toggle .icon-sun,
+    .theme-toggle .icon-moon {
+      display: none;
+    }
+
+    [data-theme="light"] .theme-toggle .icon-moon {
+      display: inline;
+    }
+
+    [data-theme="dark"] .theme-toggle .icon-sun {
+      display: inline;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--scroll-btn-bg);
+      color: var(--scroll-btn-color);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+      z-index: 90;
+      padding: 0;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    .scroll-top:hover {
+      background: var(--scroll-btn-hover);
+      transform: translateY(-2px);
+    }
+
+    .scroll-top i {
+      color: var(--scroll-btn-color) !important;
+    }
+
+    /* Giscus error/fallback */
+    .giscus-fallback {
+      padding: 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .giscus-fallback a {
+      color: var(--link);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 680px) {
+      .page-cont {
+        padding: 1.5rem 1rem 3rem;
+      }
+
+      .page-cont.shifted {
+        transform: none;
+      }
+
+      .chapter-title {
+        font-size: 1.7rem;
+      }
+
+      .chapter-content {
+        font-size: 15px;
+      }
+
+      .nav-bar {
+        gap: 8px;
+      }
+
+      .nav-btn {
+        padding: 7px 12px;
+        font-size: 11px;
+      }
+
+      .settings-panel {
+        padding: 14px 16px;
+      }
+
+      .settings-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .author-note,
+      .footnotes,
+      .chapter-comment {
+        padding: 18px;
+      }
+
+      .para-wrapper {
+        padding-right: 36px;
+      }
+
+      .comment-btn {
+        right: 4px;
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+        opacity: 0.6;
+      }
+
+      .comment-panel {
+        width: 100vw;
+        max-width: 100vw;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .chapter-title {
+        font-size: 1.4rem;
+      }
+
+      .settings-options button {
+        padding: 5px 10px;
+        font-size: 11px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="page-cont" id="pageCont">
-
-        <div class="nav-bar">
-            <a href="index.html" class="nav-btn">
-                <i class="mgc_menu_line"></i> Mục lục
-            </a>
-            <a href="#" class="nav-btn disabled">
-                <i class="mgc_arrow_left_line"></i> Trước
-            </a>
-            <a href="chapter02.html" class="nav-btn">
-                Sau <i class="mgc_arrow_right_line"></i>
-            </a>
-            <div class="nav-spacer"></div>
-            <button class="settings-toggle" onclick="toggleSettings()" title="Cài đặt đọc">
-                <i class="mgc_settings_3_line"></i>
-            </button>
-            <button class="settings-toggle theme-toggle" onclick="toggleTheme()" title="Đổi giao diện">
-                <i class="mgc_sun_line icon-sun"></i>
-                <i class="mgc_moon_line icon-moon"></i>
-            </button>
-        </div>
-
-        <div class="settings-panel" id="settingsPanel">
-            <div class="settings-row">
-                <span class="settings-label">Font</span>
-                <div class="settings-options" id="fontOptions">
-                    <button class="active" data-font="'Lora', serif">Lora</button>
-                    <button data-font="'Inter', sans-serif">Inter</button>
-                    <button data-font="'Merriweather', serif">Merriweather</button>
-                    <button data-font="'Source Serif 4', serif">Source Serif</button>
-                    <button data-font="'Cormorant Garamond', serif">Garamond</button>
-                </div>
-            </div>
-            <div class="settings-row">
-                <span class="settings-label">Cỡ chữ</span>
-                <div class="size-controls">
-                    <button onclick="changeSize(-1)">−</button>
-                    <span class="size-display" id="sizeDisplay">16px</span>
-                    <button onclick="changeSize(1)">+</button>
-                </div>
-            </div>
-        </div>
-
-        <header class="chapter-header">
-            <div class="chapter-number">Chương 01</div>
-            <h1 class="chapter-title">Zephyr <span class="fn-ref" data-fn="1" id="ref1">1</span></h1>
-            <div class="chapter-epigraph">Gió dường như chợt lặng yên</div>
-        </header>
-
-        <article class="chapter-content" id="chapterContent">
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p1">
-                <p>Lisbon<span class="fn-ref" data-fn="2" id="ref2">2</span>, mười giờ đêm.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p1')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p2">
-                <p>Khương Thủ Ngôn hòa theo dòng người rời khỏi sân bay.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p2')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p3">
-                <p>Anh kéo vali, đứng đợi một mình bên vỉa hè, suốt dọc đường đi, dáng vẻ xuất sắc của anh đã vô tình níu lấy không biết bao nhiêu ánh nhìn.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p3')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p4">
-                <p>Chốc lát sau, một chiếc xe đỗ trước mặt, cửa kính trượt xuống, để lộ gương mặt rám nắng màu đồng của Martim.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p4')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p5">
-                <p>"Riley, esperaste muito?" (Riley, đợi lâu không?)</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p5')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p6">
-                <p>Khương Thủ Ngôn cười khẽ, giọng nói cất lên chậm rãi, buông lơi như chính màn đêm này.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p6')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p7">
-                <p>"Não esperei muito tempo." (Không lâu lắm.)</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p7')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p8">
-                <p>Martim giúp anh bỏ hành lý vào cốp xe, đã lâu không gặp, những câu hàn huyên khó tránh đôi phần rôm rả hơn.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p8')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p9">
-                <p>"Lúc nghe cậu bảo đột nhiên muốn sang đây sống một thời gian tôi ngạc nhiên lắm đấy, trước kia lần nào hỏi cậu cũng than bận."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p9')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p10">
-                <p>Khương Thủ Ngôn uể oải đáp lại: "Giờ đỡ hơn nhiều rồi."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p10')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p11">
-                <p>"Chúng ta cũng khá lâu không gặp rồi nhỉ, lần trước là bao giờ? Ba năm trước à? Cái dạo cậu theo công ty sang đây chạy dự án ấy?"</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p11')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p12">
-                <p>Khương Thủ Ngôn "ừ" một tiếng, hạ cửa kính xuống đôi chút, gió đêm lùa vào khiến mái tóc anh rối tung, Martim nhìn sườn mặt đang hướng ra ngoài cửa của Khương Thủ Ngôn, có thể nhận ra anh không mấy hào hứng.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p12')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p13">
-                <p>Đinh ninh Khương Thủ Ngôn mệt mỏi sau chuyến bay dài, cậu ta không mở lời quấy rầy nữa, im lặng lái xe.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p13')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p14">
-                <p>Thật ra, việc biết Khương Thủ Ngôn tới đây cũng do tình cờ, bởi anh chẳng hề liên hệ với ai.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p14')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p15">
-                <p>Cũng nhờ lần trước đi công tác Barcelona, cậu ta gặp một người bạn chung rồi vô tình nhắc đến, Martim mới hay tin Khương Thủ Ngôn nghỉ việc.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p15')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p16">
-                <p>"Nhà có chuyện, bà cụ gieo mình xuống sông tự vẫn rồi."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p16')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p17">
-                <p>Martim bàng hoàng.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p17')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p18">
-                <p>Khương Thủ Ngôn luôn mang đến cho người khác cảm giác hờ hững, hiếm khi anh nhắc chuyện gia đình mình, chỉ biết rằng anh có một người bà ngoại, tình cảm hai bà cháu vô cùng gắn bó, mỗi bận sang đây công tác, anh đều gói ghém ít bánh tart trứng mang về.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p18')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p19">
-                <p>Người già hảo ngọt nhưng anh cũng chẳng mang quá nhiều, chủ yếu để bà ăn thử vị.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p19')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p20">
-                <p>Về sau khi nghe tin anh đang làm visa, định sang Lisbon cho nguôi ngoai nỗi lòng, Martim vốn tính nhiệt tình liền gọi điện hỏi han dự định của Khương Thủ Ngôn, trước khi anh tới thì đã sắp xếp ổn thỏa mọi thứ.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p20')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p21">
-                <p>Xe chạy vun vút trên cao tốc tới thẳng Cascais<span class="fn-ref" data-fn="3" id="ref3">3</span>.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p21')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p22">
-                <p>"Chỗ này tuy không rộng lắm, nhưng đồ đạc gì cũng có, quan trọng nhất là…" Martim đặt hành lý ở phòng khách, đẩy cửa sổ ra, vẫy tay gọi Khương Thủ Ngôn.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p22')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p23">
-                <p>Khương Thủ Ngôn bước tới.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p23')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p24">
-                <p>Martim nói: "Ở đây gần biển lắm, cứ mở cửa sổ là thấy ngay đường chân trời."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p24')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p25">
-                <p>"Chẳng nơi nào có tầm nhìn đẹp hơn chỗ này đâu, nghe tin cậu sang, tôi đã cất công đi hỏi thăm giúp cậu đấy."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p25')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p26">
-                <p>"Chủ nhà quý người Trung Quốc cực kỳ, nhà cũng chỉ cho khách du lịch Trung Quốc thuê thôi. Có điều anh ta không hay ở Bồ Đào Nha, chuyện thuê mướn đều giao tất cho bạn anh ta lo."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p26')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p27">
-                <p>Nói đến đây, Martim nháy mắt đầy vẻ láu lỉnh: "Mà bạn của anh ta tình cờ lại là bạn của tôi."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p27')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p28">
-                <p>Khương Thủ Ngôn cười, gió đêm mơn man lướt qua gò má, anh nghe thấy tiếng sóng biển vọng về từ chốn xa.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p28')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p29">
-                <p>Martim nhìn anh đến ngẩn ngơ.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p29')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p30">
-                <p>Ở Khương Thủ Ngôn luôn toát ra một sức hút kỳ lạ như thế, khi không cười, anh trông tao nhã nhưng xa cách, thế mà hễ cười lên lại khiến người ta muốn đến làm thân.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p30')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p31">
-                <p>Ánh mắt Martim dừng lại ở bàn tay đang đặt trên bệ cửa sổ của anh.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p31')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p32">
-                <p>"Cậu bệnh à?"</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p32')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p33">
-                <p>Khương Thủ Ngôn thoáng khựng lại, cụp mắt nhìn vết kim trên mu bàn tay mình, do cắm kim lâu quá nên vùng da xung quanh đã tím bầm một mảng lớn.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p33')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p34">
-                <p>"Ừ," Khương Thủ Ngôn nói, "Gặp chút sự cố thôi."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p34')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p35">
-                <p>Martim gãi đầu đinh ngắn cũn, trên gương mặt rám nắng lộ rõ vẻ ngượng ngùng: "Tôi rất lấy làm tiếc, chuyện gia đình cậu ấy."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p35')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p36">
-                <p>Khương Thủ Ngôn rũ mi, giọng nói nhẹ tênh: "Không sao đâu, đã qua cả rồi."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p36')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p37">
-                <p>Biết ý anh không muốn nói nhiều nên Martim không gặng hỏi nữa, chỉ cất gọn hành lý, rồi ngoái lại nhìn Khương Thủ Ngôn vẫn đang đứng bên cửa sổ.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p37')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p38">
-                <p>"Muộn rồi, tôi về trước nhé. Cậu ngủ sớm đi, cần gì cứ gọi tôi." Martim dặn dò.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p38')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p39">
-                <p>Khương Thủ Ngôn xoay lại, cười với cậu ta, ánh đèn vàng ấm áp hắt lên dáng dấp anh, chẳng hiểu sao, Martim cứ thấy anh có gì đó khác xưa.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p39')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p40">
-                <p>Ngày trước anh chỉ hờ hững thôi, nhưng giờ đây, vẻ ngoài ấy như phủ lên một lớp tro tàn, mang nét héo úa đẹp đến nao lòng.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p40')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p41">
-                <p>Martim lắc đầu quầy quậy, xua đi cái suy nghĩ điềm gở ấy ra khỏi đầu.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p41')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="scene-break">—</div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p42">
-                <p>Dạo gần đây Khương Thủ Ngôn ngủ rất ít, anh khó vào giấc mà giấc ngủ cũng chập chờn không yên.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p42')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p43">
-                <p>Anh tìm thấy một chai rượu vang trong tủ lạnh, bèn cầm lên sân thượng nhỏ trên tầng.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p43')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p44">
-                <p>Đêm ở Cascais mát rượi, tiếng sóng Đại Tây Dương rì rào vỗ về.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p44')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p45">
-                <p>Vài ba câu tiếng Bồ Đào Nha thỉnh thoảng vọng lên từ con đường nhỏ bên dưới, Khương Thủ Ngôn nhìn đường bờ biển xám xanh đằng xa, nhấm nháp cạn dần chai rượu.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p45')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p46">
-                <p>Rượu ngấm, anh lười chẳng buồn nhúc nhích bèn cuộn mình trên ghế mây, mơ màng thiếp đi.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p46')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p47">
-                <p>Tháng sáu ở Bồ Đào Nha mau sáng, tia nắng ấm áp rọi lên người.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p47')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p48">
-                <p>Tiếng hải âu gọi bầy lảnh lót lướt ngang chân trời, cuốn theo làn gió biển mang vị mặn ẩm ướt.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p48')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p49">
-                <p>Cái lạnh ập đến khiến Khương Thủ Ngôn hơi chau mày, cơn say vẫn váng vất làm đôi mắt anh mãi mới hé mở.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p49')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p50">
-                <p>Ánh ban mai nhập nhèm vương trên hàng mi khẽ run, mặt biển màu cam đỏ trải ra trước tầm mắt, sóng nước lấp lánh hệt như giấc mộng ban ngày.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p50')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p51">
-                <p>Khương Thủ Ngôn lặng đi hồi lâu mới nhận ra, bình minh lên rồi.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p51')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p52">
-                <p>Chai rượu trong tay lăn lông lốc xuống đất, không khí phảng phất chút hương nho ngọt ngào.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p52')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p53">
-                <p>Khương Thủ Ngôn nằm nghiêng trên ghế mây, ngắm nhìn bầu trời phương xa chuyển từ sắc xám xanh sang xanh nhạt, đợi đến khi vệt nắng vàng cam kia đánh thức cả thành phố đang say giấc nồng.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p53')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p54">
-                <p>Dòng xe cộ lướt đến từ xa, tiếng người cũng theo đó huyên náo dần.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p54')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p55">
-                <p>Khương Thủ Ngôn khẽ cựa cần cổ mỏi nhừ, ngửa đầu gối lên mép ghế mây, tính xem giờ.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p55')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p56">
-                <p>Ngón tay anh mò mẫm trong túi áo hồi lâu mới chợt nhớ ra, chiếc điện thoại hết pin đã bị anh vứt trên bàn dưới lầu rồi.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p56')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p57">
-                <p>Nhưng nghĩ đến việc phải đi lấy điện thoại, nghĩa là phải đứng dậy khỏi ghế, xuống lầu, lục vali tìm cục sạc, cắm điện, rồi chờ mở máy…</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p57')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p58">
-                <p>Khương Thủ Ngôn thấy sao mà phiền quá.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p58')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p59">
-                <p>Thế là anh quấn chặt áo khoác đang mặc, trở mình, co lại thành một tư thế thoải mái khác rồi vùi đầu ngủ tiếp.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p59')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p60">
-                <p>Trong mơ có quá nhiều thứ hỗn loạn, khi Khương Thủ Ngôn tỉnh lại lần nữa thì đã đầm đìa mồ hôi.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p60')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p61">
-                <p>Chênh lệch nhiệt độ ngày đêm ở Cascais rất lớn, cái nắng gay gắt giữa trưa khiến áo khoác chống rét trên người Khương Thủ Ngôn trở nên vướng víu lạ thường.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p61')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p62">
-                <p>Anh hít một hơi thật sâu, cuối cùng cũng đứng dậy khỏi ghế mây.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p62')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p63">
-                <p>Áo khoác được vắt bừa trên chiếc ghế cạnh bàn, Khương Thủ Ngôn lôi cục sạc từ trong vali ra, đi vào gian bếp bán mở.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p63')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p64">
-                <p>Vừa mở nguồn máy, tiếng chuông tin nhắn đã vang lên liên tục, anh chưa kịp đọc hết thì Kỳ Chu đã gọi tới.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p64')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p65">
-                <p>Khương Thủ Ngôn uống một ngụm nước đá rồi mới đủng đỉnh bắt máy: "A lô."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p65')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p66">
-                <p>Đầu dây bên kia lặng đi vài giây như đang cố kìm nén cảm xúc: "Hôm nay cậu mà còn bặt vô âm tín thì tôi đã tính gọi thẳng cho đại sứ quán để nhận xác của cậu rồi đấy."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p66')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p67">
-                <p>Khương Thủ Ngôn khẽ cười, giọng nói trong trẻo: "Chưa nhanh thế đâu."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p67')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p68">
-                <p>Kỳ Chu lại im bặt.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p68')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p69">
-                <p>Trước khi đến Lisbon, Khương Thủ Ngôn từng nằm viện một thời gian, bác sĩ điều trị chính là Kỳ Chu, nguyên nhân là ngộ độc khí CO cấp tính.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p69')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p70">
-                <p>Ba ngày sau khi bà ngoại gieo mình xuống sông, Khương Thủ Ngôn đốt than trong nhà.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p70')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p71">
-                <p>Chỉ cần phát hiện muộn hơn chút nữa thôi, anh giờ đã là một nắm tro vô cơ vùi trong đất rồi.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p71')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p72">
-                <p>Ngủ cả buổi sáng nên hơi đói, trong lúc Kỳ Chu im lặng, Khương Thủ Ngôn mở tủ lạnh, tìm thấy một hộp bánh tart trứng được gói ghém đẹp đẽ.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p72')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p73">
-                <p>"Cậu cứ một mực muốn đi con đường này thật à? Không còn đường lui nào nữa sao?" Kỳ Chu không kìm được nữa, những lời chẳng thể thốt ra khi đối mặt, nay cách xa hơn 9000 cây số dường như khiến y có thêm chút can đảm để cất lời.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p73')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p74">
-                <p>Giọng Khương Thủ Ngôn vẫn bình lặng như nước: "Kỳ Chu, năm nay tôi 28 tuổi, không phải 8 tuổi, cũng chẳng phải 18 tuổi."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p74')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p75">
-                <p>Anh tựa người vào cạnh bàn, ánh mắt buông xuống, xuyên qua ô cửa sổ hẹp trong phòng khách trông về mặt biển xanh thẫm.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p75')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p76">
-                <p>Cái chết đối với Khương Thủ Ngôn mà nói chẳng qua chỉ như giọt nước rơi vào lòng biển, nhẹ bẫng đến độ gợn sóng lăn tăn cũng thật khẽ khàng.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p76')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p77">
-                <p>"Não tôi lành lặn rồi, tôi biết rõ mình đang làm gì."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p77')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p78">
-                <p>Kỳ Chu nghẹn lời.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p78')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p79">
-                <p>Điều khiến người ta cảm thấy vô vọng nhất không phải ý nghĩ bất chợt nảy ra, mà là sự sắp đặt đầy tỉnh táo và lý trí, anh tỉ mẩn chọn sẵn địa điểm kết thúc cuộc đời, thậm chí nắm cả quyền kiểm soát về thời gian.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p79')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p80">
-                <p>Loại người trước vẫn còn cơ hội sống, loại người sau thực sự chẳng còn gì vướng bận, mỗi ngày trôi qua đều có thể là ngày cuối cùng.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p80')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p81">
-                <p>Kỳ Chu và Khương Thủ Ngôn quen nhau hơn mười năm, y là người bạn duy nhất biết rõ ngọn ngành về anh.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p81')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p82">
-                <p>Chính vì biết quá rõ, nên y chẳng thể nào phán xét hành động của Khương Thủ Ngôn được.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p82')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p83">
-                <p>Y chỉ có thể im lặng, đợi đến khi chẳng còn nghe thấy tin tức gì nữa.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p83')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p84">
-                <p>Thì cũng là lúc y nhận được tin.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p84')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p85">
-                <p>Bầu không khí im ắng đến mức ngột ngạt, có lẽ cơn nắng sáng nay khiến con người ta dễ chịu thật, Khương Thủ Ngôn hiếm khi mở miệng an ủi một câu.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p85')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p86">
-                <p>"Ít nhất thì không phải hôm nay."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p86')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p87">
-                <p>Kỳ Chu chỉ muốn chui qua đường dây điện thoại đấm cho anh một phát.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p87')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p88">
-                <p>Khương Thủ Ngôn lấy từ trong hộp bánh ra một tấm thiệp nhỏ, trên đó in những mặt cười hoạt hình đủ mọi sắc màu, chính giữa là dòng chữ tiếng Trung bay bướm, Chúc bạn ngày nào cũng vui vẻ.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p88')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p89">
-                <p>Tâm trạng Khương Thủ Ngôn bỗng dưng rộn ràng vì dòng chữ ấy.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p89')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p90">
-                <p>Anh cười khẽ, giải thích một câu: "Tại vì có người chúc tôi ngày nào cũng vui vẻ."</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p90')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p91">
-                <p>Kỳ Chu cúp máy cái rụp, sợ chậm một giây thôi là y cũng hóa điên theo.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p91')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p92">
-                <p>Khương Thủ Ngôn vẫn cười trong tiếng tút tút ngắn ngủi, thực ra anh cũng chẳng biết mình cười vì lẽ gì, chỉ là rất muốn cười mà thôi.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p92')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p93">
-                <p>Nắng chiều xiên qua ô cửa sổ hẹp, vạt nắng nhảy trên sô pha xanh thẫm trong phòng khách, rồi rơi xuống chân Khương Thủ Ngôn.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p93')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p94">
-                <p>Anh đứng chôn chân tại chỗ hồi lâu, mãi cho đến khi tia nắng kia leo từ chân lên ống quần, anh mới vội lùi lại như vừa bị bỏng.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p94')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p95">
-                <p>Đầu óc trì trệ chậm rãi hoạt động, anh nghĩ mình nên tìm một bãi biển trước đã.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p95')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p96">
-                <p>Vắng người, sóng to, nước chảy xiết.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p96')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p97">
-                <p>Bồ Đào Nha có gần một nửa biên giới là bờ biển, ánh mặt trời ngập tràn khiến Cascais, thị trấn sát biển này, đẹp lộng lẫy.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p97')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p98">
-                <p>Khương Thủ Ngôn tản bộ dọc đại lộ ven biển, tìm được một chốn ưng ý giữa nắng vàng ươm.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p98')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p99">
-                <p>Chẳng giống bến phà tấp nập tàu bè, nơi này vắng vẻ, tĩnh lặng, những tảng đá ngầm tự nhiên tựa như hang động, đổ xuống bãi cát trắng mịn một vạt bóng râm êm ái.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p99')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p100">
-                <p>Khương Thủ Ngôn ngồi trong vạt bóng râm ấy, thơ thẫn nhìn từng đợt sóng cuộn trào từ xa tấp vào bờ.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p100')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p101">
-                <p>Nắng lấn tới một tấc, anh lại lùi về sau một tấc, mải miết không biết chán trong trò chơi đuổi bắt dài đằng đẵng này.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p101')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p102">
-                <p>Cho đến khi lưng chạm phải vách đá, hết đường lui, việc trốn tránh dường như cũng chẳng còn quan trọng nữa.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p102')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p103">
-                <p>Khương Thủ Ngôn gác tay lên gối, lười biếng nheo mắt dưới ánh mặt trời.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p103')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p104">
-                <p>Từ xa vọng lại tiếng động cơ ầm ĩ của mô tô nước và trực thăng, giữa những âm thanh ồn ã đó, Khương Thủ Ngôn nghe có người gọi to đầy phấn khích: "Zephyr!"</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p104')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p105">
-                <p>Anh mở mắt, vừa khéo trông thấy một chàng trai ôm ván lướt sóng ngã ngửa ra sau từ trên mô tô nước, lao ùm xuống biển.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p105')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p106">
-                <p>Rõ ràng khoảng cách rất xa, nhưng Khương Thủ Ngôn ngỡ như thấy rõ gió biển vờn qua mái tóc ướt đẫm của hắn, ngang tàng và rực rỡ.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p106')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p107">
-                <p>Một suy nghĩ thật kỳ quặc, Khương Thủ Ngôn hơi nhíu mày, rồi lại nhắm mắt.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p107')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p108">
-                <p>"Zephyr!" Trên bờ, ai đó giơ cao máy tính bảng, gào lên đầy phấn khích với người dưới biển: "Kỷ lục mới của mày đấy! Chắc chắn là kỷ lục mới luôn! Video từ drone báo về cho thấy con sóng cao hơn năm mét lận!"</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p108')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p109">
-                <p>Một bóng người trồi lên khỏi mặt nước đầy dứt khoát, Trình Tại Dã ngồi trên ván, thong dong dập dềnh theo nhịp sóng.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p109')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p110">
-                <p>Tiếng trực thăng ầm ĩ khiến hắn chẳng nghe rõ người kia nói gì, hắn ra hiệu chờ chút, rồi rạp người chèo nước, bắt trọn con sóng, lướt trơn tru vào bờ.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p110')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p111">
-                <p>Thủy triều rút đi, Trình Tại Dã đặt chân lên bãi cát ẩm ướt.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p111')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p112">
-                <p>Cậu bạn kia hào hứng chìa máy tính bảng cho hắn xem: "Zephyr, khúc cuối mày luồn qua ống sóng<span class="fn-ref" data-fn="4" id="ref4">4</span> quá hoàn hảo luôn!"</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p112')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p113">
-                <p>Màn hình đang phát đoạn video quay từ trên cao cảnh Trình Tại Dã lướt sóng ngoài khơi nửa tiếng trước, nước biển cuộn lên rồi đập mạnh xuống, bọt sóng trắng xóa bay rợp trời trông như trận tuyết lở.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p113')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p114">
-                <p>Màn hình bị lóa sáng, Trình Tại Dã theo phản xạ nghiêng đầu sang bên, đúng lúc đó một bóng người lọt vào tầm mắt hắn, tóc đen, da trắng, nhìn quen vô cùng.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p114')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p115">
-                <p>Vệt nắng vương nơi khóe mắt chưa kịp tan, cậu bạn kia vẫn giơ máy tính bảng liến thoắng không ngừng.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p115')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p116">
-                <p>Nhưng vào khoảnh khắc ấy, Trình Tại Dã bỗng thấy lòng mình tĩnh lặng khó tả.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p116')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p117">
-                <p>Hắn vươn tay bịt cái mồm đang lải nhải của cậu bạn, rồi dúi tấm ván lướt sóng cho cậu ta.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p117')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p118">
-                <p>Tiếng sóng biển lùi dần về sau, gương mặt ngày càng rõ nét khiến thời gian như nhòe đi.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p118')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p119">
-                <p>Trình Tại Dã ngỡ đâu mình bị kéo ngược về mùa hè của rất nhiều năm trước, khi người đàn ông đứng trước cửa tiệm bánh ngọt mỉm cười nói với hắn: Desculpa (Xin lỗi).</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p119')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p120">
-                <p>Năm ấy, Trình Tại Dã mười bảy tuổi.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p120')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p121">
-                <p>Tiếng ồn ào của trực thăng đã biến mất nơi chân trời, Khương Thủ Ngôn mơ màng ngửi thấy hơi ẩm của biển cả.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p121')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p122">
-                <p>Có bóng râm phủ xuống trước mắt anh.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p122')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p123">
-                <p>Gió dường như chợt lặng yên</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p123')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-            <div class="para-wrapper" data-id="mhnt7-c01-p124">
-                <p>Anh ngước lên, chạm phải một đôi mắt màu nâu vàng.</p>
-                <button class="comment-btn" onclick="openComments('mhnt7-c01-p124')"><i class="mgc_chat_1_line"></i></button>
-            </div>
-
-        </article>
-
-        <div class="author-note">
-            <div class="author-note-header">
-                <div class="icon"><i class="mgc_chat_3_line"></i></div>
-                <span class="label">Tác giả có lời muốn nói</span>
-            </div>
-            <p>Đăng truyện rồi đây! Tóm tắt thì đây là câu chuyện giằng co qua lại giữa một người sống nhưng chỉ muốn chết (thụ) và một người vui vẻ tự do (công), nếu thích thì hãy lưu truyện nhé ~~</p>
-            <p>Truyện hư cấu, ngoại trừ địa danh là thật thì những chi tiết khác đều là do tôi bịa đấy.</p>
-            <p>Vì bối cảnh ở nước ngoài, nhưng nếu viết cả đoạn dài tiếng bản địa rồi thêm lời dịch thì tốn chữ quá, nên để phân biệt, những câu trong ngoặc (Tiếng Trung) là đang nói tiếng Bồ Đào Nha (<em>Mình edit thì sẽ để in nghiêng nhé</em>) nhưng tôi gõ thẳng tiếng Trung luôn, còn những chỗ khác là tiếng Trung bình thường.</p>
-            <p>Cảm ơn mọi người đã đọc!</p>
-        </div>
-
-        <div class="footnotes">
-            <div class="footnotes-header">Chú thích</div>
-            <div class="footnote-item" id="fn1">
-                <span class="fn-num">1</span>
-                <div class="fn-text">Đây là từ tiếng Anh, tượng trưng cho cơn gió nhẹ nhàng, gốc Hy Lạp là Zephyrus, tên của thần gió Tây mùa xuân. <a class="fn-back-inline" href="#ref1" title="Quay lại"><i class="mgc_arrow_left_up_line"></i></a></div>
-            </div>
-            <div class="footnote-item" id="fn2">
-                <span class="fn-num">2</span>
-                <div class="fn-text">Là thành phố lớn nhất và là thủ đô của Bồ Đào Nha. <a class="fn-back-inline" href="#ref2" title="Quay lại"><i class="mgc_arrow_left_up_line"></i></a></div>
-            </div>
-            <div class="footnote-item" id="fn3">
-                <span class="fn-num">3</span>
-                <div class="fn-text">Cascais là một huyện thuộc tỉnh Lisboa, Bồ Đào Nha. <a class="fn-back-inline" href="#ref3" title="Quay lại"><i class="mgc_arrow_left_up_line"></i></a></div>
-            </div>
-            <div class="footnote-item" id="fn4">
-                <span class="fn-num">4</span>
-                <div class="fn-text">Ống sóng (管浪) Thuật ngữ chuyên môn là wave barrel, khi con sóng cuộn lại tạo thành một cái ống rỗng, người lướt sóng đi xuyên qua đó. Đây là kỹ thuật lướt sóng khó và đẹp mắt nhất. <a class="fn-back-inline" href="#ref4" title="Quay lại"><i class="mgc_arrow_left_up_line"></i></a></div>
-            </div>
-        </div>
-
-        <!-- Chapter comment section -->
-        <div class="chapter-comment">
-            <div class="chapter-comment-header">
-                <div class="icon"><i class="mgc_chat_1_line"></i></div>
-                <span class="label">Bình luận chương</span>
-            </div>
-            <div class="giscus-chapter" id="giscusChapter"></div>
-        </div>
-
-        <div class="chapter-nav-bottom">
-            <a href="#" class="nav-btn disabled">
-                <i class="mgc_arrow_left_line"></i> Chương trước
-            </a>
-            <a href="index.html" class="nav-btn">
-                <i class="mgc_menu_line"></i> Mục lục
-            </a>
-            <a href="chapter02.html" class="nav-btn">
-                Chương sau <i class="mgc_arrow_right_line"></i>
-            </a>
-        </div>
-
-        <div class="story-footer">♡ cảm ơn đã ghé đọc ♡</div>
+  <div class="page-cont" id="pageCont">
+
+    <div class="nav-bar">
+      <a href="index.html" class="nav-btn">
+        <i class="mgc_menu_line"></i> Mục lục
+      </a>
+      <a href="#" class="nav-btn disabled">
+        <i class="mgc_arrow_left_line"></i> Trước
+      </a>
+      <a href="chapter02.html" class="nav-btn">
+        Sau <i class="mgc_arrow_right_line"></i>
+      </a>
+      <div class="nav-spacer"></div>
+      <button class="settings-toggle" onclick="toggleSettings()" title="Cài đặt đọc">
+        <i class="mgc_settings_3_line"></i>
+      </button>
+      <button class="settings-toggle theme-toggle" onclick="toggleTheme()" title="Đổi giao diện">
+        <i class="mgc_sun_line icon-sun"></i>
+        <i class="mgc_moon_line icon-moon"></i>
+      </button>
     </div>
 
-    <div class="overlay" id="overlay" onclick="closeComments()"></div>
-
-    <div class="comment-panel" id="commentPanel">
-        <div class="panel-header">
-            <div>
-                <h3><i class="mgc_chat_1_line"></i> Bình luận đoạn văn</h3>
-                <span class="para-label" id="paraLabel">—</span>
-            </div>
-            <button class="close-btn" onclick="closeComments()"><i class="mgc_close_line"></i></button>
+    <div class="settings-panel" id="settingsPanel">
+      <div class="settings-row">
+        <span class="settings-label">Font</span>
+        <div class="settings-options" id="fontOptions">
+          <button class="active" data-font="'Lora', serif">Lora</button>
+          <button data-font="'Inter', sans-serif">Inter</button>
+          <button data-font="'Merriweather', serif">Merriweather</button>
+          <button data-font="'Source Serif 4', serif">Source Serif</button>
+          <button data-font="'Cormorant Garamond', serif">Garamond</button>
         </div>
-        <div class="panel-quote" id="panelQuote"></div>
-        <div class="giscus-container" id="giscusContainer">
-            <div class="loading-giscus">
-                <div class="spinner"></div>
-                <p>Chọn một đoạn văn để xem bình luận...</p>
-            </div>
+      </div>
+      <div class="settings-row">
+        <span class="settings-label">Cỡ chữ</span>
+        <div class="size-controls">
+          <button onclick="changeSize(-1)">−</button>
+          <span class="size-display" id="sizeDisplay">16px</span>
+          <button onclick="changeSize(1)">+</button>
         </div>
+      </div>
     </div>
 
-    <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()">
-        <i class="mgc_arrow_up_line"></i>
-    </button>
+    <header class="chapter-header">
+      <div class="chapter-number">Chương 01</div>
+      <h1 class="chapter-title">Zephyr <span class="fn-ref" data-fn="1" id="ref1">1</span></h1>
+      <div class="chapter-epigraph">Gió dường như chợt lặng yên</div>
+    </header>
 
-    <script>
-        const GISCUS_CONFIG = {
-            repo: "junowhite23/junowhite23.github.io",
-            repoId: "R_kgDOSdm-sA",
-            category: "General",
-            categoryId: "DIC_kwDOSdm-sM4C9HPP",
-            lang: "vi"
-        };
+    <article class="chapter-content" id="chapterContent">
 
-        function getGiscusTheme() {
-            return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-        }
+      <div class="para-wrapper" data-id="mhnt7-c01-p1">
+        <p>Lisbon<span class="fn-ref" data-fn="2" id="ref2">2</span>, mười giờ đêm.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p1')"><i class="mgc_chat_1_line"></i></button>
+      </div>
 
-        let currentParaId = null;
+      <div class="para-wrapper" data-id="mhnt7-c01-p2">
+        <p>Khương Thủ Ngôn hòa theo dòng người rời khỏi sân bay.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p2')"><i class="mgc_chat_1_line"></i></button>
+      </div>
 
-        function openComments(paraId) {
-            document.querySelectorAll('.para-wrapper').forEach(function (el) { el.classList.remove('active'); });
-            var wrapper = document.querySelector('[data-id="' + paraId + '"]');
-            if (wrapper) wrapper.classList.add('active');
-            currentParaId = paraId;
-            document.getElementById('paraLabel').textContent = paraId;
-            var paraText = wrapper ? wrapper.querySelector('p').textContent : '';
-            document.getElementById('panelQuote').textContent =
-                paraText.length > 180 ? paraText.substring(0, 180) + '…' : paraText;
-            document.getElementById('commentPanel').classList.add('open');
-            document.getElementById('overlay').classList.add('show');
-            document.getElementById('pageCont').classList.add('shifted');
-            loadGiscus(paraId);
-        }
+      <div class="para-wrapper" data-id="mhnt7-c01-p3">
+        <p>Anh kéo vali, đứng đợi một mình bên vỉa hè, suốt dọc đường đi, dáng vẻ xuất sắc của anh đã vô tình níu lấy
+          không biết bao nhiêu ánh nhìn.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p3')"><i class="mgc_chat_1_line"></i></button>
+      </div>
 
-        function closeComments() {
-            document.getElementById('commentPanel').classList.remove('open');
-            document.getElementById('overlay').classList.remove('show');
-            document.getElementById('pageCont').classList.remove('shifted');
-            document.querySelectorAll('.para-wrapper').forEach(function (el) { el.classList.remove('active'); });
-            currentParaId = null;
-        }
+      <div class="para-wrapper" data-id="mhnt7-c01-p4">
+        <p>Chốc lát sau, một chiếc xe đỗ trước mặt, cửa kính trượt xuống, để lộ gương mặt rám nắng màu đồng của Martim.
+        </p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p4')"><i class="mgc_chat_1_line"></i></button>
+      </div>
 
-        function loadGiscus(paraId) {
-            var container = document.getElementById('giscusContainer');
-            container.innerHTML = '<div class="loading-giscus"><div class="spinner"></div><p>Đang tải bình luận...</p></div>';
-            setTimeout(function () {
-                container.innerHTML = '';
-                var script = document.createElement('script');
-                script.src = 'https://giscus.app/client.js';
-                script.setAttribute('data-repo', GISCUS_CONFIG.repo);
-                script.setAttribute('data-repo-id', GISCUS_CONFIG.repoId);
-                script.setAttribute('data-category', GISCUS_CONFIG.category);
-                script.setAttribute('data-category-id', GISCUS_CONFIG.categoryId);
-                script.setAttribute('data-mapping', 'specific');
-                script.setAttribute('data-term', paraId);
-                script.setAttribute('data-strict', '0');
-                script.setAttribute('data-reactions-enabled', '1');
-                script.setAttribute('data-emit-metadata', '0');
-                script.setAttribute('data-input-position', 'top');
-                script.setAttribute('data-theme', getGiscusTheme());
-                script.setAttribute('data-lang', GISCUS_CONFIG.lang);
-                script.setAttribute('data-loading', 'lazy');
-                script.crossOrigin = 'anonymous';
-                script.async = true;
-                container.appendChild(script);
-            }, 300);
-        }
+      <div class="para-wrapper" data-id="mhnt7-c01-p5">
+        <p>"Riley, esperaste muito?" (Riley, đợi lâu không?)</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p5')"><i class="mgc_chat_1_line"></i></button>
+      </div>
 
-        // Load chapter-level giscus comment
-        function loadChapterGiscus() {
-            var container = document.getElementById('giscusChapter');
-            var script = document.createElement('script');
-            script.src = 'https://giscus.app/client.js';
-            script.setAttribute('data-repo', GISCUS_CONFIG.repo);
-            script.setAttribute('data-repo-id', GISCUS_CONFIG.repoId);
-            script.setAttribute('data-category', GISCUS_CONFIG.category);
-            script.setAttribute('data-category-id', GISCUS_CONFIG.categoryId);
-            script.setAttribute('data-mapping', 'specific');
-            script.setAttribute('data-term', 'mhnt7-c01');
-            script.setAttribute('data-strict', '0');
-            script.setAttribute('data-reactions-enabled', '1');
-            script.setAttribute('data-emit-metadata', '0');
-            script.setAttribute('data-input-position', 'top');
-            script.setAttribute('data-theme', getGiscusTheme());
-            script.setAttribute('data-lang', GISCUS_CONFIG.lang);
-            script.setAttribute('data-loading', 'lazy');
-            script.crossOrigin = 'anonymous';
-            script.async = true;
-            container.appendChild(script);
-        }
+      <div class="para-wrapper" data-id="mhnt7-c01-p6">
+        <p>Khương Thủ Ngôn cười khẽ, giọng nói cất lên chậm rãi, buông lơi như chính màn đêm này.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p6')"><i class="mgc_chat_1_line"></i></button>
+      </div>
 
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') closeComments();
+      <div class="para-wrapper" data-id="mhnt7-c01-p7">
+        <p>"Não esperei muito tempo." (Không lâu lắm.)</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p7')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p8">
+        <p>Martim giúp anh bỏ hành lý vào cốp xe, đã lâu không gặp, những câu hàn huyên khó tránh đôi phần rôm rả hơn.
+        </p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p8')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p9">
+        <p>"Lúc nghe cậu bảo đột nhiên muốn sang đây sống một thời gian tôi ngạc nhiên lắm đấy, trước kia lần nào hỏi
+          cậu cũng than bận."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p9')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p10">
+        <p>Khương Thủ Ngôn uể oải đáp lại: "Giờ đỡ hơn nhiều rồi."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p10')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p11">
+        <p>"Chúng ta cũng khá lâu không gặp rồi nhỉ, lần trước là bao giờ? Ba năm trước à? Cái dạo cậu theo công ty sang
+          đây chạy dự án ấy?"</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p11')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p12">
+        <p>Khương Thủ Ngôn "ừ" một tiếng, hạ cửa kính xuống đôi chút, gió đêm lùa vào khiến mái tóc anh rối tung, Martim
+          nhìn sườn mặt đang hướng ra ngoài cửa của Khương Thủ Ngôn, có thể nhận ra anh không mấy hào hứng.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p12')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p13">
+        <p>Đinh ninh Khương Thủ Ngôn mệt mỏi sau chuyến bay dài, cậu ta không mở lời quấy rầy nữa, im lặng lái xe.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p13')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p14">
+        <p>Thật ra, việc biết Khương Thủ Ngôn tới đây cũng do tình cờ, bởi anh chẳng hề liên hệ với ai.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p14')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p15">
+        <p>Cũng nhờ lần trước đi công tác Barcelona, cậu ta gặp một người bạn chung rồi vô tình nhắc đến, Martim mới hay
+          tin Khương Thủ Ngôn nghỉ việc.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p15')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p16">
+        <p>"Nhà có chuyện, bà cụ gieo mình xuống sông tự vẫn rồi."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p16')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p17">
+        <p>Martim bàng hoàng.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p17')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p18">
+        <p>Khương Thủ Ngôn luôn mang đến cho người khác cảm giác hờ hững, hiếm khi anh nhắc chuyện gia đình mình, chỉ
+          biết rằng anh có một người bà ngoại, tình cảm hai bà cháu vô cùng gắn bó, mỗi bận sang đây công tác, anh đều
+          gói ghém ít bánh tart trứng mang về.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p18')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p19">
+        <p>Người già hảo ngọt nhưng anh cũng chẳng mang quá nhiều, chủ yếu để bà ăn thử vị.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p19')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p20">
+        <p>Về sau khi nghe tin anh đang làm visa, định sang Lisbon cho nguôi ngoai nỗi lòng, Martim vốn tính nhiệt tình
+          liền gọi điện hỏi han dự định của Khương Thủ Ngôn, trước khi anh tới thì đã sắp xếp ổn thỏa mọi thứ.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p20')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p21">
+        <p>Xe chạy vun vút trên cao tốc tới thẳng Cascais<span class="fn-ref" data-fn="3" id="ref3">3</span>.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p21')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p22">
+        <p>"Chỗ này tuy không rộng lắm, nhưng đồ đạc gì cũng có, quan trọng nhất là…" Martim đặt hành lý ở phòng khách,
+          đẩy cửa sổ ra, vẫy tay gọi Khương Thủ Ngôn.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p22')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p23">
+        <p>Khương Thủ Ngôn bước tới.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p23')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p24">
+        <p>Martim nói: "Ở đây gần biển lắm, cứ mở cửa sổ là thấy ngay đường chân trời."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p24')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p25">
+        <p>"Chẳng nơi nào có tầm nhìn đẹp hơn chỗ này đâu, nghe tin cậu sang, tôi đã cất công đi hỏi thăm giúp cậu đấy."
+        </p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p25')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p26">
+        <p>"Chủ nhà quý người Trung Quốc cực kỳ, nhà cũng chỉ cho khách du lịch Trung Quốc thuê thôi. Có điều anh ta
+          không hay ở Bồ Đào Nha, chuyện thuê mướn đều giao tất cho bạn anh ta lo."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p26')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p27">
+        <p>Nói đến đây, Martim nháy mắt đầy vẻ láu lỉnh: "Mà bạn của anh ta tình cờ lại là bạn của tôi."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p27')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p28">
+        <p>Khương Thủ Ngôn cười, gió đêm mơn man lướt qua gò má, anh nghe thấy tiếng sóng biển vọng về từ chốn xa.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p28')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p29">
+        <p>Martim nhìn anh đến ngẩn ngơ.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p29')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p30">
+        <p>Ở Khương Thủ Ngôn luôn toát ra một sức hút kỳ lạ như thế, khi không cười, anh trông tao nhã nhưng xa cách,
+          thế mà hễ cười lên lại khiến người ta muốn đến làm thân.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p30')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p31">
+        <p>Ánh mắt Martim dừng lại ở bàn tay đang đặt trên bệ cửa sổ của anh.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p31')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p32">
+        <p>"Cậu bệnh à?"</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p32')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p33">
+        <p>Khương Thủ Ngôn thoáng khựng lại, cụp mắt nhìn vết kim trên mu bàn tay mình, do cắm kim lâu quá nên vùng da
+          xung quanh đã tím bầm một mảng lớn.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p33')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p34">
+        <p>"Ừ," Khương Thủ Ngôn nói, "Gặp chút sự cố thôi."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p34')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p35">
+        <p>Martim gãi đầu đinh ngắn cũn, trên gương mặt rám nắng lộ rõ vẻ ngượng ngùng: "Tôi rất lấy làm tiếc, chuyện
+          gia đình cậu ấy."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p35')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p36">
+        <p>Khương Thủ Ngôn rũ mi, giọng nói nhẹ tênh: "Không sao đâu, đã qua cả rồi."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p36')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p37">
+        <p>Biết ý anh không muốn nói nhiều nên Martim không gặng hỏi nữa, chỉ cất gọn hành lý, rồi ngoái lại nhìn Khương
+          Thủ Ngôn vẫn đang đứng bên cửa sổ.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p37')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p38">
+        <p>"Muộn rồi, tôi về trước nhé. Cậu ngủ sớm đi, cần gì cứ gọi tôi." Martim dặn dò.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p38')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p39">
+        <p>Khương Thủ Ngôn xoay lại, cười với cậu ta, ánh đèn vàng ấm áp hắt lên dáng dấp anh, chẳng hiểu sao, Martim cứ
+          thấy anh có gì đó khác xưa.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p39')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p40">
+        <p>Ngày trước anh chỉ hờ hững thôi, nhưng giờ đây, vẻ ngoài ấy như phủ lên một lớp tro tàn, mang nét héo úa đẹp
+          đến nao lòng.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p40')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p41">
+        <p>Martim lắc đầu quầy quậy, xua đi cái suy nghĩ điềm gở ấy ra khỏi đầu.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p41')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="scene-break">—</div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p42">
+        <p>Dạo gần đây Khương Thủ Ngôn ngủ rất ít, anh khó vào giấc mà giấc ngủ cũng chập chờn không yên.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p42')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p43">
+        <p>Anh tìm thấy một chai rượu vang trong tủ lạnh, bèn cầm lên sân thượng nhỏ trên tầng.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p43')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p44">
+        <p>Đêm ở Cascais mát rượi, tiếng sóng Đại Tây Dương rì rào vỗ về.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p44')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p45">
+        <p>Vài ba câu tiếng Bồ Đào Nha thỉnh thoảng vọng lên từ con đường nhỏ bên dưới, Khương Thủ Ngôn nhìn đường bờ
+          biển xám xanh đằng xa, nhấm nháp cạn dần chai rượu.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p45')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p46">
+        <p>Rượu ngấm, anh lười chẳng buồn nhúc nhích bèn cuộn mình trên ghế mây, mơ màng thiếp đi.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p46')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p47">
+        <p>Tháng sáu ở Bồ Đào Nha mau sáng, tia nắng ấm áp rọi lên người.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p47')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p48">
+        <p>Tiếng hải âu gọi bầy lảnh lót lướt ngang chân trời, cuốn theo làn gió biển mang vị mặn ẩm ướt.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p48')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p49">
+        <p>Cái lạnh ập đến khiến Khương Thủ Ngôn hơi chau mày, cơn say vẫn váng vất làm đôi mắt anh mãi mới hé mở.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p49')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p50">
+        <p>Ánh ban mai nhập nhèm vương trên hàng mi khẽ run, mặt biển màu cam đỏ trải ra trước tầm mắt, sóng nước lấp
+          lánh hệt như giấc mộng ban ngày.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p50')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p51">
+        <p>Khương Thủ Ngôn lặng đi hồi lâu mới nhận ra, bình minh lên rồi.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p51')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p52">
+        <p>Chai rượu trong tay lăn lông lốc xuống đất, không khí phảng phất chút hương nho ngọt ngào.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p52')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p53">
+        <p>Khương Thủ Ngôn nằm nghiêng trên ghế mây, ngắm nhìn bầu trời phương xa chuyển từ sắc xám xanh sang xanh nhạt,
+          đợi đến khi vệt nắng vàng cam kia đánh thức cả thành phố đang say giấc nồng.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p53')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p54">
+        <p>Dòng xe cộ lướt đến từ xa, tiếng người cũng theo đó huyên náo dần.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p54')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p55">
+        <p>Khương Thủ Ngôn khẽ cựa cần cổ mỏi nhừ, ngửa đầu gối lên mép ghế mây, tính xem giờ.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p55')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p56">
+        <p>Ngón tay anh mò mẫm trong túi áo hồi lâu mới chợt nhớ ra, chiếc điện thoại hết pin đã bị anh vứt trên bàn
+          dưới lầu rồi.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p56')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p57">
+        <p>Nhưng nghĩ đến việc phải đi lấy điện thoại, nghĩa là phải đứng dậy khỏi ghế, xuống lầu, lục vali tìm cục sạc,
+          cắm điện, rồi chờ mở máy…</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p57')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p58">
+        <p>Khương Thủ Ngôn thấy sao mà phiền quá.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p58')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p59">
+        <p>Thế là anh quấn chặt áo khoác đang mặc, trở mình, co lại thành một tư thế thoải mái khác rồi vùi đầu ngủ
+          tiếp.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p59')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p60">
+        <p>Trong mơ có quá nhiều thứ hỗn loạn, khi Khương Thủ Ngôn tỉnh lại lần nữa thì đã đầm đìa mồ hôi.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p60')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p61">
+        <p>Chênh lệch nhiệt độ ngày đêm ở Cascais rất lớn, cái nắng gay gắt giữa trưa khiến áo khoác chống rét trên
+          người Khương Thủ Ngôn trở nên vướng víu lạ thường.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p61')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p62">
+        <p>Anh hít một hơi thật sâu, cuối cùng cũng đứng dậy khỏi ghế mây.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p62')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p63">
+        <p>Áo khoác được vắt bừa trên chiếc ghế cạnh bàn, Khương Thủ Ngôn lôi cục sạc từ trong vali ra, đi vào gian bếp
+          bán mở.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p63')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p64">
+        <p>Vừa mở nguồn máy, tiếng chuông tin nhắn đã vang lên liên tục, anh chưa kịp đọc hết thì Kỳ Chu đã gọi tới.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p64')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p65">
+        <p>Khương Thủ Ngôn uống một ngụm nước đá rồi mới đủng đỉnh bắt máy: "A lô."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p65')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p66">
+        <p>Đầu dây bên kia lặng đi vài giây như đang cố kìm nén cảm xúc: "Hôm nay cậu mà còn bặt vô âm tín thì tôi đã
+          tính gọi thẳng cho đại sứ quán để nhận xác của cậu rồi đấy."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p66')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p67">
+        <p>Khương Thủ Ngôn khẽ cười, giọng nói trong trẻo: "Chưa nhanh thế đâu."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p67')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p68">
+        <p>Kỳ Chu lại im bặt.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p68')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p69">
+        <p>Trước khi đến Lisbon, Khương Thủ Ngôn từng nằm viện một thời gian, bác sĩ điều trị chính là Kỳ Chu, nguyên
+          nhân là ngộ độc khí CO cấp tính.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p69')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p70">
+        <p>Ba ngày sau khi bà ngoại gieo mình xuống sông, Khương Thủ Ngôn đốt than trong nhà.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p70')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p71">
+        <p>Chỉ cần phát hiện muộn hơn chút nữa thôi, anh giờ đã là một nắm tro vô cơ vùi trong đất rồi.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p71')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p72">
+        <p>Ngủ cả buổi sáng nên hơi đói, trong lúc Kỳ Chu im lặng, Khương Thủ Ngôn mở tủ lạnh, tìm thấy một hộp bánh
+          tart trứng được gói ghém đẹp đẽ.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p72')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p73">
+        <p>"Cậu cứ một mực muốn đi con đường này thật à? Không còn đường lui nào nữa sao?" Kỳ Chu không kìm được nữa,
+          những lời chẳng thể thốt ra khi đối mặt, nay cách xa hơn 9000 cây số dường như khiến y có thêm chút can đảm để
+          cất lời.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p73')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p74">
+        <p>Giọng Khương Thủ Ngôn vẫn bình lặng như nước: "Kỳ Chu, năm nay tôi 28 tuổi, không phải 8 tuổi, cũng chẳng
+          phải 18 tuổi."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p74')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p75">
+        <p>Anh tựa người vào cạnh bàn, ánh mắt buông xuống, xuyên qua ô cửa sổ hẹp trong phòng khách trông về mặt biển
+          xanh thẫm.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p75')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p76">
+        <p>Cái chết đối với Khương Thủ Ngôn mà nói chẳng qua chỉ như giọt nước rơi vào lòng biển, nhẹ bẫng đến độ gợn
+          sóng lăn tăn cũng thật khẽ khàng.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p76')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p77">
+        <p>"Não tôi lành lặn rồi, tôi biết rõ mình đang làm gì."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p77')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p78">
+        <p>Kỳ Chu nghẹn lời.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p78')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p79">
+        <p>Điều khiến người ta cảm thấy vô vọng nhất không phải ý nghĩ bất chợt nảy ra, mà là sự sắp đặt đầy tỉnh táo và
+          lý trí, anh tỉ mẩn chọn sẵn địa điểm kết thúc cuộc đời, thậm chí nắm cả quyền kiểm soát về thời gian.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p79')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p80">
+        <p>Loại người trước vẫn còn cơ hội sống, loại người sau thực sự chẳng còn gì vướng bận, mỗi ngày trôi qua đều có
+          thể là ngày cuối cùng.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p80')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p81">
+        <p>Kỳ Chu và Khương Thủ Ngôn quen nhau hơn mười năm, y là người bạn duy nhất biết rõ ngọn ngành về anh.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p81')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p82">
+        <p>Chính vì biết quá rõ, nên y chẳng thể nào phán xét hành động của Khương Thủ Ngôn được.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p82')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p83">
+        <p>Y chỉ có thể im lặng, đợi đến khi chẳng còn nghe thấy tin tức gì nữa.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p83')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p84">
+        <p>Thì cũng là lúc y nhận được tin.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p84')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p85">
+        <p>Bầu không khí im ắng đến mức ngột ngạt, có lẽ cơn nắng sáng nay khiến con người ta dễ chịu thật, Khương Thủ
+          Ngôn hiếm khi mở miệng an ủi một câu.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p85')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p86">
+        <p>"Ít nhất thì không phải hôm nay."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p86')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p87">
+        <p>Kỳ Chu chỉ muốn chui qua đường dây điện thoại đấm cho anh một phát.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p87')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p88">
+        <p>Khương Thủ Ngôn lấy từ trong hộp bánh ra một tấm thiệp nhỏ, trên đó in những mặt cười hoạt hình đủ mọi sắc
+          màu, chính giữa là dòng chữ tiếng Trung bay bướm, Chúc bạn ngày nào cũng vui vẻ.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p88')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p89">
+        <p>Tâm trạng Khương Thủ Ngôn bỗng dưng rộn ràng vì dòng chữ ấy.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p89')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p90">
+        <p>Anh cười khẽ, giải thích một câu: "Tại vì có người chúc tôi ngày nào cũng vui vẻ."</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p90')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p91">
+        <p>Kỳ Chu cúp máy cái rụp, sợ chậm một giây thôi là y cũng hóa điên theo.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p91')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p92">
+        <p>Khương Thủ Ngôn vẫn cười trong tiếng tút tút ngắn ngủi, thực ra anh cũng chẳng biết mình cười vì lẽ gì, chỉ
+          là rất muốn cười mà thôi.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p92')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p93">
+        <p>Nắng chiều xiên qua ô cửa sổ hẹp, vạt nắng nhảy trên sô pha xanh thẫm trong phòng khách, rồi rơi xuống chân
+          Khương Thủ Ngôn.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p93')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p94">
+        <p>Anh đứng chôn chân tại chỗ hồi lâu, mãi cho đến khi tia nắng kia leo từ chân lên ống quần, anh mới vội lùi
+          lại như vừa bị bỏng.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p94')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p95">
+        <p>Đầu óc trì trệ chậm rãi hoạt động, anh nghĩ mình nên tìm một bãi biển trước đã.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p95')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p96">
+        <p>Vắng người, sóng to, nước chảy xiết.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p96')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p97">
+        <p>Bồ Đào Nha có gần một nửa biên giới là bờ biển, ánh mặt trời ngập tràn khiến Cascais, thị trấn sát biển này,
+          đẹp lộng lẫy.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p97')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p98">
+        <p>Khương Thủ Ngôn tản bộ dọc đại lộ ven biển, tìm được một chốn ưng ý giữa nắng vàng ươm.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p98')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p99">
+        <p>Chẳng giống bến phà tấp nập tàu bè, nơi này vắng vẻ, tĩnh lặng, những tảng đá ngầm tự nhiên tựa như hang
+          động, đổ xuống bãi cát trắng mịn một vạt bóng râm êm ái.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p99')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p100">
+        <p>Khương Thủ Ngôn ngồi trong vạt bóng râm ấy, thơ thẫn nhìn từng đợt sóng cuộn trào từ xa tấp vào bờ.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p100')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p101">
+        <p>Nắng lấn tới một tấc, anh lại lùi về sau một tấc, mải miết không biết chán trong trò chơi đuổi bắt dài đằng
+          đẵng này.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p101')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p102">
+        <p>Cho đến khi lưng chạm phải vách đá, hết đường lui, việc trốn tránh dường như cũng chẳng còn quan trọng nữa.
+        </p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p102')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p103">
+        <p>Khương Thủ Ngôn gác tay lên gối, lười biếng nheo mắt dưới ánh mặt trời.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p103')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p104">
+        <p>Từ xa vọng lại tiếng động cơ ầm ĩ của mô tô nước và trực thăng, giữa những âm thanh ồn ã đó, Khương Thủ Ngôn
+          nghe có người gọi to đầy phấn khích: "Zephyr!"</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p104')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p105">
+        <p>Anh mở mắt, vừa khéo trông thấy một chàng trai ôm ván lướt sóng ngã ngửa ra sau từ trên mô tô nước, lao ùm
+          xuống biển.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p105')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p106">
+        <p>Rõ ràng khoảng cách rất xa, nhưng Khương Thủ Ngôn ngỡ như thấy rõ gió biển vờn qua mái tóc ướt đẫm của hắn,
+          ngang tàng và rực rỡ.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p106')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p107">
+        <p>Một suy nghĩ thật kỳ quặc, Khương Thủ Ngôn hơi nhíu mày, rồi lại nhắm mắt.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p107')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p108">
+        <p>"Zephyr!" Trên bờ, ai đó giơ cao máy tính bảng, gào lên đầy phấn khích với người dưới biển: "Kỷ lục mới của
+          mày đấy! Chắc chắn là kỷ lục mới luôn! Video từ drone báo về cho thấy con sóng cao hơn năm mét lận!"</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p108')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p109">
+        <p>Một bóng người trồi lên khỏi mặt nước đầy dứt khoát, Trình Tại Dã ngồi trên ván, thong dong dập dềnh theo
+          nhịp sóng.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p109')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p110">
+        <p>Tiếng trực thăng ầm ĩ khiến hắn chẳng nghe rõ người kia nói gì, hắn ra hiệu chờ chút, rồi rạp người chèo
+          nước, bắt trọn con sóng, lướt trơn tru vào bờ.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p110')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p111">
+        <p>Thủy triều rút đi, Trình Tại Dã đặt chân lên bãi cát ẩm ướt.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p111')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p112">
+        <p>Cậu bạn kia hào hứng chìa máy tính bảng cho hắn xem: "Zephyr, khúc cuối mày luồn qua ống sóng<span
+            class="fn-ref" data-fn="4" id="ref4">4</span> quá hoàn hảo luôn!"</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p112')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p113">
+        <p>Màn hình đang phát đoạn video quay từ trên cao cảnh Trình Tại Dã lướt sóng ngoài khơi nửa tiếng trước, nước
+          biển cuộn lên rồi đập mạnh xuống, bọt sóng trắng xóa bay rợp trời trông như trận tuyết lở.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p113')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p114">
+        <p>Màn hình bị lóa sáng, Trình Tại Dã theo phản xạ nghiêng đầu sang bên, đúng lúc đó một bóng người lọt vào tầm
+          mắt hắn, tóc đen, da trắng, nhìn quen vô cùng.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p114')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p115">
+        <p>Vệt nắng vương nơi khóe mắt chưa kịp tan, cậu bạn kia vẫn giơ máy tính bảng liến thoắng không ngừng.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p115')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p116">
+        <p>Nhưng vào khoảnh khắc ấy, Trình Tại Dã bỗng thấy lòng mình tĩnh lặng khó tả.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p116')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p117">
+        <p>Hắn vươn tay bịt cái mồm đang lải nhải của cậu bạn, rồi dúi tấm ván lướt sóng cho cậu ta.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p117')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p118">
+        <p>Tiếng sóng biển lùi dần về sau, gương mặt ngày càng rõ nét khiến thời gian như nhòe đi.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p118')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p119">
+        <p>Trình Tại Dã ngỡ đâu mình bị kéo ngược về mùa hè của rất nhiều năm trước, khi người đàn ông đứng trước cửa
+          tiệm bánh ngọt mỉm cười nói với hắn: Desculpa (Xin lỗi).</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p119')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p120">
+        <p>Năm ấy, Trình Tại Dã mười bảy tuổi.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p120')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p121">
+        <p>Tiếng ồn ào của trực thăng đã biến mất nơi chân trời, Khương Thủ Ngôn mơ màng ngửi thấy hơi ẩm của biển cả.
+        </p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p121')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p122">
+        <p>Có bóng râm phủ xuống trước mắt anh.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p122')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p123">
+        <p>Gió dường như chợt lặng yên</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p123')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+      <div class="para-wrapper" data-id="mhnt7-c01-p124">
+        <p>Anh ngước lên, chạm phải một đôi mắt màu nâu vàng.</p>
+        <button class="comment-btn" onclick="openComments('mhnt7-c01-p124')"><i class="mgc_chat_1_line"></i></button>
+      </div>
+
+    </article>
+
+    <div class="author-note">
+      <div class="author-note-header">
+        <div class="icon"><i class="mgc_chat_3_line"></i></div>
+        <span class="label">Tác giả có lời muốn nói</span>
+      </div>
+      <p>Đăng truyện rồi đây! Tóm tắt thì đây là câu chuyện giằng co qua lại giữa một người sống nhưng chỉ muốn chết
+        (thụ) và một người vui vẻ tự do (công), nếu thích thì hãy lưu truyện nhé ~~</p>
+      <p>Truyện hư cấu, ngoại trừ địa danh là thật thì những chi tiết khác đều là do tôi bịa đấy.</p>
+      <p>Vì bối cảnh ở nước ngoài, nhưng nếu viết cả đoạn dài tiếng bản địa rồi thêm lời dịch thì tốn chữ quá, nên để
+        phân biệt, những câu trong ngoặc (Tiếng Trung) là đang nói tiếng Bồ Đào Nha (<em>Mình edit thì sẽ để in nghiêng
+          nhé</em>) nhưng tôi gõ thẳng tiếng Trung luôn, còn những chỗ khác là tiếng Trung bình thường.</p>
+      <p>Cảm ơn mọi người đã đọc!</p>
+    </div>
+
+    <div class="footnotes">
+      <div class="footnotes-header">Chú thích</div>
+      <div class="footnote-item" id="fn1">
+        <span class="fn-num">1</span>
+        <div class="fn-text">Đây là từ tiếng Anh, tượng trưng cho cơn gió nhẹ nhàng, gốc Hy Lạp là Zephyrus, tên của
+          thần gió Tây mùa xuân. <a class="fn-back-inline" href="#ref1" title="Quay lại"><i
+              class="mgc_arrow_left_up_line"></i></a></div>
+      </div>
+      <div class="footnote-item" id="fn2">
+        <span class="fn-num">2</span>
+        <div class="fn-text">Là thành phố lớn nhất và là thủ đô của Bồ Đào Nha. <a class="fn-back-inline" href="#ref2"
+            title="Quay lại"><i class="mgc_arrow_left_up_line"></i></a></div>
+      </div>
+      <div class="footnote-item" id="fn3">
+        <span class="fn-num">3</span>
+        <div class="fn-text">Cascais là một huyện thuộc tỉnh Lisboa, Bồ Đào Nha. <a class="fn-back-inline" href="#ref3"
+            title="Quay lại"><i class="mgc_arrow_left_up_line"></i></a></div>
+      </div>
+      <div class="footnote-item" id="fn4">
+        <span class="fn-num">4</span>
+        <div class="fn-text">Ống sóng (管浪) Thuật ngữ chuyên môn là wave barrel, khi con sóng cuộn lại tạo thành một cái
+          ống rỗng, người lướt sóng đi xuyên qua đó. Đây là kỹ thuật lướt sóng khó và đẹp mắt nhất. <a
+            class="fn-back-inline" href="#ref4" title="Quay lại"><i class="mgc_arrow_left_up_line"></i></a></div>
+      </div>
+    </div>
+
+    <!-- Chapter comment section -->
+    <div class="chapter-comment">
+      <div class="chapter-comment-header">
+        <div class="icon"><i class="mgc_chat_1_line"></i></div>
+        <span class="label">Bình luận chương</span>
+      </div>
+      <div class="giscus-chapter" id="giscusChapter"></div>
+    </div>
+
+    <div class="chapter-nav-bottom">
+      <a href="#" class="nav-btn disabled">
+        <i class="mgc_arrow_left_line"></i> Chương trước
+      </a>
+      <a href="index.html" class="nav-btn">
+        <i class="mgc_menu_line"></i> Mục lục
+      </a>
+      <a href="chapter02.html" class="nav-btn">
+        Chương sau <i class="mgc_arrow_right_line"></i>
+      </a>
+    </div>
+
+    <div class="story-footer">♡ cảm ơn đã ghé đọc ♡</div>
+  </div>
+
+  <div class="overlay" id="overlay" onclick="closeComments()"></div>
+
+  <div class="comment-panel" id="commentPanel">
+    <div class="panel-header">
+      <div>
+        <h3><i class="mgc_chat_1_line"></i> Bình luận đoạn văn</h3>
+        <span class="para-label" id="paraLabel">—</span>
+      </div>
+      <button class="close-btn" onclick="closeComments()"><i class="mgc_close_line"></i></button>
+    </div>
+    <div class="panel-quote" id="panelQuote"></div>
+    <div class="giscus-container" id="giscusContainer">
+      <div class="loading-giscus">
+        <div class="spinner"></div>
+        <p>Chọn một đoạn văn để xem bình luận...</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()">
+    <i class="mgc_arrow_up_line"></i>
+  </button>
+
+  <script>
+    const GISCUS_CONFIG = {
+      repo: "junowhite23/junowhite23.github.io",
+      repoId: "R_kgDOSdm-sA",
+      category: "General",
+      categoryId: "DIC_kwDOSdm-sM4C9HPP",
+      lang: "vi"
+    };
+
+    function getGiscusTheme() {
+      return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    }
+
+    let currentParaId = null;
+
+    function openComments(paraId) {
+      document.querySelectorAll('.para-wrapper').forEach(function (el) { el.classList.remove('active'); });
+      var wrapper = document.querySelector('[data-id="' + paraId + '"]');
+      if (wrapper) wrapper.classList.add('active');
+      currentParaId = paraId;
+      document.getElementById('paraLabel').textContent = 'Comment ở đây nò: ';
+      var paraText = wrapper ? wrapper.querySelector('p').textContent : '';
+      document.getElementById('panelQuote').textContent =
+        paraText.length > 180 ? paraText.substring(0, 180) + '…' : paraText;
+      document.getElementById('commentPanel').classList.add('open');
+      document.getElementById('overlay').classList.add('show');
+      document.getElementById('pageCont').classList.add('shifted');
+      loadGiscus(paraId);
+    }
+
+    function closeComments() {
+      document.getElementById('commentPanel').classList.remove('open');
+      document.getElementById('overlay').classList.remove('show');
+      document.getElementById('pageCont').classList.remove('shifted');
+      document.querySelectorAll('.para-wrapper').forEach(function (el) { el.classList.remove('active'); });
+      currentParaId = null;
+    }
+
+    function loadGiscus(paraId) {
+      var container = document.getElementById('giscusContainer');
+      container.innerHTML = '<div class="loading-giscus"><div class="spinner"></div><p>Đang tải bình luận...</p></div>';
+
+      // Xoá iframe giscus cũ trong panel (nếu có)
+      var oldFrame = container.querySelector('iframe.giscus-frame');
+      if (oldFrame) oldFrame.remove();
+      var oldGiscusDiv = container.querySelector('.giscus');
+      if (oldGiscusDiv) oldGiscusDiv.remove();
+
+      setTimeout(function () {
+        container.innerHTML = '';
+
+        var script = document.createElement('script');
+        script.src = 'https://giscus.app/client.js';
+        script.setAttribute('data-repo', GISCUS_CONFIG.repo);
+        script.setAttribute('data-repo-id', GISCUS_CONFIG.repoId);
+        script.setAttribute('data-category', GISCUS_CONFIG.category);
+        script.setAttribute('data-category-id', GISCUS_CONFIG.categoryId);
+        script.setAttribute('data-mapping', 'specific');
+        script.setAttribute('data-term', paraId);
+        script.setAttribute('data-strict', '0');
+        script.setAttribute('data-reactions-enabled', '1');
+        script.setAttribute('data-emit-metadata', '0');
+        script.setAttribute('data-input-position', 'top');
+        script.setAttribute('data-theme', getGiscusTheme());
+        script.setAttribute('data-lang', GISCUS_CONFIG.lang);
+        script.setAttribute('data-loading', 'eager');
+        script.crossOrigin = 'anonymous';
+        script.async = true;
+
+        // Fallback nếu giscus không load được sau 8s
+        var fallbackTimer = setTimeout(function () {
+          if (!container.querySelector('iframe.giscus-frame')) {
+            container.innerHTML = '<div class="giscus-fallback"><p>Không thể tải bình luận.</p><p>Hãy đảm bảo bạn đang truy cập từ domain chính (GitHub Pages) và không bị chặn bởi trình duyệt.</p><p><a href="https://github.com/' + GISCUS_CONFIG.repo + '/discussions" target="_blank">Xem trên GitHub Discussions →</a></p></div>';
+          }
+        }, 8000);
+
+        // Khi giscus load thành công, xoá fallback timer
+        window.addEventListener('message', function giscusLoaded(event) {
+          if (event.origin === 'https://giscus.app') {
+            clearTimeout(fallbackTimer);
+            window.removeEventListener('message', giscusLoaded);
+          }
         });
 
-        function toggleTheme() {
-            var html = document.documentElement;
-            var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', next);
-            try { localStorage.setItem('theme', next); } catch (e) { }
-            // Update all giscus iframes
-            var giscusFrames = document.querySelectorAll('iframe.giscus-frame');
-            giscusFrames.forEach(function (frame) {
-                frame.contentWindow.postMessage(
-                    { giscus: { setConfig: { theme: next === 'dark' ? 'dark' : 'light' } } },
-                    'https://giscus.app'
-                );
-            });
+        container.appendChild(script);
+      }, 300);
+    }
+
+    function loadChapterGiscus() {
+      var container = document.getElementById('giscusChapter');
+      if (!container) return;
+
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.setAttribute('data-repo', GISCUS_CONFIG.repo);
+      script.setAttribute('data-repo-id', GISCUS_CONFIG.repoId);
+      script.setAttribute('data-category', GISCUS_CONFIG.category);
+      script.setAttribute('data-category-id', GISCUS_CONFIG.categoryId);
+      script.setAttribute('data-mapping', 'specific');
+      script.setAttribute('data-term', 'mhnt7-c01');
+      script.setAttribute('data-strict', '0');
+      script.setAttribute('data-reactions-enabled', '1');
+      script.setAttribute('data-emit-metadata', '0');
+      script.setAttribute('data-input-position', 'top');
+      script.setAttribute('data-theme', getGiscusTheme());
+      script.setAttribute('data-lang', GISCUS_CONFIG.lang);
+      script.setAttribute('data-loading', 'eager');
+      script.crossOrigin = 'anonymous';
+      script.async = true;
+      container.appendChild(script);
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeComments();
+    });
+
+    function toggleTheme() {
+      var html = document.documentElement;
+      var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) { }
+      // Update all giscus iframes
+      var giscusFrames = document.querySelectorAll('iframe.giscus-frame');
+      giscusFrames.forEach(function (frame) {
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme: next === 'dark' ? 'dark' : 'light' } } },
+          'https://giscus.app'
+        );
+      });
+    }
+
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
         }
+      } catch (e) { }
+    })();
 
-        (function () {
-            try {
-                var saved = localStorage.getItem('theme');
-                if (saved === 'dark' || saved === 'light') {
-                    document.documentElement.setAttribute('data-theme', saved);
-                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                }
-            } catch (e) { }
-        })();
+    function toggleSettings() {
+      document.getElementById('settingsPanel').classList.toggle('open');
+    }
 
-        function toggleSettings() {
-            document.getElementById('settingsPanel').classList.toggle('open');
+    var currentFont = "'Lora', serif";
+    var currentSize = 16;
+
+    (function () {
+      try {
+        var savedFont = localStorage.getItem('readingFont');
+        var savedSize = localStorage.getItem('readingSize');
+        if (savedFont) currentFont = savedFont;
+        if (savedSize) currentSize = parseInt(savedSize);
+      } catch (e) { }
+      applySettings();
+      var fontBtns = document.querySelectorAll('#fontOptions button');
+      fontBtns.forEach(function (btn) {
+        if (btn.getAttribute('data-font') === currentFont) {
+          fontBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
         }
-
-        var currentFont = "'Lora', serif";
-        var currentSize = 16;
-
-        (function () {
-            try {
-                var savedFont = localStorage.getItem('readingFont');
-                var savedSize = localStorage.getItem('readingSize');
-                if (savedFont) currentFont = savedFont;
-                if (savedSize) currentSize = parseInt(savedSize);
-            } catch (e) { }
-            applySettings();
-            var fontBtns = document.querySelectorAll('#fontOptions button');
-            fontBtns.forEach(function (btn) {
-                if (btn.getAttribute('data-font') === currentFont) {
-                    fontBtns.forEach(function (b) { b.classList.remove('active'); });
-                    btn.classList.add('active');
-                }
-                btn.addEventListener('click', function () {
-                    fontBtns.forEach(function (b) { b.classList.remove('active'); });
-                    btn.classList.add('active');
-                    currentFont = btn.getAttribute('data-font');
-                    applySettings();
-                    try { localStorage.setItem('readingFont', currentFont); } catch (e) { }
-                });
-            });
-        })();
-
-        function changeSize(delta) {
-            currentSize = Math.max(13, Math.min(24, currentSize + delta));
-            applySettings();
-            try { localStorage.setItem('readingSize', currentSize); } catch (e) { }
-        }
-
-        function applySettings() {
-            var content = document.getElementById('chapterContent');
-            content.style.fontFamily = currentFont;
-            content.style.fontSize = currentSize + 'px';
-            document.getElementById('sizeDisplay').textContent = currentSize + 'px';
-        }
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        window.addEventListener('scroll', function () {
-            var btn = document.getElementById('scrollTopBtn');
-            btn.classList.toggle('visible', window.scrollY > 400);
+        btn.addEventListener('click', function () {
+          fontBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          currentFont = btn.getAttribute('data-font');
+          applySettings();
+          try { localStorage.setItem('readingFont', currentFont); } catch (e) { }
         });
+      });
+    })();
 
-        document.querySelectorAll('.fn-ref').forEach(function (ref) {
-            ref.addEventListener('click', function (e) {
-                e.preventDefault();
-                var target = document.getElementById('fn' + ref.getAttribute('data-fn'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    target.classList.add('highlight');
-                    setTimeout(function () { target.classList.remove('highlight'); }, 2500);
-                }
-            });
-        });
+    function changeSize(delta) {
+      currentSize = Math.max(13, Math.min(24, currentSize + delta));
+      applySettings();
+      try { localStorage.setItem('readingSize', currentSize); } catch (e) { }
+    }
 
-        document.querySelectorAll('.fn-back-inline').forEach(function (link) {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                var target = document.getElementById(link.getAttribute('href').substring(1));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            });
-        });
+    function applySettings() {
+      var content = document.getElementById('chapterContent');
+      content.style.fontFamily = currentFont;
+      content.style.fontSize = currentSize + 'px';
+      document.getElementById('sizeDisplay').textContent = currentSize + 'px';
+    }
 
-        // Load chapter giscus on page load
-        loadChapterGiscus();
-    </script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.addEventListener('scroll', function () {
+      var btn = document.getElementById('scrollTopBtn');
+      btn.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    document.querySelectorAll('.fn-ref').forEach(function (ref) {
+      ref.addEventListener('click', function (e) {
+        e.preventDefault();
+        var target = document.getElementById('fn' + ref.getAttribute('data-fn'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.classList.add('highlight');
+          setTimeout(function () { target.classList.remove('highlight'); }, 2500);
+        }
+      });
+    });
+
+    document.querySelectorAll('.fn-back-inline').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var target = document.getElementById(link.getAttribute('href').substring(1));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+
+    // Load chapter giscus on page load
+    loadChapterGiscus();
+  </script>
 </body>
 
 </html>
