@@ -206,7 +206,6 @@
       color: var(--link-hover);
     }
 
-    /* Settings */
     .settings-panel {
       display: none;
       background: var(--settings-bg);
@@ -403,7 +402,6 @@
       color: var(--link-hover);
     }
 
-    /* Para wrapper - thêm padding-right để không overlay comment btn */
     .para-wrapper {
       position: relative;
       margin: 0 0 1.4em;
@@ -431,7 +429,7 @@
     .comment-btn {
       position: absolute;
       top: 50%;
-      right: 6px;
+      right: 8px;
       transform: translateY(-50%);
       width: 28px;
       height: 28px;
@@ -597,7 +595,6 @@
       color: var(--fn-back-hover-color) !important;
     }
 
-    /* Chapter comment section */
     .chapter-comment {
       margin-top: 32px;
       padding: 20px 24px;
@@ -637,6 +634,13 @@
 
     .chapter-comment .giscus-chapter {
       min-height: 100px;
+    }
+
+    .giscus-iframe {
+      width: 100%;
+      border: none;
+      min-height: 300px;
+      color-scheme: light dark;
     }
 
     .overlay {
@@ -743,7 +747,11 @@
     .giscus-container {
       flex: 1;
       overflow-y: auto;
-      padding: 16px 22px;
+      padding: 0;
+    }
+
+    .giscus-container .giscus-iframe {
+      min-height: 100%;
     }
 
     .loading-giscus {
@@ -846,20 +854,6 @@
 
     .scroll-top i {
       color: var(--scroll-btn-color) !important;
-    }
-
-    /* Giscus error/fallback */
-    .giscus-fallback {
-      padding: 20px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
-    }
-
-    .giscus-fallback a {
-      color: var(--link);
-      text-decoration: underline;
     }
 
     @media (max-width: 680px) {
@@ -1745,7 +1739,6 @@
     <div class="panel-quote" id="panelQuote"></div>
     <div class="giscus-container" id="giscusContainer">
       <div class="loading-giscus">
-        <div class="spinner"></div>
         <p>Chọn một đoạn văn để xem bình luận...</p>
       </div>
     </div>
@@ -1756,6 +1749,7 @@
   </button>
 
   <script>
+    // ===== GISCUS CONFIG =====
     const GISCUS_CONFIG = {
       repo: "junowhite23/junowhite23.github.io",
       repoId: "R_kgDOSdm-sA",
@@ -1768,6 +1762,40 @@
       return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     }
 
+    // Tạo URL iframe trực tiếp cho giscus (không dùng script injection)
+    function buildGiscusIframeSrc(term) {
+      var params = new URLSearchParams({
+        repo: GISCUS_CONFIG.repo,
+        repoId: GISCUS_CONFIG.repoId,
+        category: GISCUS_CONFIG.category,
+        categoryId: GISCUS_CONFIG.categoryId,
+        mapping: 'specific',
+        term: term,
+        strict: '0',
+        reactionsEnabled: '1',
+        emitMetadata: '0',
+        inputPosition: 'top',
+        theme: getGiscusTheme(),
+        lang: GISCUS_CONFIG.lang
+      });
+      return 'https://giscus.app/widget?' + params.toString();
+    }
+
+    // Tạo iframe giscus
+    function createGiscusIframe(term) {
+      var iframe = document.createElement('iframe');
+      iframe.className = 'giscus-frame giscus-iframe';
+      iframe.src = buildGiscusIframeSrc(term);
+      iframe.setAttribute('loading', 'lazy');
+      iframe.setAttribute('allow', 'clipboard-write');
+      iframe.style.width = '100%';
+      iframe.style.border = 'none';
+      iframe.style.minHeight = '300px';
+      iframe.style.colorScheme = 'light dark';
+      return iframe;
+    }
+
+    // ===== PARAGRAPH COMMENTS =====
     let currentParaId = null;
 
     function openComments(paraId) {
@@ -1775,14 +1803,14 @@
       var wrapper = document.querySelector('[data-id="' + paraId + '"]');
       if (wrapper) wrapper.classList.add('active');
       currentParaId = paraId;
-      document.getElementById('paraLabel').textContent = 'Comment ở đây nò: ';
+      document.getElementById('paraLabel').textContent = 'Comment ở đây nò:';
       var paraText = wrapper ? wrapper.querySelector('p').textContent : '';
       document.getElementById('panelQuote').textContent =
         paraText.length > 180 ? paraText.substring(0, 180) + '…' : paraText;
       document.getElementById('commentPanel').classList.add('open');
       document.getElementById('overlay').classList.add('show');
       document.getElementById('pageCont').classList.add('shifted');
-      loadGiscus(paraId);
+      loadParaGiscus(paraId);
     }
 
     function closeComments() {
@@ -1793,90 +1821,61 @@
       currentParaId = null;
     }
 
-    function loadGiscus(paraId) {
+    function loadParaGiscus(paraId) {
       var container = document.getElementById('giscusContainer');
       container.innerHTML = '<div class="loading-giscus"><div class="spinner"></div><p>Đang tải bình luận...</p></div>';
 
-      // Xoá iframe giscus cũ trong panel (nếu có)
-      var oldFrame = container.querySelector('iframe.giscus-frame');
-      if (oldFrame) oldFrame.remove();
-      var oldGiscusDiv = container.querySelector('.giscus');
-      if (oldGiscusDiv) oldGiscusDiv.remove();
-
+      // Dùng iframe trực tiếp thay vì script injection
       setTimeout(function () {
         container.innerHTML = '';
+        var iframe = createGiscusIframe(paraId);
+        container.appendChild(iframe);
 
-        var script = document.createElement('script');
-        script.src = 'https://giscus.app/client.js';
-        script.setAttribute('data-repo', GISCUS_CONFIG.repo);
-        script.setAttribute('data-repo-id', GISCUS_CONFIG.repoId);
-        script.setAttribute('data-category', GISCUS_CONFIG.category);
-        script.setAttribute('data-category-id', GISCUS_CONFIG.categoryId);
-        script.setAttribute('data-mapping', 'specific');
-        script.setAttribute('data-term', paraId);
-        script.setAttribute('data-strict', '0');
-        script.setAttribute('data-reactions-enabled', '1');
-        script.setAttribute('data-emit-metadata', '0');
-        script.setAttribute('data-input-position', 'top');
-        script.setAttribute('data-theme', getGiscusTheme());
-        script.setAttribute('data-lang', GISCUS_CONFIG.lang);
-        script.setAttribute('data-loading', 'eager');
-        script.crossOrigin = 'anonymous';
-        script.async = true;
-
-        // Fallback nếu giscus không load được sau 8s
-        var fallbackTimer = setTimeout(function () {
-          if (!container.querySelector('iframe.giscus-frame')) {
-            container.innerHTML = '<div class="giscus-fallback"><p>Không thể tải bình luận.</p><p>Hãy đảm bảo bạn đang truy cập từ domain chính (GitHub Pages) và không bị chặn bởi trình duyệt.</p><p><a href="https://github.com/' + GISCUS_CONFIG.repo + '/discussions" target="_blank">Xem trên GitHub Discussions →</a></p></div>';
-          }
-        }, 8000);
-
-        // Khi giscus load thành công, xoá fallback timer
-        window.addEventListener('message', function giscusLoaded(event) {
-          if (event.origin === 'https://giscus.app') {
-            clearTimeout(fallbackTimer);
-            window.removeEventListener('message', giscusLoaded);
+        // Auto-resize iframe khi giscus gửi message về
+        window.addEventListener('message', function resizeHandler(event) {
+          if (event.origin !== 'https://giscus.app') return;
+          if (!event.data || !event.data.giscus) return;
+          if (event.data.giscus.resizeHeight) {
+            iframe.style.height = event.data.giscus.resizeHeight + 'px';
           }
         });
-
-        container.appendChild(script);
-      }, 300);
+      }, 200);
     }
 
+    // ===== CHAPTER GISCUS =====
     function loadChapterGiscus() {
       var container = document.getElementById('giscusChapter');
       if (!container) return;
+      var iframe = createGiscusIframe('mhnt7-c01');
+      container.appendChild(iframe);
 
-      var script = document.createElement('script');
-      script.src = 'https://giscus.app/client.js';
-      script.setAttribute('data-repo', GISCUS_CONFIG.repo);
-      script.setAttribute('data-repo-id', GISCUS_CONFIG.repoId);
-      script.setAttribute('data-category', GISCUS_CONFIG.category);
-      script.setAttribute('data-category-id', GISCUS_CONFIG.categoryId);
-      script.setAttribute('data-mapping', 'specific');
-      script.setAttribute('data-term', 'mhnt7-c01');
-      script.setAttribute('data-strict', '0');
-      script.setAttribute('data-reactions-enabled', '1');
-      script.setAttribute('data-emit-metadata', '0');
-      script.setAttribute('data-input-position', 'top');
-      script.setAttribute('data-theme', getGiscusTheme());
-      script.setAttribute('data-lang', GISCUS_CONFIG.lang);
-      script.setAttribute('data-loading', 'eager');
-      script.crossOrigin = 'anonymous';
-      script.async = true;
-      container.appendChild(script);
+      // Auto-resize
+      window.addEventListener('message', function (event) {
+        if (event.origin !== 'https://giscus.app') return;
+        if (!event.data || !event.data.giscus) return;
+        if (event.data.giscus.resizeHeight) {
+          // Tìm iframe trong chapter container
+          var chapterIframe = container.querySelector('iframe');
+          if (chapterIframe && event.source === chapterIframe.contentWindow) {
+            chapterIframe.style.height = event.data.giscus.resizeHeight + 'px';
+          }
+        }
+      });
     }
 
+    // ===== KEYBOARD =====
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeComments();
     });
 
+    // ===== THEME =====
     function toggleTheme() {
       var html = document.documentElement;
       var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       try { localStorage.setItem('theme', next); } catch (e) { }
-      // Update all giscus iframes
+
+      // Update tất cả giscus iframe
       var giscusFrames = document.querySelectorAll('iframe.giscus-frame');
       giscusFrames.forEach(function (frame) {
         frame.contentWindow.postMessage(
@@ -1897,6 +1896,7 @@
       } catch (e) { }
     })();
 
+    // ===== SETTINGS =====
     function toggleSettings() {
       document.getElementById('settingsPanel').classList.toggle('open');
     }
@@ -1941,6 +1941,7 @@
       document.getElementById('sizeDisplay').textContent = currentSize + 'px';
     }
 
+    // ===== SCROLL TOP =====
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -1950,6 +1951,7 @@
       btn.classList.toggle('visible', window.scrollY > 400);
     });
 
+    // ===== FOOTNOTES =====
     document.querySelectorAll('.fn-ref').forEach(function (ref) {
       ref.addEventListener('click', function (e) {
         e.preventDefault();
@@ -1970,7 +1972,7 @@
       });
     });
 
-    // Load chapter giscus on page load
+    // ===== INIT =====
     loadChapterGiscus();
   </script>
 </body>
