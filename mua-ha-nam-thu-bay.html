@@ -11,68 +11,110 @@
     <link rel="icon"
         href="https://i.ibb.co/nq6NnL6s/imgi-2-b6d41899a20f3d146d6b3d5a75b3ccfdd4575618a53b9a8e5874dfe83644c84a.png">
 
-    <!-- Fonts - Vietnamese subset -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Golos+Text:wght@400..900&family=Figtree:ital,wght@0,300..900;1,300..900&subset=vietnamese,latin&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Figtree:ital,wght@0,300..900;1,300..900&subset=vietnamese,latin&display=swap"
         rel="stylesheet">
 
-    <!-- Icon Fonts -->
     <link href="https://cdn.jsdelivr.net/gh/Richard9394/MingCute@main/fonts/MingCute.min.css" rel="stylesheet">
 
     <style>
         :root,
         [data-theme="light"] {
-            --Background-Color: #f5f7fa;
-            --Main-Text-Font-Family: "Inter", "Segoe UI", sans-serif;
-            --Main-Text-Font-Size: 0.925rem;
-            --Main-Text-Line-Height: 1.8;
-            --Main-Text-Color: #5e7e95;
-            --Bold-Text-Color: #4a7a9b;
-            --Italic-Text-Color: #7aa3c0;
-            --Heading-Font-Family: "Golos Text", serif;
-            --Caps-Font-Family: "Figtree", sans-serif;
-            --Links-Color: #6a9ec0;
-            --Links-HOVER-Color: #4a7a9b;
-            --Boxes-BG: #ffffff;
-            --Boxes-Shadow: 5px 5px 0px rgba(160, 185, 210, 0.35);
-            --clr-blue: #4a90c8;
-            --clr-blue-light: #5ba8e8;
-            --clr-blue-border: #c4daf0;
-            --clr-blue-bg: #eaf2fa;
-            --clr-muted: #93b3cc;
-            --hero-title-color: #5a8aaa;
-            --nav-btn-bg: #eaf2fa;
-            --nav-btn-border: #c4daf0;
-            --nav-btn-color: #6a9ec0;
-            --nav-btn-hover-bg: #dbe8f5;
-            --nav-btn-hover-color: #4a7a9b;
+            --bg: #f5f7fa;
+            --font: "Inter", "Segoe UI", sans-serif;
+            --font-serif: "Cormorant Garamond", "Times New Roman", serif;
+            --font-caps: "Figtree", sans-serif;
+            --text: #5e7e95;
+            --text-dark: #2a3a4c;
+            --bold: #4a7a9b;
+            --italic: #7aa3c0;
+            --link: #6a9ec0;
+            --link-hover: #4a7a9b;
+            --box-bg: #ffffff;
+            --box-shadow: 5px 5px 0px rgba(160, 185, 210, 0.35);
+            --blue: #4a90c8;
+            --blue-light: #5ba8e8;
+            --blue-border: #c4daf0;
+            --blue-bg: #eaf2fa;
+            --navy: #1a3a6c;
+            --navy-light: #2a5090;
+            --pink: #b85070;
+            --pink-border: #e0c8d4;
+            --pink-bg: #fdf8fa;
+            --pink-sub: #c0a0b4;
+            --muted: #93b3cc;
+            --hero: #5a8aaa;
             --chapter-border: #e8f0f8;
-            --chapter-hover-bg: #f8fbfd;
+            --chapter-hover: #f8fbfd;
+            --tab-active-bg: var(--navy);
+            --tab-active-text: #fff;
+            --tab-inactive-bg: var(--blue-bg);
+            --tab-inactive-text: var(--navy);
+            --season-summer: #b8922e;
+            --season-summer-light: #e8d090;
+            --season-summer-bg: #fdfaf4;
+            --season-autumn: #c4522e;
+            --season-autumn-light: #e8c0a0;
+            --season-autumn-bg: #fdf9f7;
+            --season-winter: #1a3a6c;
+            --season-winter-light: #a0c0d8;
+            --season-winter-bg: #f5f9fc;
+            --season-spring: #b85070;
+            --season-spring-light: #e0b0c0;
+            --season-spring-bg: #fdf8fa;
+            --season-extra: #5a8a9a;
+            --season-extra-light: #b0c8d4;
+            --season-extra-bg: #f7f9fb;
+            --detail-bg: #f8fbfd;
+            --detail-border: #e0eaf2;
         }
 
         [data-theme="dark"] {
-            --Background-Color: #1a2332;
-            --Main-Text-Color: #b0c8dc;
-            --Bold-Text-Color: #8ec0e8;
-            --Italic-Text-Color: #7aa8c8;
-            --Links-Color: #7ab8e0;
-            --Links-HOVER-Color: #a0d0f0;
-            --Boxes-BG: #1e2e40;
-            --Boxes-Shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
-            --clr-blue: #5aa0d8;
-            --clr-blue-light: #6ab8f0;
-            --clr-blue-border: #3a5a78;
-            --clr-blue-bg: #243344;
-            --clr-muted: #6a8aa0;
-            --hero-title-color: #7ab8e0;
-            --nav-btn-bg: #243344;
-            --nav-btn-border: #3a5a78;
-            --nav-btn-color: #7ab8e0;
-            --nav-btn-hover-bg: #2e4458;
-            --nav-btn-hover-color: #a0d0f0;
+            --bg: #1a2332;
+            --text: #b0c8dc;
+            --text-dark: #d0e0f0;
+            --bold: #8ec0e8;
+            --italic: #7aa8c8;
+            --link: #7ab8e0;
+            --link-hover: #a0d0f0;
+            --box-bg: #1e2e40;
+            --box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+            --blue: #5aa0d8;
+            --blue-light: #6ab8f0;
+            --blue-border: #3a5a78;
+            --blue-bg: #243344;
+            --navy: #7ab8e0;
+            --navy-light: #a0d0f0;
+            --pink: #d87098;
+            --pink-border: #5a3040;
+            --pink-bg: #2e2030;
+            --pink-sub: #a07888;
+            --muted: #6a8aa0;
+            --hero: #7ab8e0;
             --chapter-border: #2a3a4e;
-            --chapter-hover-bg: #243344;
+            --chapter-hover: #243344;
+            --tab-active-bg: #7ab8e0;
+            --tab-active-text: #1a2332;
+            --tab-inactive-bg: #243344;
+            --tab-inactive-text: #7ab8e0;
+            --season-summer: #e8d090;
+            --season-summer-light: #b8922e;
+            --season-summer-bg: #2a2a1e;
+            --season-autumn: #e8a070;
+            --season-autumn-light: #c4522e;
+            --season-autumn-bg: #2a2420;
+            --season-winter: #7ab8e0;
+            --season-winter-light: #3a5a78;
+            --season-winter-bg: #1e2e40;
+            --season-spring: #d87098;
+            --season-spring-light: #5a3040;
+            --season-spring-bg: #2e2030;
+            --season-extra: #90c8d8;
+            --season-extra-light: #3a5a68;
+            --season-extra-bg: #1e2e38;
+            --detail-bg: #243344;
+            --detail-border: #3a5a78;
         }
 
         *, *::before, *::after { box-sizing: border-box; }
@@ -80,100 +122,42 @@
 
         body {
             margin: 0;
-            background-color: var(--Background-Color);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25'%3E%3Crect width='25' height='25' fill='none' stroke='%23cdd8e2' stroke-width='0.6' stroke-dasharray='4 3'/%3E%3C/svg%3E");
+            background-color: var(--bg);
             background-repeat: repeat;
             background-attachment: fixed;
-            font: normal var(--Main-Text-Font-Size)/var(--Main-Text-Line-Height) var(--Main-Text-Font-Family);
-            color: var(--Main-Text-Color);
+            font: normal 0.925rem/1.8 var(--font);
+            color: var(--text);
             -webkit-font-smoothing: antialiased;
             transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        [data-theme="light"] body {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25'%3E%3Crect width='25' height='25' fill='none' stroke='%23cdd8e2' stroke-width='0.6' stroke-dasharray='4 3'/%3E%3C/svg%3E");
         }
 
         [data-theme="dark"] body {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25'%3E%3Crect width='25' height='25' fill='none' stroke='%23283848' stroke-width='0.6' stroke-dasharray='4 3'/%3E%3C/svg%3E");
         }
 
-        a { text-decoration: none; color: var(--Links-Color); }
-        a:hover { color: var(--Links-HOVER-Color); }
-        b, strong { font-weight: 600; color: var(--Bold-Text-Color); }
-        i, em { color: var(--Italic-Text-Color); }
-        img { max-width: 100%; }
+        a { text-decoration: none; color: var(--link); transition: color 0.2s; }
+        a:hover { color: var(--link-hover); }
+        b, strong { font-weight: 600; color: var(--bold); }
+        img { max-width: 100%; display: block; }
         p { margin: 0 0 14px; }
+        ul { list-style: none; margin: 0; padding: 0; }
 
         .page-cont {
-            max-width: 680px;
+            max-width: 780px;
             margin: 0 auto;
             padding: 3rem 1rem;
         }
 
-        /* Story Header */
-        .story-header {
-            background: var(--Boxes-BG);
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: var(--Boxes-Shadow);
-            margin-bottom: 28px;
-            transition: background-color 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .story-cover {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .story-header-body {
-            padding: 24px;
-        }
-
-        .story-title {
-            font-family: var(--Heading-Font-Family);
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: var(--hero-title-color);
-            margin: 0 0 6px;
-            line-height: 1.35;
-        }
-
-        .story-author {
-            font-size: 14px;
-            color: var(--clr-muted);
-            margin: 0 0 14px;
-        }
-
-        .story-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 16px;
-        }
-
-        .meta-tag {
-            display: inline-block;
-            padding: 3px 12px;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 600;
-            background: var(--clr-blue-bg);
-            color: var(--clr-blue);
-            border: 1px solid var(--clr-blue-border);
-        }
-
-        .story-desc {
-            font-size: var(--Main-Text-Font-Size);
-            line-height: var(--Main-Text-Line-Height);
-            color: var(--Main-Text-Color);
-        }
-
-        /* Navigation */
         .nav-bar {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-bottom: 28px;
             gap: 12px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
         }
 
         .nav-btn {
@@ -181,109 +165,872 @@
             align-items: center;
             gap: 6px;
             padding: 8px 18px;
-            border: 1.5px solid var(--nav-btn-border);
+            border: 1.5px solid var(--blue-border);
             border-radius: 50px;
-            background: var(--nav-btn-bg);
-            color: var(--nav-btn-color);
+            background: var(--blue-bg);
+            color: var(--navy);
             font-size: 13px;
             font-weight: 600;
-            font-family: var(--Caps-Font-Family);
+            font-family: var(--font-caps);
             cursor: pointer;
             transition: all 0.2s ease;
             text-decoration: none;
         }
 
         .nav-btn:hover {
-            background: var(--nav-btn-hover-bg);
-            color: var(--nav-btn-hover-color);
+            background: var(--box-bg);
+            color: var(--link-hover);
+            border-color: var(--link-hover);
         }
 
-        .theme-toggle-story {
-            margin-left: auto;
-        }
+        .nav-btn.ml-auto { margin-left: auto; }
 
-        /* Chapter List */
-        .chapter-box {
-            background: var(--Boxes-BG);
-            border-radius: 14px;
-            padding: 24px;
-            box-shadow: var(--Boxes-Shadow);
+        .story-hero {
+            display: flex;
+            gap: 28px;
+            background: var(--box-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 28px;
             transition: background-color 0.4s ease, box-shadow 0.4s ease;
         }
 
-        .chapter-box h2 {
-            font-family: var(--Heading-Font-Family);
-            font-size: 1rem;
+        .story-cover-col {
+            flex-shrink: 0;
+            width: 240px;
+        }
+
+        .story-cover-col img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 380px;
+        }
+
+        .story-info-col {
+            flex: 1;
+            padding: 28px 28px 28px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .story-title-main {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
             font-weight: 500;
-            color: var(--hero-title-color);
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            margin: 0 0 18px;
-        }
-
-        .chapter-list {
-            list-style: none;
+            font-style: italic;
+            color: var(--hero);
+            line-height: 1.2;
             margin: 0;
-            padding: 0;
         }
 
-        .chapter-list li {
-            border-bottom: 1px solid var(--chapter-border);
+        .story-title-cn {
+            font-size: 11px;
+            color: var(--muted);
+            letter-spacing: 3px;
+            margin-top: 2px;
         }
 
-        .chapter-list li:last-child {
-            border-bottom: none;
+        .story-author-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: var(--navy);
+            color: #fff;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            width: fit-content;
         }
 
-        .chapter-list a {
+        [data-theme="dark"] .story-author-badge {
+            background: #3a5a78;
+        }
+
+        .story-quote {
+            font-style: italic;
+            color: var(--italic);
+            font-size: 14px;
+            padding-left: 14px;
+            border-left: 3px solid var(--blue-border);
+            line-height: 1.7;
+        }
+
+        .story-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .story-tags .tag {
+            display: inline-block;
+            padding: 3px 11px;
+            border-radius: 50px;
+            font-size: 10.5px;
+            font-weight: 600;
+            background: var(--blue-bg);
+            color: var(--blue);
+            border: 1px solid var(--blue-border);
+        }
+
+        .story-meta-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 6px 14px;
+            font-size: 13px;
+        }
+
+        .meta-label {
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-top: 2px;
+        }
+
+        .meta-value {
+            color: var(--text-dark);
+        }
+
+        .meta-value a {
+            border-bottom: 1px solid var(--blue-border);
+            padding-bottom: 1px;
+        }
+
+        .meta-value a:hover {
+            border-color: var(--link-hover);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: rgba(74, 144, 200, 0.12);
+            color: var(--blue);
+            border: 1px solid var(--blue-border);
+        }
+
+        .tabs-container {
+            background: var(--box-bg);
+            border-radius: 16px;
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .tabs-nav {
+            display: flex;
+            border-bottom: 2px solid var(--blue-border);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .tabs-nav::-webkit-scrollbar { display: none; }
+
+        .tab-btn {
+            flex: 1;
+            min-width: max-content;
+            padding: 14px 20px;
+            border: none;
+            background: var(--tab-inactive-bg);
+            color: var(--tab-inactive-text);
+            font: 600 11px/1 var(--font-caps);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            background: var(--box-bg);
+        }
+
+        .tab-btn.active {
+            background: var(--tab-active-bg);
+            color: var(--tab-active-text);
+        }
+
+        .tab-btn.active::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--tab-active-bg);
+        }
+
+        .tab-panel {
+            display: none;
+            padding: 28px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .char-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .char-card {
+            flex: 1;
+            min-width: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1.5px solid var(--blue-border);
+            background: var(--box-bg);
+            transition: border-color 0.4s ease;
+        }
+
+        .char-card--pink {
+            border-color: var(--pink-border);
+        }
+
+        .char-card-header {
+            padding: 7px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--navy);
+        }
+
+        .char-card--pink .char-card-header {
+            background: var(--pink);
+        }
+
+        .char-card-header .dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .char-card-header .dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .char-card-header .dots span:last-child {
+            background: var(--pink);
+        }
+
+        .char-card--pink .char-card-header .dots span:last-child {
+            background: var(--navy);
+        }
+
+        .char-card-header .role-tag {
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 4px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .char-card-body {
+            padding: 18px 20px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .char-card-body-info {
+            flex: 1;
+        }
+
+        .char-name {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.1;
+            margin-bottom: 2px;
+        }
+
+        .char-name-cn {
+            font-size: 10px;
+            color: var(--muted);
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .char-desc-box {
+            background: var(--detail-bg);
+            border-left: 3px solid var(--navy);
+            border-radius: 0 8px 8px 0;
+            padding: 8px 12px;
+        }
+
+        .char-card--pink .char-desc-box {
+            border-left-color: var(--pink);
+            background: var(--pink-bg);
+        }
+
+        .char-desc-box .label {
+            font-size: 8px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+
+        .char-desc-box .value {
+            font-size: 12px;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .char-img-wrap {
+            flex-shrink: 0;
+        }
+
+        .char-img-wrap img {
+            width: 85px;
+            height: 115px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 10px;
+            border: 2px solid var(--blue-border);
+        }
+
+        .char-card--pink .char-img-wrap img {
+            border-color: var(--pink-border);
+        }
+
+        .char-img-wrap .dob {
+            margin-top: 6px;
+            text-align: center;
+            font-size: 9px;
+            color: var(--muted);
+            letter-spacing: 1px;
+        }
+
+        .couple-badge {
+            margin-top: 18px;
+            background: var(--box-bg);
+            border-radius: 14px;
+            padding: 14px 24px;
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 14px 12px;
+            border: 2px solid var(--pink-border);
+        }
+
+        .couple-badge-icon {
+            width: 32px;
+            height: 32px;
             border-radius: 8px;
-            color: var(--Main-Text-Color);
-            transition: background 0.2s ease, color 0.2s ease;
-        }
-
-        .chapter-list a:hover {
-            background: var(--chapter-hover-bg);
-            color: var(--Links-Color);
-        }
-
-        .ch-num {
-            flex-shrink: 0;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: var(--clr-blue-bg);
-            border: 1.5px solid var(--clr-blue-border);
+            background: var(--pink-bg);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--clr-blue);
+            font-size: 16px;
+            flex-shrink: 0;
         }
 
-        .ch-title {
-            font-size: var(--Main-Text-Font-Size);
+        .couple-badge-label {
+            font-size: 8px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--pink-sub);
+            margin-bottom: 3px;
+        }
+
+        .couple-badge-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--pink);
+            letter-spacing: 1px;
+        }
+
+        .synopsis-banner {
+            border-radius: 16px;
+            overflow: hidden;
+            height: 180px;
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .synopsis-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 38%;
+        }
+
+        .synopsis-banner .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(10,25,50,0.82) 0%, rgba(10,25,50,0.3) 55%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 28px 32px;
+        }
+
+        .synopsis-banner .overlay .author-small {
+            font-size: 8px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 8px;
+        }
+
+        .synopsis-banner .overlay .title-big {
+            font-family: var(--font-serif);
+            font-size: clamp(22px, 4vw, 34px);
+            font-style: italic;
+            font-weight: 300;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .synopsis-banner .overlay .title-cn-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .synopsis-banner .overlay .title-cn-row .bar {
+            width: 24px;
+            height: 2px;
+            background: var(--pink);
+            border-radius: 2px;
+        }
+
+        .synopsis-banner .overlay .title-cn-row .cn {
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+        }
+
+        .synopsis-section-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .synopsis-section-label span {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .synopsis-section-label .line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--blue-border), transparent);
+        }
+
+        .synopsis-block {
+            margin-bottom: 20px;
+            padding-left: 16px;
+            border-left: 2px solid var(--blue-border);
+        }
+
+        .synopsis-block--pink {
+            border-left-color: var(--pink-border);
+        }
+
+        .synopsis-block p {
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--text-dark);
+            margin: 0 0 10px;
+        }
+
+        .synopsis-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .synopsis-divider {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 22px 0;
+        }
+
+        .synopsis-divider .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .synopsis-divider .dot--pink { background: var(--pink); }
+        .synopsis-divider .dot--blue { background: var(--blue); }
+
+        .synopsis-divider .line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--pink-border), var(--blue-border));
+        }
+
+        .notes-section {
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .section-header .badge {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            padding: 5px 14px;
+            border-radius: 4px 0 0 4px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .section-header .badge--navy { background: var(--navy); }
+        .section-header .badge--pink { background: var(--pink); }
+
+        .section-header .line {
+            height: 2px;
+            flex: 1;
+            border-radius: 2px;
+        }
+
+        .section-header .line--navy { background: linear-gradient(to right, var(--navy), transparent); }
+        .section-header .line--pink { background: linear-gradient(to right, var(--pink), transparent); }
+
+        .section-header .eng {
+            font-size: 9px;
+            letter-spacing: 4px;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        .notes-list {
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1.5px solid var(--blue-border);
+        }
+
+        .note-item {
+            display: flex;
+            align-items: stretch;
+            border-bottom: 1px solid var(--detail-border);
+        }
+
+        .note-item:last-child {
+            border-bottom: none;
+        }
+
+        .note-item .num {
+            width: 40px;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        [data-theme="dark"] .note-item .num {
+            background: #2a4060;
+        }
+
+        .note-item .num span {
+            font-family: var(--font-serif);
+            font-size: 16px;
+            font-style: italic;
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .note-item .content {
+            padding: 14px 18px;
+            font-size: 14px;
+            line-height: 1.85;
+            color: var(--text-dark);
+            background: var(--detail-bg);
+            flex: 1;
+        }
+
+        .editor-notes {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 22px 24px;
+            background: var(--pink-bg);
+            border-radius: 12px;
+            border: 1.5px solid var(--pink-border);
+        }
+
+        .editor-notes p {
+            font-size: 14px;
+            line-height: 1.85;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .editor-notes .highlight {
+            color: var(--pink);
+            font-style: italic;
+        }
+
+        .editor-notes .divider {
+            height: 1px;
+            background: linear-gradient(to right, var(--pink-border), var(--blue-border), transparent);
+        }
+
+        .toc-season {
+            border-bottom: 2px solid var(--detail-border);
+            margin-bottom: 0;
+        }
+
+        .toc-season:last-child {
+            border-bottom: none;
+        }
+
+        .toc-season-header {
+            padding: 16px 20px 12px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .toc-season-header .roman {
+            font-family: var(--font-serif);
+            font-size: 40px;
+            font-style: italic;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .toc-season-header .info {
+            flex: 1;
+        }
+
+        .toc-season-header .info .name {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .toc-season-header .info .range {
+            font-size: 11px;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        .toc-season-header .count {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1.5px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .toc-chapters {
+            padding: 8px 14px 14px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 2px;
+        }
+
+        .toc-chapters a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .toc-chapters a:hover {
+            background: var(--chapter-hover);
+        }
+
+        .toc-chapters a .ch-num {
+            font-size: 12px;
+            font-weight: 700;
+            min-width: 26px;
+            flex-shrink: 0;
+            font-family: var(--font-serif);
+            font-style: italic;
+        }
+
+        .toc-chapters a .ch-name {
+            font-size: 14px;
             font-weight: 500;
         }
 
-        /* Footer */
+        .toc-chapters a.disabled {
+            opacity: 0.45;
+            pointer-events: none;
+        }
+
+        /* css volumn */
+        .season-summer .toc-season-header { background: var(--season-summer-bg); }
+        .season-summer .roman { color: var(--season-summer-light); }
+        .season-summer .info .name { color: var(--season-summer); }
+        .season-summer .info .range { color: var(--season-summer-light); }
+        .season-summer .count { border-color: var(--season-summer-light); color: var(--season-summer); }
+        .season-summer .ch-num { color: var(--season-summer-light); }
+        .season-summer .ch-name { color: var(--season-summer); }
+
+        .season-autumn .toc-season-header { background: var(--season-autumn-bg); }
+        .season-autumn .roman { color: var(--season-autumn-light); }
+        .season-autumn .info .name { color: var(--season-autumn); }
+        .season-autumn .info .range { color: var(--season-autumn-light); }
+        .season-autumn .count { border-color: var(--season-autumn-light); color: var(--season-autumn); }
+        .season-autumn .ch-num { color: var(--season-autumn-light); }
+        .season-autumn .ch-name { color: var(--season-autumn); }
+
+        .season-winter .toc-season-header { background: var(--season-winter-bg); }
+        .season-winter .roman { color: var(--season-winter-light); }
+        .season-winter .info .name { color: var(--season-winter); }
+        .season-winter .info .range { color: var(--season-winter-light); }
+        .season-winter .count { border-color: var(--season-winter-light); color: var(--season-winter); }
+        .season-winter .ch-num { color: var(--season-winter-light); }
+        .season-winter .ch-name { color: var(--season-winter); }
+
+        .season-spring .toc-season-header { background: var(--season-spring-bg); }
+        .season-spring .roman { color: var(--season-spring-light); }
+        .season-spring .info .name { color: var(--season-spring); }
+        .season-spring .info .range { color: var(--season-spring-light); }
+        .season-spring .count { border-color: var(--season-spring-light); color: var(--season-spring); }
+        .season-spring .ch-num { color: var(--season-spring-light); }
+        .season-spring .ch-name { color: var(--season-spring); }
+
+        .season-extra .toc-season-header { background: var(--season-extra-bg); }
+        .season-extra .roman { color: var(--season-extra-light); }
+        .season-extra .info .name { color: var(--season-extra); }
+        .season-extra .info .range { color: var(--season-extra-light); }
+        .season-extra .count { border-color: var(--season-extra-light); color: var(--season-extra); }
+        .season-extra .ch-num { color: var(--season-extra-light); }
+        .season-extra .ch-name { color: var(--season-extra); }
+
         .story-footer {
             text-align: center;
             margin-top: 28px;
             font-style: italic;
             font-size: 12px;
-            color: var(--clr-muted);
+            color: var(--muted);
         }
 
-        @media (max-width: 640px) {
+        .theme-toggle-story .icon-sun,
+        .theme-toggle-story .icon-moon { display: none; }
+        [data-theme="light"] .theme-toggle-story .icon-moon { display: inline; }
+        [data-theme="dark"] .theme-toggle-story .icon-sun { display: inline; }
+
+        @media (max-width: 680px) {
             .page-cont { padding: 1.5rem 0.75rem 3rem; }
-            .story-cover { height: 180px; }
-            .story-title { font-size: 1.3rem; }
-            .nav-bar { flex-wrap: wrap; }
+
+            .story-hero {
+                flex-direction: column;
+            }
+
+            .story-cover-col {
+                width: 100%;
+                height: 260px;
+            }
+
+            .story-cover-col img {
+                min-height: unset;
+                height: 100%;
+            }
+
+            .story-info-col {
+                padding: 24px;
+            }
+
+            .story-title-main {
+                font-size: 1.5rem;
+            }
+
+            .tab-btn {
+                padding: 12px 14px;
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+
+            .tab-panel {
+                padding: 20px 16px;
+            }
+
+            .char-grid {
+                flex-direction: column;
+            }
+
+            .char-card {
+                min-width: unset;
+            }
+
+            .toc-chapters {
+                grid-template-columns: 1fr;
+            }
+
+            .synopsis-banner {
+                height: 140px;
+            }
+
+            .synopsis-banner .overlay {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .tabs-nav {
+                gap: 0;
+            }
+
+            .tab-btn {
+                padding: 10px 8px;
+                font-size: 9px;
+                letter-spacing: 0.5px;
+            }
+
+            .story-meta-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .meta-label {
+                margin-bottom: -4px;
+            }
         }
     </style>
 </head>
@@ -291,81 +1038,421 @@
 <body>
     <div class="page-cont">
 
-        <!-- Navigation -->
         <div class="nav-bar">
             <a href="index.html" class="nav-btn">
                 <i class="mgc_arrow_left_line"></i> Trang chủ
             </a>
-            <button class="nav-btn theme-toggle-story" onclick="toggleTheme()">
+            <button class="nav-btn ml-auto theme-toggle-story" onclick="toggleTheme()">
                 <i class="mgc_sun_line icon-sun"></i>
                 <i class="mgc_moon_line icon-moon"></i>
             </button>
         </div>
 
-        <!-- Story Header -->
-        <div class="story-header">
-            <img class="story-cover" src="https://i.ibb.co/m5Gc5X6w/B-A-2D.jpg" alt="Bìa truyện Mùa Hạ Năm Thứ Bảy">
-            <div class="story-header-body">
-                <h1 class="story-title">Mùa Hạ Năm Thứ Bảy</h1>
-                <p class="story-author">Tác giả: Xuân Hoài Tửu Nùng · Edit: juno white</p>
-                <div class="story-meta">
-                    <span class="meta-tag">HE</span>
-                    <span class="meta-tag">Niên hạ</span>
-                    <span class="meta-tag">Chữa lành</span>
-                    <span class="meta-tag">Road trip</span>
-                    <span class="meta-tag">Gương vỡ lại lành</span>
-                    <span class="meta-tag">Complete</span>
-                </div>
-                <p class="story-desc">
-                    <!-- Thêm giới thiệu ngắn về truyện ở đây -->
-                    <i>Mô tả ngắn về truyện sẽ được đặt tại đây...</i>
-                </p>
+        <section class="story-hero">
+            <div class="story-cover-col">
+                <img src="https://i.ibb.co/m5Gc5X6w/B-A-2D.jpg" alt="Bìa truyện Mùa Hạ Năm Thứ Bảy">
             </div>
-        </div>
+            <div class="story-info-col">
+                <div>
+                    <h1 class="story-title-main">Mùa Hạ Năm Thứ Bảy</h1>
+                    <div class="story-title-cn">第七年夏</div>
+                </div>
 
-        <!-- Chapters -->
-        <div class="chapter-box">
-            <h2>Mục Lục</h2>
-            <ul class="chapter-list">
-                <li><a href="#"><span class="ch-num">1</span><span class="ch-title">Chương 1</span></a></li>
-                <li><a href="#"><span class="ch-num">2</span><span class="ch-title">Chương 2</span></a></li>
-                <li><a href="#"><span class="ch-num">3</span><span class="ch-title">Chương 3</span></a></li>
-                <li><a href="#"><span class="ch-num">4</span><span class="ch-title">Chương 4</span></a></li>
-                <li><a href="#"><span class="ch-num">5</span><span class="ch-title">Chương 5</span></a></li>
-                <!-- Thêm chương tại đây -->
-            </ul>
+                <div class="story-author-badge">
+                    
+                    XUÂN HOÀI TỬU NÙNG
+                </div>
+
+                <div class="story-quote">
+                    Sự tự do, lòng dũng cảm, hy vọng và tình yêu.
+                </div>
+
+                <div class="story-tags">
+                    <span class="tag">Đam mỹ</span>
+                    <span class="tag">Hiện đại</span>
+                    <span class="tag">Chủ thụ</span>
+                    <span class="tag">Niên hạ</span>
+                    <span class="tag">Bối cảnh phương Tây</span>
+                    <span class="tag">Road trip</span>
+                    <span class="tag">Gương vỡ lại lành</span>
+                    <span class="tag">Cứu rỗi</span>
+                    <span class="tag">Chữa lành</span>
+                </div>
+
+                <div class="story-meta-grid">
+                    <span class="meta-label">Độ dài</span>
+                    <span class="meta-value">79 chương + 4 ngoại truyện</span>
+                    <span class="meta-label">Nguyên tác</span>
+                    <span class="meta-value"><a href="https://href.li/?https://www.jjwxc.net/onebook.php?novelid=8298866" target="_blank" rel="noopener">Tấn Giang</a></span>
+                    <span class="meta-label">Editor</span>
+                    <span class="meta-value">juno</span>
+                    <span class="meta-label">Trạng thái</span>
+                    <span class="meta-value"><span class="status-badge">✓ Hoàn thành</span></span>
+                </div>
+            </div>
+        </section>
+
+        <div class="tabs-container">
+            <nav class="tabs-nav" role="tablist">
+                <button class="tab-btn active" role="tab" data-tab="characters" aria-selected="true">Nhân vật</button>
+                <button class="tab-btn" role="tab" data-tab="synopsis" aria-selected="false">Giới thiệu</button>
+                <button class="tab-btn" role="tab" data-tab="notes" aria-selected="false">Lưu ý</button>
+                <button class="tab-btn" role="tab" data-tab="editor" aria-selected="false">Đôi lời</button>
+                <button class="tab-btn" role="tab" data-tab="toc" aria-selected="false">Mục lục</button>
+            </nav>
+
+            <div class="tab-panel active" id="tab-characters" role="tabpanel">
+                <div class="char-grid">
+                    <div class="char-card">
+                        <div class="char-card-header">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                            <span class="role-tag">Công</span>
+                        </div>
+                        <div class="char-card-body">
+                            <div class="char-card-body-info">
+                                <div class="char-name">Trình Tại Dã</div>
+                                <div class="char-name-cn">程在野</div>
+                                <div class="char-desc-box">
+                                    <div class="label">Giới thiệu</div>
+                                    <div class="value">Con lai kém tuổi</div>
+                                </div>
+                            </div>
+                            <div class="char-img-wrap">
+                                <img src="https://i.ibb.co/r1fTyRm/imgi-44-20250428105246.jpg" alt="Trình Tại Dã">
+                                <div class="dob">19 / 04 / 2000</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="char-card char-card--pink">
+                        <div class="char-card-header">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                            <span class="role-tag">Thụ</span>
+                        </div>
+                        <div class="char-card-body">
+                            <div class="char-img-wrap">
+                                <img src="https://i.ibb.co/S4wgf8Cd/imgi-42-20250428105338.jpg" alt="Khương Thủ Ngôn">
+                                <div class="dob">07 / 11 / 1995</div>
+                            </div>
+                            <div class="char-card-body-info">
+                                <div class="char-name">Khương Thủ Ngôn</div>
+                                <div class="char-name-cn">姜守言</div>
+                                <div class="char-desc-box">
+                                    <div class="label">Giới thiệu</div>
+                                    <div class="value">Phiên dịch viên tiếng Bồ Đào Nha</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="couple-badge">
+                    <div class="couple-badge-icon">🤍</div>
+                    <div>
+                        <div class="couple-badge-label">Ngày trọng đại</div>
+                        <div class="couple-badge-value">Đăng ký kết hôn: 19/08/2026</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="tab-synopsis" role="tabpanel">
+                <div class="synopsis-banner">
+                    <img src="https://i.ibb.co/BHxXW6v5/banner.jpg" alt="banner">
+                    <div class="overlay">
+                        <div class="author-small">Xuân Hoài Tửu Nùng</div>
+                        <div class="title-big">Mùa Hạ Năm Thứ Bảy</div>
+                        <div class="title-cn-row">
+                            <span class="bar"></span>
+                            <span class="cn">第七年夏</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="synopsis-section-label">
+                    <span>Tóm tắt</span>
+                    <div class="line"></div>
+                </div>
+
+                <div class="synopsis-block">
+                    <p>Khi Khương Thủ Ngôn đến Lisbon để giải khuây, anh gặp một chàng trai mang dòng máu lai.</p>
+                    <p>Hoang dã, tự do, dáng người rất đẹp.</p>
+                    <p>Chàng trai kéo ván lướt sóng, bước đến trước mặt Khương Thủ Ngôn đang phơi nắng trên bãi cát, cất giọng phổ thông lưu loát: "Người Trung Quốc à?"</p>
+                    <p>Mãi sau này Khương Thủ Ngôn mới biết, chàng trai ấy là chủ thuê của anh.</p>
+                </div>
+
+                <div class="synopsis-divider">
+                    <span class="dot dot--pink"></span>
+                    <span class="line"></span>
+                    <span class="dot dot--blue"></span>
+                </div>
+
+                <div class="synopsis-block synopsis-block--pink">
+                    <p>Nhà của Trình Tại Dã chỉ cho du khách Trung Quốc thuê, trong nhà lúc nào cũng bày sẵn rượu vang và bánh tart trứng vừa mới ra lò.</p>
+                    <p>Tất cả chỉ vì hắn từng tình cờ gặp gỡ một người đàn ông Trung Quốc bên ngoài tiệm bánh ngọt.</p>
+                    <p>Vài lần ngắn ngủi, thương nhớ sáu năm.</p>
+                    <p>Sau đó, năm nào hắn cũng đến Lisbon ở vài tháng. Mãi đến mùa hè năm thứ bảy, vẫn như mọi năm, hắn mang theo hơi nước mát rượi từ biển cả bước lên bờ, vô tình liếc mắt, bỗng bắt gặp một bóng hình quen thuộc.</p>
+                    <p>So với trong ký ức thì gầy hơn một chút, cao hơn một chút, vẻ mặt cũng có phần chán chường hơn một chút.</p>
+                    <p>Hắn chậm rãi bước đến, nghe rõ tiếng tim mình đập như trống dồn, cũng nghe thấy tông giọng bình tĩnh của bản thân: "Người Trung Quốc à?"</p>
+                    <p>Khoảnh khắc Khương Thủ Ngôn ngước mắt nhìn, chẳng mùa hạ năm nào rực rỡ hơn năm nay.</p>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="tab-notes" role="tabpanel">
+                <div class="section-header">
+                    <span class="badge badge--navy">Lưu ý</span>
+                    <div class="line line--navy"></div>
+                    <span class="eng">Notes</span>
+                </div>
+
+                <div class="notes-list">
+                    <div class="note-item">
+                        <div class="num"><span>1</span></div>
+                        <div class="content">Edit phi lợi nhuận, chưa có sự cho phép của tác giả.</div>
+                    </div>
+                    <div class="note-item">
+                        <div class="num"><span>2</span></div>
+                        <div class="content">Editor không biết một chữ tiếng Trung nào cả, xin đừng đặt quá nhiều niềm tin và hy vọng vào bản edit này. Độ chính xác không bao giờ là 100%.</div>
+                    </div>
+                    <div class="note-item">
+                        <div class="num"><span>3</span></div>
+                        <div class="content">Editor cũng không phải dân biên phiên dịch, dân ngôn ngữ, hay dân chuyên văn, em là dân tự nhiên học IT nên từ vựng khô khan trình độ có hạn, mọi người giơ cao đánh khẽ, có lỗi gì cứ comment góp ý em thấy được thì sẽ sửa ngay.</div>
+                    </div>
+                    <div class="note-item">
+                        <div class="num"><span>4</span></div>
+                        <div class="content">Nếu bạn thấy văn dở thì là do editor edit dở ẹc. Có thể chê editor, chê nhân vật (đừng chê nặng quá em xót) nhưng đừng chê tác giả.</div>
+                    </div>
+                    <div class="note-item">
+                        <div class="num"><span>5</span></div>
+                        <div class="content">Có thể bình luận góp ý thoải mái, nhưng em xin phép không chấp nhận những lời mạt sát.</div>
+                    </div>
+                    <div class="note-item">
+                        <div class="num"><span>6</span></div>
+                        <div class="content">Mọi nhân vật đều chỉ là những con chữ, mọi tình tiết đều là hư cấu, có người thấy hợp có người không, nếu đọc và thấy không hay thì cũng không cần báo em chi đâu, mọi người cứ vui vẻ thoát ra và tìm truyện nào hợp gu bản thân hơn hen.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="tab-editor" role="tabpanel">
+                <div class="section-header">
+                    <span class="badge badge--pink">Đôi lời</span>
+                    <div class="line line--pink"></div>
+                    <span class="eng">Editor's Note</span>
+                </div>
+
+                <div class="editor-notes">
+                    <p>Mình ôm truyện vì đọc review thấy đúng gu quá, sẵn cũng muốn thử edit một bộ road trip, hồi hai ba năm trước mình tính edit Đêm nay tôi ở Đức Linh Cáp mà bận nên đành ngậm ngùi bỏ. Bây giờ thấy bộ này thì chắc chắn phải múc thui =)))</p>
+                    <div class="divider"></div>
+                    <p>Có vài chương mình nhét hơi nhiều chú thích, chủ yếu là các địa danh, loài vật xuất hiện trong chương thôi chứ cũng không có gì quá quan trọng. Mọi người không thích hoặc thấy không cần thiết thì cứ lướt qua hen.</p>
+                    <div class="divider"></div>
+                    <p>Vẫn vấn đề cũ, mình dở vụ xưng hô khủng khiếp. Gọi thụ là "anh" thì cá nhân mình thấy hợp lý rồi, còn công ban đầu mình phân vân giữa "cậu" và "hắn", cuối cùng mình chọn "hắn" do cái vibe Golden Retriever của công gọi hắn vào nghe nó hoang dã hơn huhu =)) Mọi người đọc có thấy cấn cấn thì góp ý mình nhen, yếu nghề nó z 🥲</p>
+                    <div class="divider"></div>
+                    <p>Tác phẩm có đề cập đến vấn đề tâm lý. Những chi tiết trong truyện không phản ánh chính xác 100% thực tế và chỉ mang tính hư cấu, phục vụ cho cốt truyện. Mọi người đọc đừng khắt khe quá.</p>
+                    <div class="divider"></div>
+                    <p class="highlight">Gửi đến các bạn đang phải đối mặt với các vấn đề về tâm lý: Các bạn rất mạnh mẽ, mong các bạn sẽ luôn yêu thương bản thân mình.</p>
+                    <p>Hết rồi, chúc các bạn đọc truyện vui vẻ.</p>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="tab-toc" role="tabpanel">
+
+                <div class="toc-season season-summer">
+                    <div class="toc-season-header">
+                        <span class="roman">I</span>
+                        <div class="info">
+                            <div class="name">Hạ</div>
+                            <div class="range">c.01 – 29 · 29 chương</div>
+                        </div>
+                        <div class="count">29</div>
+                    </div>
+                    <div class="toc-chapters">
+                        <a href="stories/mhnt7/chapter01.html"><span class="ch-num">01</span><span class="ch-name">Zephyr</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">02</span><span class="ch-name">Tấm thiệp</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">03</span><span class="ch-name">Hướng dương</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">04</span><span class="ch-name">Bóng chuyền bãi biển</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">05</span><span class="ch-name">Thuốc lá</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">06</span><span class="ch-name">Hương rượu</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">07</span><span class="ch-name">Ở bên nhau</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">08</span><span class="ch-name">Hoa hồng</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">09</span><span class="ch-name">Bình minh</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">10</span><span class="ch-name">Album ảnh</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">11</span><span class="ch-name">Hồ bơi</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">12</span><span class="ch-name">Bức thư thứ ba</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">13</span><span class="ch-name">Vết rượu</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">14</span><span class="ch-name">Màn đêm</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">15</span><span class="ch-name">Căn bếp</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">16</span><span class="ch-name">Năm giây</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">17</span><span class="ch-name">Xao xuyến lòng</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">18</span><span class="ch-name">Căn nhà gỗ</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">19</span><span class="ch-name">Mùa hạ bất tận</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">20</span><span class="ch-name">Run rẩy</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">21</span><span class="ch-name">Lướt sóng</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">22</span><span class="ch-name">Siêu thị</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">23</span><span class="ch-name">Sóc đất Marmot</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">24</span><span class="ch-name">Vòm trời sao</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">25</span><span class="ch-name">Âu yếm</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">26</span><span class="ch-name">Dạy học</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">27</span><span class="ch-name">Lặn biển</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">28</span><span class="ch-name">Vách đá</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">29</span><span class="ch-name">Cuối hạ</span></a>
+                    </div>
+                </div>
+
+                <div class="toc-season season-autumn">
+                    <div class="toc-season-header">
+                        <span class="roman">II</span>
+                        <div class="info">
+                            <div class="name">Thu</div>
+                            <div class="range">c.30 – 34 · 5 chương</div>
+                        </div>
+                        <div class="count">5</div>
+                    </div>
+                    <div class="toc-chapters">
+                        <a href="#" class="disabled"><span class="ch-num">30</span><span class="ch-name">Sống</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">31</span><span class="ch-name">Quá khứ</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">32</span><span class="ch-name">Trung Thu</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">33</span><span class="ch-name">Ăn cơm</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">34</span><span class="ch-name">Bươm bướm</span></a>
+                    </div>
+                </div>
+
+                <div class="toc-season season-winter">
+                    <div class="toc-season-header">
+                        <span class="roman">III</span>
+                        <div class="info">
+                            <div class="name">Đông</div>
+                            <div class="range">c.35 – 72 · 38 chương</div>
+                        </div>
+                        <div class="count">38</div>
+                    </div>
+                    <div class="toc-chapters">
+                        <a href="#" class="disabled"><span class="ch-num">35</span><span class="ch-name">Khương Thủ Ngôn</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">36</span><span class="ch-name">Hoa tuyết</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">37</span><span class="ch-name">0 giờ</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">38</span><span class="ch-name">Diệu kỳ</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">39</span><span class="ch-name">Nhiệt độ</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">40</span><span class="ch-name">Trời đông giá rét</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">41</span><span class="ch-name">Tàu hỏa</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">42</span><span class="ch-name">Muốn hôn</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">43</span><span class="ch-name">Một lần nữa</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">44</span><span class="ch-name">Tự lái</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">45</span><span class="ch-name">Mặt băng</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">46</span><span class="ch-name">Thôn bản</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">47</span><span class="ch-name">Lê đông lạnh</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">48</span><span class="ch-name">Viết thư</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">49</span><span class="ch-name">Mặt trời giả</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">50</span><span class="ch-name">Ngọt không</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">51</span><span class="ch-name">Khung ảnh</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">52</span><span class="ch-name">Đêm dài</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">53</span><span class="ch-name">Là nhà</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">54</span><span class="ch-name">Hoa hồng</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">55</span><span class="ch-name">Uống thuốc</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">56</span><span class="ch-name">Mệt mỏi</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">57</span><span class="ch-name">Cung răng</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">58</span><span class="ch-name">Vẽ tranh</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">59</span><span class="ch-name">Cún con</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">60</span><span class="ch-name">Năm mới</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">61</span><span class="ch-name">Tên gọi</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">62</span><span class="ch-name">Bướng bỉnh</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">63</span><span class="ch-name">Ánh đèn</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">64</span><span class="ch-name">Phụ huynh</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">65</span><span class="ch-name">Vé tàu</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">66</span><span class="ch-name">Nỉ non</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">67</span><span class="ch-name">Sông băng</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">68</span><span class="ch-name">Đại dương</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">69</span><span class="ch-name">Sinh mệnh</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">70</span><span class="ch-name">Giá lạnh</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">71</span><span class="ch-name">Thật tốt</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">72</span><span class="ch-name">Mầm sống</span></a>
+                    </div>
+                </div>
+
+                <div class="toc-season season-spring">
+                    <div class="toc-season-header">
+                        <span class="roman">IV</span>
+                        <div class="info">
+                            <div class="name">Xuân</div>
+                            <div class="range">c.73 – 79 · 7 chương</div>
+                        </div>
+                        <div class="count">7</div>
+                    </div>
+                    <div class="toc-chapters">
+                        <a href="#" class="disabled"><span class="ch-num">73</span><span class="ch-name">Chi phối</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">74</span><span class="ch-name">Mê mẩn</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">75</span><span class="ch-name">Hội ngộ</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">76</span><span class="ch-name">Gửi</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">77</span><span class="ch-name">Bản ngã</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">78</span><span class="ch-name">Xanh huỳnh quang</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">79</span><span class="ch-name">Họ</span></a>
+                    </div>
+                </div>
+
+                <div class="toc-season season-extra">
+                    <div class="toc-season-header">
+                        <span class="roman">V</span>
+                        <div class="info">
+                            <div class="name">Ngoại Truyện</div>
+                            <div class="range">Thời gian chảy trôi</div>
+                        </div>
+                        <div class="count">5</div>
+                    </div>
+                    <div class="toc-chapters">
+                        <a href="#" class="disabled"><span class="ch-num">NT1</span><span class="ch-name">Ngoại truyện 1</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">NT2</span><span class="ch-name">Ngoại truyện 2</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">NT3</span><span class="ch-name">Ngoại truyện 3</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">NT4</span><span class="ch-name">Ngoại truyện 4</span></a>
+                        <a href="#" class="disabled"><span class="ch-num">WB</span><span class="ch-name">Ngoại truyện Weibo</span></a>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
         <div class="story-footer">♡ cảm ơn đã ghé đọc ♡</div>
     </div>
 
     <script>
+        (function () {
+            var btns = document.querySelectorAll('.tab-btn');
+            var panels = document.querySelectorAll('.tab-panel');
+
+            btns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var target = btn.getAttribute('data-tab');
+
+                    btns.forEach(function (b) {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-selected', 'false');
+                    });
+                    panels.forEach(function (p) {
+                        p.classList.remove('active');
+                    });
+
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
+                    document.getElementById('tab-' + target).classList.add('active');
+                });
+            });
+        })();
+
         function toggleTheme() {
-            const html = document.documentElement;
-            const current = html.getAttribute('data-theme');
-            const next = current === 'dark' ? 'light' : 'dark';
+            var html = document.documentElement;
+            var current = html.getAttribute('data-theme');
+            var next = current === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', next);
-            try { localStorage.setItem('theme', next); } catch (e) {}
+            try { localStorage.setItem('theme', next); } catch (e) { }
         }
 
         (function () {
             try {
-                const saved = localStorage.getItem('theme');
+                var saved = localStorage.getItem('theme');
                 if (saved === 'dark' || saved === 'light') {
                     document.documentElement.setAttribute('data-theme', saved);
                 } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                     document.documentElement.setAttribute('data-theme', 'dark');
                 }
-            } catch (e) {}
+            } catch (e) { }
         })();
     </script>
-
-    <style>
-        .theme-toggle-story .icon-sun,
-        .theme-toggle-story .icon-moon { display: none; }
-        [data-theme="light"] .theme-toggle-story .icon-moon { display: inline; }
-        [data-theme="dark"] .theme-toggle-story .icon-sun { display: inline; }
-    </style>
 </body>
 
 </html>
