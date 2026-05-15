@@ -1918,14 +1918,32 @@
       btn.title = '';
     }
 
-    function loadCachedCounts() {
-      try {
-        var cache = JSON.parse(localStorage.getItem(CACHE_KEY) || '{}');
-        Object.keys(cache).forEach(function (id) {
-          if (cache[id] > 0) showCommentCount(id, cache[id]);
+    // ✅ Fetch từ file JSON online (giống nhau cho tất cả mọi người)
+    function loadOnlineCounts() {
+      fetch('/data/comment-counts.json?t=' + Date.now())
+        .then(function (res) {
+          if (!res.ok) throw new Error('No data');
+          return res.json();
+        })
+        .then(function (counts) {
+          Object.keys(counts).forEach(function (id) {
+            if (counts[id] > 0) showCommentCount(id, counts[id]);
+          });
+        })
+        .catch(function () {
+          // File chưa tồn tại (chưa có ai comment) → bỏ qua
         });
-      } catch (e) { }
     }
+
+    // ✅ Lắng nghe real-time từ giscus khi panel mở (cập nhật tức thì)
+    window.addEventListener('message', function (event) {
+      if (!event.data || !event.data.giscus || !event.data.giscus.discussion) return;
+      var d = event.data.giscus.discussion;
+      var count = (d.totalCommentCount || 0) + (d.totalReplyCount || 0);
+      if (currentParaId) {
+        count > 0 ? showCommentCount(currentParaId, count) : hideCommentCount(currentParaId);
+      }
+    });
 
     function cacheCount(paraId, count) {
       try {
@@ -2105,7 +2123,7 @@
 
     // ===== KHỞI ĐỘNG =====
     loadChapterGiscus();
-    loadCachedCounts();   // ✅ hiện số comment từ cache
+    loadOnlineCounts();   // ✅ hiện số comment từ cache
     updateReadingBar();   // ✅ init reading bar
   </script>
 </body>
