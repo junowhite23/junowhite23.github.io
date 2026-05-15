@@ -442,21 +442,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      opacity: 0;
+      opacity: 0.5;
       transition: all 0.2s ease;
       padding: 0;
     }
 
-    .para-wrapper:hover .comment-btn {
-      opacity: 1;
-    }
-
     .comment-btn:hover {
+      opacity: 1;
       background: var(--blue);
       color: #fff;
       border-color: var(--blue);
       transform: translateY(-50%) scale(1.1);
     }
+
+
 
     .author-note {
       margin-top: 48px;
@@ -910,7 +909,7 @@
 
     /* ========== COMMENT COUNT BADGE ========== */
     .comment-btn.has-comments {
-      opacity: 1 !important;
+      opacity: 1;
       width: auto;
       height: 24px;
       border-radius: 12px;
@@ -1002,7 +1001,7 @@
         width: 24px;
         height: 24px;
         font-size: 11px;
-        opacity: 0.6;
+        opacity: 0.4;
       }
 
       .comment-panel {
